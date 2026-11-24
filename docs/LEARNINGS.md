@@ -14,10 +14,9 @@ Neue Einträge oben anfügen. Format: `## JJJJ-MM-TT – Thema`, dann kurze Stic
   zweiten Klick auf das Input → nur einen aufzeichnen (sonst Checkbox doppelt umgeschaltet).
   Mission 7 zieht Fragen per `Math.random` → nach Reload evtl. andere Frage (kosmetisch).
 - Test `tools/persist.cjs`: klickt deterministisch in jeder Mission, lädt neu, vergleicht Zustand.
-- Offen: `.claude/settings.json` sperrt mit `Read(./index.html)` auch `src/index.html`, wenn das
-  Arbeitsverzeichnis `src/` ist (`./` = relativ zum cwd). Richtig wäre `Read(/index.html)` (relativ
-  zum Projekt). Claude darf die eigene Berechtigungsdatei nicht ändern → von Hand anpassen.
-  Bis dahin: `src/index.html` per `python3` lesen/ändern oder cwd = Projektwurzel.
+- `.claude/settings.json`: `Read(./index.html)` sperrte auch `src/index.html`, wenn das Arbeits-
+  verzeichnis `src/` war (`./` = relativ zum cwd). Korrigiert auf `Read(/index.html)` /
+  `Grep(/index.html)` (führendes `/` = relativ zum Projektordner).
 
 ## 2026-11-24 – Ausgeliefert wird die optimierte Web-Version
 - `index.html` referenziert Medien jetzt als `assets/...` statt Base64: 21,6 MB → 0,3 MB HTML.
