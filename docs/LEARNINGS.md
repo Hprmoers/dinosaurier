@@ -2,6 +2,19 @@
 
 Neue Einträge oben anfügen. Format: `## JJJJ-MM-TT – Thema`, dann kurze Stichpunkte.
 
+## 2026-11-24 – Missionsdateien formatiert
+- `src/missions/*.html` mit Prettier 3.3.3 formatiert (`.prettierrc.json`: printWidth 110,
+  `htmlWhitespaceSensitivity: css` → Leerraum zwischen Inline-Elementen bleibt erhalten).
+  537 → 8270 Zeilen, längste Zeile 8609 → 278 Zeichen.
+- Geprüft mit neuem visuellen Regressionstest: `tools/visual.cjs` (15 Klickrunden × 3 Scrollpositionen
+  je Mission = 315 Screenshots, fester Zufall, Animationen aus) + `tools/visual_compare.py`.
+  Ergebnis: identisch. Einzelne Screenshots weichen zwischen Läufen um ±1 Farbstufe ab
+  (Bild-Dekodierung) → Vergleich mit Toleranz ±2, nicht bytegenau.
+- Folge: Missions-Hash ändert sich → gespeicherte Missionsstände (Klickprotokolle) werden einmalig
+  verworfen. Bei jeder inhaltlichen Missionsänderung passiert das ebenso (gewollt).
+- `index.html` wächst durch Einrückung auf ~410 KB (gzip über Pages macht das fast wett).
+- `tools/import_single.py` würde unformatierte Missionen erzeugen → nach einem Import erneut Prettier.
+
 ## 2026-11-24 – Fortschritt über Neuladen erhalten
 - Problem: Gespeichert wurden nur Heft-Checks + Prolog. Reload startete immer beim Trailer
   (`view('trailer')` am Ende von app.js) und jede Mission wieder bei Stufe 1.
@@ -37,9 +50,7 @@ Neue Einträge oben anfügen. Format: `## JJJJ-MM-TT – Thema`, dann kurze Stic
   dem Original → keine Verhaltensänderung durch das Refactoring.
 - `index.html` bleibt als Build-Ergebnis im Repo (GitHub Pages liefert sie aus); in
   `.gitattributes` als generiert/ohne Diff markiert, in `.claude/settings.json` für Read/Grep gesperrt.
-- Missionsdateien bestehen aus wenigen sehr langen Zeilen (Original-Formatierung beibehalten,
-  um byte-identisch zu bleiben). Mögliche spätere Verbesserung: formatieren (Prettier), dann
-  mit `node tools/smoke.cjs --shots` visuell prüfen.
+- Missionsdateien bestanden anfangs aus wenigen sehr langen Zeilen (inzwischen formatiert, s. o.).
 - Wird wieder eine komplette `index.html` hochgeladen (z. B. neue Version aus anderem Tool):
   `python3 tools/import_single.py index.html` – erkennt bekannte Bilder per Hash wieder,
   neue landen in `assets/img/new/` → mit `tools/rename_asset.py` sinnvoll benennen.

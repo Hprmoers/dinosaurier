@@ -1,36 +1,987 @@
-<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AKTE 66 – Mission 2 · Spuren aus dem All</title><style>*{box-sizing:border-box}body{margin:0;background:#101a20;color:#f5ead8;font:17px/1.55 system-ui,Arial,sans-serif}button{cursor:pointer;font:inherit}a{color:#edc987}.hero{min-height:245px;background:linear-gradient(90deg,#101a20ee,#101a2060),url({{asset:img/mission-1/hero-grenzschicht.jpg}}) center/cover;display:flex;align-items:center;padding:clamp(20px,5vw,65px)}.hero h1{font-family:Georgia,serif;font-size:clamp(32px,5vw,58px);margin:0;color:#ffdc9b}.hero p{max-width:670px}.wrap{max-width:1160px;margin:0 auto;padding:22px}.top{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.chip{background:#27343b;border:1px solid #b68d55;border-radius:50px;padding:6px 14px}.progress{height:8px;border-radius:9px;background:#38454b;margin:15px 0 24px;overflow:hidden}.progress>div{height:100%;background:#eaba70;transition:width .2s}.nav{display:flex;flex-wrap:wrap;gap:9px}.nav button{background:#1e2b32;color:#faeddd;border:1px solid #906b3c;border-radius:8px;padding:9px 12px}.nav button[disabled]{opacity:.45}.nav .current{background:#e4b76f;color:#161b1d}.stage{margin-top:22px}.hidden{display:none!important}.eyebrow{color:#eebc6a;letter-spacing:.13em;text-transform:uppercase;font-size:13px}.stage h2{font-family:Georgia,serif;font-size:clamp(27px,4vw,40px);margin:5px 0 12px}.lead{max-width:920px;font-size:19px}.scene{display:grid;grid-template-columns:minmax(0,1.07fr) minmax(0,.93fr);gap:18px;align-items:start}.panel{border:1px solid #89663d;background:#18262e;border-radius:15px;overflow:hidden}.panel svg{width:100%;height:auto;display:block}.artcaption{padding:10px 17px;color:#e4d6c4;font-size:13px}.paper{background:#fff0d5;color:#20272b;border:2px solid #b99662;border-radius:14px;padding:clamp(16px,3vw,28px);box-shadow:0 8px 25px #0005}.paper h3{font-family:Georgia,serif;font-size:26px;color:#503718;margin:0 0 8px}.paper p{margin:9px 0}.paper ol{padding-left:24px}.paper li{margin:10px 0}.book{border-left:5px solid #bc7e2b;background:#fff9eb;padding:11px 14px;margin-top:16px}.prior{background:#fff9ed;border:1px solid #bd9f72;color:#15252b;border-radius:9px;padding:10px 13px;margin:13px 0}.prior summary{cursor:pointer;font-weight:750;color:#382b17}.prior p,.prior strong{color:#16242a}.help{margin:17px 0}.help>button{background:#2c3941;color:#ffe6ac;border:1px solid #b78d54;padding:10px 14px;border-radius:9px}.helps{background:#fff6e5;color:#18272c;padding:14px;border-radius:10px;margin-top:6px}.helps details{border-bottom:1px solid #d2b992;padding:9px 3px}.helps summary{cursor:pointer;font-weight:700}.controls{display:flex;justify-content:space-between;gap:12px;margin:28px 0;flex-wrap:wrap}.primary{background:#e5b56a;color:#161b1d;border:0;border-radius:9px;padding:12px 20px;font-weight:750}.ghost{background:#26343a;color:#fff2dd;border:1px solid #ac8558;border-radius:9px;padding:12px 20px}.feedback{margin:12px 0;padding:11px;background:#fff9ea;color:#152b30;border-left:4px solid #946329;border-radius:4px}.choice{display:block;padding:10px;background:#fffaf0;margin:9px 0;border:1px solid #d6bd92;border-radius:9px}.choice input{margin-right:10px;accent-color:#775020}input[type=checkbox]{accent-color:#674623;transform:scale(1.2)}.record{background:#20313a;padding:16px;border:1px solid #a88051;border-radius:12px}.record b{color:#ffd390}.source{font-size:13px;margin-top:24px;border-top:1px solid #6c6558;padding-top:17px;color:#cbd7d4}.badge{display:inline-block;background:#26464b;color:#d5f5df;padding:3px 9px;border-radius:20px;font-size:12px}.small{font-size:14px}.note{border-left:4px solid #d9b878;padding:10px 15px;background:#25333a}.hotspot{cursor:pointer;outline:none}.hotspot:focus-visible circle{stroke:#fff;stroke-width:6px}@media(max-width:770px){.scene{grid-template-columns:1fr}.hero{min-height:200px}.wrap{padding:14px}.panel{max-width:100%}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}.real-world-map{display:block;width:100%;height:auto;background:#e8f2f7;border-radius:10px}.panel .artcaption{color:#d9ddd6}
-/* Wissenschaftliche Bildtafel – Station 2, Beweisstück 3 */
-.research-visuals{background:#172830;padding:12px;display:grid;gap:15px}
-.evidence-figure{margin:0;border-radius:11px;overflow:hidden;background:#0f1f28;border:1px solid #8b6c47}
-.evidence-figure img.full-evidence,.evidence-figure .image-canvas img{display:block;width:100%;height:auto}
-.image-canvas{position:relative;background:#d3eafa}
-.map-annotation{position:absolute;left:75%;top:68%;padding:3px 7px;background:#fff9e9;color:#63390f;border:2px solid #a35a2a;border-radius:7px;font-size:clamp(11px,1.6vw,16px);font-weight:750;box-shadow:0 2px 8px #0003;pointer-events:none}
-.evidence-figure .artcaption{background:#233641;color:#fff2db;font-size:14px;line-height:1.5}
-.evidence-figure .artcaption strong{color:#ffce80}
-.cross-section svg{display:block;width:100%;height:auto}
-.quartz-compare{background:#f3ecdf;color:#24333a;border-radius:12px;padding:10px;margin:12px 0}.quartz-compare p{color:#24333a}</style></head><body><header class="hero"><div><div class="eyebrow">AKTE 66 · Expedition ins verlorene Zeitalter</div><h1>Mission 2: Spuren aus dem All</h1><p>Eine ungewöhnliche Gesteinsspur aus Italien führt euch über mehrere Kontinente bis zu einem verborgenen Krater. Welche Befunde passen zusammen?</p></div></header><main class="wrap"><div class="top"><span class="chip">🔎 Ermitteln · Vergleichen · Begründen</span><span class="chip">📓 Ergebnisse ausschließlich ins analoge Forscherheft</span></div><div class="progress"><div id="bar" style="width:0%"></div></div><nav class="nav" aria-label="Missionsabschnitte"><button data-step="0" class="current">1 · Die Spur</button><button data-step="1" disabled>2 · Quarz</button><button data-step="2" disabled>3 · Krater</button><button data-step="3" disabled>4 · Urteil</button></nav>
-<section class="stage" id="s0"><div class="eyebrow">Beweisstück 1 von 3</div><h2>Eine Spur an mehreren Orten</h2><p class="lead">Aus Mission 1 kennst du den ungewöhnlich hohen Iridiumwert bei Gubbio in Italien. Auch in Montana (USA) wurden Gesteine an der Kreide-Paläogen-Grenze untersucht. Der Chicxulub-Krater liegt auf der Halbinsel Yucatán in Mexiko. Vergleiche die Orte und ihre unterschiedlichen Spuren.</p><div class="scene"><div class="panel"><img class="real-world-map" src="{{asset:img/mission-2/weltkarte-fundorte.webp}}" alt="Weltkarte mit tatsächlichen Küstenlinien und den markierten heutigen Orten: Montana, USA; Gubbio, Italien; Yucatán, Mexiko."><div class="artcaption">Heutige Weltkarte mit realen Küstenlinien (Kartengrundlage: Basemap/GSHHG). Die Markierung Yucatán bezeichnet den Einschlagsort Chicxulub; Montana und Gubbio sind Orte geologischer Untersuchungen. Nicht alle drei Punkte stehen für dieselbe Art von Beleg.</div></div><div class="paper"><h3>Ermittlungsauftrag</h3><details class="prior"><summary>🧭 Vorwissen: Was ist eine Kreide-Paläogen-Grenze?</summary><p>So nennen Forschende den Übergang zwischen zwei erdgeschichtlichen Zeitabschnitten vor ungefähr <b>66 Millionen Jahren</b>. In Gesteinen kann man Spuren dieses Übergangs untersuchen.</p></details><p>Eine ungewöhnlich hohe Iridiumkonzentration wurde in Grenzschichten an vielen Orten nachgewiesen. An anderen Orten fanden Forschende weitere Hinweise auf einen Einschlag. Der Krater bei Yucatán ist eine andere Art von Beleg.</p><ol><li>Betrachte die Weltkarte. In welchen Ländern liegen Gubbio, Montana und Yucatán? Wie weit sind die Orte ungefähr voneinander entfernt?</li><li>Vermute: Warum macht es einen Unterschied, ob man eine Spur nur an einem Ort oder an vielen Orten entdeckt?</li><li>Notiere eine Frage, die du mit dieser Beobachtung noch <b>nicht</b> beantworten kannst.</li></ol><div class="book"><b>📓 Forscherheft:</b> Überschrift „Spur 1 – viele Fundorte“. Schreibe eine Vermutung mit Begründung auf.</div><details class="prior"><summary>🌍 Zusatzentdeckung: Sah die Erde vor 66 Millionen Jahren genauso aus?</summary><p>Nein. Die Kontinente bewegten sich im Laufe der Erdgeschichte langsam. Deshalb sah die Erde damals anders aus. Vergleiche bei Gelegenheit eine wissenschaftliche Rekonstruktion: <a href="https://commons.wikimedia.org/wiki/File:Mollweide_Paleographic_Map_of_Earth,_60_Ma_(Selandian_Age).png" target="_blank" rel="noopener">PALEOMAP-Karte der Erde vor 60 Millionen Jahren</a> (CC BY 4.0). <b>Wichtig:</b> Diese Rekonstruktion zeigt die Erde rund 6 Millionen Jahre nach dem Einschlag und ist kein exaktes Bild für 66 Millionen Jahre.</p><p><b>Zusatzfrage:</b> Warum können wir die heutigen Fundorte nicht einfach unverändert auf eine Karte der damaligen Erde übertragen?</p><figure style="margin:16px 0 10px; padding:12px; border-radius:12px; background:#f4eedc; color:#17252a"><img src="{{asset:img/mission-2/infografik.webp}}" alt="Wissenschaftliche Rekonstruktion der Erde vor 60 Millionen Jahren in Mollweide-Projektion: Die Kontinente sind anders angeordnet als heute." style="display:block;width:100%;height:auto;object-fit:contain;border-radius:8px;background:#0c2741"><figcaption style="font-size:.85em;line-height:1.5;margin-top:8px;color:#263b43">Rekonstruktion der Erde vor <strong>60 Millionen Jahren</strong>, nicht zur Zeit des Einschlags vor etwa 66 Millionen Jahren. Bild: PALEOMAP / Wikimedia Commons, <a href="https://commons.wikimedia.org/wiki/File:Mollweide_Paleographic_Map_of_Earth,_60_Ma_(Selandian_Age).png" target="_blank" rel="noopener" style="color:#174f6b">CC BY 4.0 – Quelle und Lizenz</a>. Die Karte ist offline eingebettet.</figcaption></figure><p><b>Wenn du die beiden Karten vergleichst:</b> Suche zuerst Afrika und Südamerika. Beschreibe dann einen Unterschied zwischen der heutigen Karte und der Rekonstruktion. Für die Zusatzaufgabe reicht eine Beobachtung.</p></details></div></div><div class="help"><button>💡 Arbeitshilfen öffnen</button><div class="helps" hidden><details><summary>Hilfe 1 · Karte verstehen</summary>Die Punkte stehen für Untersuchungsorte. Was unterscheidet einen örtlichen Befund von einer Spur an mehreren weit entfernten Orten?</details><details><summary>Hilfe 2 · Gedanken ordnen</summary>Formuliere: „Weil die Spur an verschiedenen Orten vorkommt, vermute ich …“</details></div></div><div class="controls"><span></span><button class="primary" data-next>Weiter: Quarz untersuchen →</button></div></section>
-<section class="stage hidden" id="s1"><div class="eyebrow">Beweisstück 2 von 3</div><h2>Ein Kristall mit ungewöhnlichen Spuren</h2><p class="lead">Eine Spezialuntersuchung liefert einen neuen Hinweis. In Quarzkristallen aus Grenzschichten entdeckten Forschende feine, regelmäßig angeordnete Veränderungen. Sie entstehen bei einem extrem starken, plötzlichen Druckstoß.</p><div class="scene"><div class="panel"><figure style="margin:0"><img src="{{asset:img/mission-2/druckstoss-foto.jpg}}" alt="Mikroskopische Aufnahme eines Schockquarz-Korns mit vielen feinen parallelen Linien" style="width:100%;display:block;border-radius:18px;border:2px solid rgba(255,230,180,.35);box-shadow:0 14px 30px rgba(0,0,0,.28);background:#1a1a1a"><figcaption class="artcaption">Mikroskopische Aufnahme von Schockquarz: Die feinen parallelen Linien sind typische Deformationsmerkmale nach extrem hohem Druck.</figcaption></figure></div><div class="paper"><h3>Spur im Kristall</h3>
-<div class="quartz-compare" role="group" aria-label="Schematische Gegenüberstellung von Quarz ohne und mit Stoßdruckspuren">
-<svg viewBox="0 0 740 270" role="img" aria-label="Links ein stark vereinfachtes Modell eines Quarzkristalls ohne Stoßdruckspuren. Rechts ein Quarzkristall mit vielen eng benachbarten parallelen Linien als schematische Stoßdruckspuren. Beide sind keine Mikroskopaufnahmen." style="display:block;width:100%;max-width:740px;margin:auto">
-<rect x="2" y="2" width="360" height="263" rx="12" fill="#e9e0ce" stroke="#7d7c76"/><rect x="378" y="2" width="360" height="263" rx="12" fill="#e9e0ce" stroke="#7d7c76"/>
-<text x="182" y="34" text-anchor="middle" fill="#23333a" font-family="sans-serif" font-size="21" font-weight="bold">A · ohne Schockspuren</text>
-<text x="560" y="34" text-anchor="middle" fill="#23333a" font-family="sans-serif" font-size="21" font-weight="bold">B · mit Schockspuren</text>
-<path d="M120 77 L182 55 L246 82 L262 190 L186 221 L111 186 Z" fill="#d9edf0" stroke="#52717b" stroke-width="4"/>
-<path d="M494 77 L556 55 L620 82 L636 190 L560 221 L485 186 Z" fill="#d9edf0" stroke="#52717b" stroke-width="4"/>
-<g stroke="#bc7a43" stroke-width="3" opacity=".95"><path d="M515 81 L550 208"/><path d="M527 74 L562 212"/><path d="M539 71 L574 208"/><path d="M551 68 L586 202"/><path d="M564 69 L599 197"/><path d="M576 72 L610 187"/></g>
-<text x="182" y="251" text-anchor="middle" fill="#23333a" font-family="sans-serif" font-size="16">vereinfacht dargestellt</text>
-<text x="560" y="251" text-anchor="middle" fill="#23333a" font-family="sans-serif" font-size="16">parallele Linien im Kristall</text></svg>
-<p style="font-size:.86em;margin:7px 0 13px"><b>Abbildungen A und B:</b> Didaktische Schemata zum Vergleich; <b>keine echten Mikroskopbilder</b>. Die echte Mikroskopaufnahme in dieser Station zeigt die wissenschaftliche Spur.</p></div><details class="prior"><summary>🧭 Vorwissen: Quarz und Druckstoß</summary><p><b>Quarz</b> ist ein häufiges Mineral, das in vielen Gesteinen vorkommt. Ein <b>Kristall</b> besteht aus regelmäßig angeordneten Teilchen. Bei einem extrem starken, schlagartigen Druckstoß kann diese innere Ordnung beschädigt werden. Das lässt sich unter speziellen Mikroskopen erkennen.</p></details><ol><li><b>Vergleiche Abbildung A und B direkt über diesem Auftrag.</b> Was ist in B zu sehen, das in A fehlt? Nenne einen sichtbaren Unterschied. <small>(„Vergleichen“ heißt: Gemeinsamkeiten oder Unterschiede genau benennen.)</small></li><li>Lies den Fachhinweis: Solche Schockspuren können bei einem sehr heftigen Einschlag entstehen. <b>Erkläre in einem oder zwei Sätzen</b>, warum das zur Asteroidenvermutung passt. <small>(„Erklären“ heißt: einen Zusammenhang mit „weil“ oder „deshalb“ verständlich machen.)</small></li><li>Überlege: Warum wäre die Entdeckung solcher Kristalle überzeugender als nur ein ungewöhnlicher Iridiumwert?</li></ol><div class="book"><b>📓 Forscherheft:</b> Fertige eine <b>einfache Skizze</b> von Kristall B an: Umriss und einige parallele Linien reichen. <b>Nicht ausmalen.</b> Schreibe darunter einen Satz: Was deutet diese Spur an – und was beweist sie noch nicht allein?</div></div></div><div class="note"><b>Fachhinweis:</b> Die hier gemeinten sogenannten planaren Deformationsmerkmale sind charakteristische Hinweise auf sehr hohe Stoßdrücke. Forschende haben sie in Quarz aus Ablagerungen an der Grenze nachgewiesen. <a href="https://www.lpi.usra.edu/science/kring/Chicxulub/discovery/">Lunar and Planetary Institute</a></div><div class="help"><button>💡 Arbeitshilfen öffnen</button><div class="helps" hidden><details><summary>Hilfe 1 · Zeichnung untersuchen</summary>Vergleiche vor allem die vielen parallelen Linien im rechten Kristall.</details><details><summary>Hilfe 2 · Begründung aufbauen</summary>Verknüpfe zwei Informationen: „Ein starker Druckstoß kann …“ und „Ein Asteroideneinschlag erzeugt …“</details><details><summary>Hilfe 3 · Zwei Spuren verbinden</summary>Frage dich: Zeigen die beiden Belege genau dasselbe – oder zwei unterschiedliche Folgen desselben möglichen Ereignisses?</details></div></div><div class="controls"><button class="ghost" data-back>← Zurück</button><button class="primary" data-next>Weiter: Krater erforschen →</button></div></section>
-<section class="stage hidden" id="s2"><div class="eyebrow">Beweisstück 3 von 3</div><h2>Ein riesiger Krater unter der Erde</h2><p class="lead">Auf der Halbinsel Yucatán in Mexiko liegt der etwa 180 Kilometer breite Chicxulub-Einschlagkrater. Er ist heute größtenteils unter jüngeren Gesteinen verborgen. Unterschiedliche Hinweise – darunter eine auffällige Anordnung von Cenoten, Bohrkerne und Messungen des Untergrunds – helfen Forschenden, seine Form zu rekonstruieren.</p><div class="scene"><div class="panel research-visuals">
-  <figure class="evidence-figure">
-    <div class="image-canvas light-map"><img src="{{asset:img/mission-2/light-map.webp}}" alt="Geografische Karte von Mexiko mit Umrissen der Bundesstaaten und der Halbinsel Yucatán im Osten" loading="eager"><span class="map-annotation">Yucatán <span aria-hidden="true">↙</span></span></div>
-    <figcaption class="artcaption"><strong>Abbildung A · Orientierung:</strong> Die Halbinsel Yucatán liegt im Osten Mexikos zwischen dem Golf von Mexiko und dem Karibischen Meer.</figcaption>
-  </figure>
-  <figure class="evidence-figure">
-    <img class="full-evidence" src="{{asset:img/mission-2/beweis-gesamt.jpg}}" alt="Zweiteilige Abbildung der Halbinsel Yucatán. Oben ist der ungefähr kreisförmige Chicxulub-Bereich eingezeichnet. Unten ist ein halbkreisförmiger Verlauf von Cenoten mit gestrichelter Linie hervorgehoben." loading="eager">
-    <figcaption class="artcaption"><strong>Abbildung B · Eine Spur an der Oberfläche:</strong> Die gestrichelte Linie folgt einem Bogen von <em>Cenoten</em> (wassergefüllten Einbruchstellen im Kalkstein). Dieser Bogen entspricht ungefähr einem Teil der verschütteten Kraterstruktur. Die gezeichneten Linien sind eine Deutung; der Kraterrand ist auf der Erdoberfläche nicht direkt sichtbar.</figcaption>
-  </figure>
-  <figure class="evidence-figure"><div class="cross-section"><svg viewBox="0 0 720 440" role="img" aria-label="Schematischer Querschnitt des unter Sediment verborgenen Chicxulub-Kraters auf Yucatán, mit ringförmiger Struktur und Bohrkernposition"><defs><linearGradient id="ground" x2="0" y2="1"><stop stop-color="#9c865d"/><stop offset="1" stop-color="#4c4946"/></linearGradient></defs><rect width="720" height="440" fill="#162a35"/><text x="24" y="42" fill="#f8dba6" font-size="24">Der verborgene Einschlagkrater</text><rect y="135" width="720" height="305" fill="url(#ground)"/><path d="M0 126 L160 125 Q220 143 280 185 Q360 242 440 185 Q510 140 570 126 L720 126 L720 174 Q570 182 488 235 Q365 323 235 239 Q144 179 0 178Z" fill="#b8aa86"/><path d="M0 200 Q160 210 234 278 Q355 374 488 278 Q584 202 720 212" stroke="#f0d59c" stroke-width="10" fill="none"/><path d="M0 318 Q185 306 275 355 Q359 392 453 351 Q545 307 720 321" fill="none" stroke="#604942" stroke-width="23"/><path d="M360 86V335" stroke="#f6d69b" stroke-width="4" stroke-dasharray="9 8"/><circle cx="360" cy="337" r="8" fill="#f6d69b"/><g fill="#fff1db" font-family="sans-serif" font-size="19"><text x="383" y="88">Bohrung</text><text x="29" y="102">heutige Oberfläche</text><text x="27" y="412">Querschnitt stark vereinfacht · kein maßstäbliches Profil</text></g></svg></div><figcaption class="artcaption"><strong>Abbildung C · Blick in den Untergrund:</strong> Eigener vereinfachter Querschnitt. Die jüngeren Ablagerungen überdecken die verformten Gesteine; die Darstellung ist nicht maßstabsgetreu.</figcaption></figure>
-</div><div class="paper"><h3>Spurensuche auf und unter Yucatán</h3><details class="prior"><summary>🧭 Vorwissen: Was sind Bohrkern und geophysikalische Messung?</summary><p>Ein <b>Bohrkern</b> ist eine lange Gesteinsprobe aus einer Bohrung. An ihr lässt sich untersuchen, welche Gesteine tief im Untergrund liegen. Mit <b>geophysikalischen Messungen</b> erkunden Forschende den Untergrund, ohne ihn überall freizulegen – etwa über Unterschiede der Schwerkraft.</p></details><details class="prior"><summary>🧭 Vorwissen: Was sind Cenoten?</summary><p>Eine <b>Cenote</b> ist eine natürliche Einbruchstelle im Kalkstein, die oft mit Wasser gefüllt ist. Mehrere Cenoten auf Yucatán liegen ungefähr auf einem Bogen. Dieser Verlauf kann Hinweise auf Veränderungen des Untergrunds geben.</p></details><ol><li><b>Orientiere dich:</b> Zeige auf Abbildung A die Halbinsel Yucatán. Beschreibe ihre Lage in Mexiko.</li><li><b>Entdecke eine Spur:</b> Suche in Abbildung B die gestrichelte Linie. Welche Form hat der Verlauf der Cenoten?</li><li><b>Erkläre den Zusammenhang:</b> Betrachte danach Abbildung C. Warum ist der Krater heute nicht als großes Loch an der Oberfläche zu sehen?</li><li><b>Begründe:</b> Warum müssen Forschende zusätzlich Bohrkerne und Messungen des Untergrunds untersuchen, statt allein aus der Cenoten-Anordnung auf einen Einschlag zu schließen?</li></ol><div class="book"><b>📓 Forscherheft:</b> Schreibe „Spur 3 – Chicxulub“. Skizziere den Cenoten-Bogen und notiere <b>zwei unterschiedliche Hinweise</b> auf den verborgenen Krater. Erkläre in einem Satz, warum der Bogen allein noch kein sicherer Beweis wäre.</div></div></div><div class="help"><button>💡 Arbeitshilfen öffnen</button><div class="helps" hidden><details><summary>Hilfe 1 · Querschnitt lesen</summary>Achte in Abbildung C darauf, welche Gesteine nahe der Oberfläche liegen und welche Gesteine darunter verformt sind.</details><details><summary>Hilfe 2 · Den Beleg erklären</summary>Die Anordnung von Cenoten ist ein Hinweis. Bohrungen zeigen zudem Gesteine, die durch starken Stoßdruck verändert oder teilweise geschmolzen wurden.</details><details><summary>Hilfe 3 · Ursache und Spur</summary>Überlege, welche Spuren ein großer Körper aus dem All sowohl am Einschlagsort als auch weit entfernt hinterlassen könnte.</details></div></div><div class="controls"><button class="ghost" data-back>← Zurück</button><button class="primary" data-next>Weiter: Belege bewerten →</button></div></section>
-<section class="stage hidden" id="s3"><div class="eyebrow">Expeditionsentscheidung</div><h2>Welche Erklärung trägt die Beweise?</h2><p class="lead">Euer Team legt die drei Spuren nebeneinander: Iridiumanreicherung, geschockten Quarz und den Chicxulub-Krater. Jetzt braucht die Expeditionsleitung ein begründetes Urteil.</p><div class="scene"><div class="paper"><h3>Entscheide und begründe</h3><p><b>Welche Aussage wird durch die drei Belege am besten gestützt?</b></p><label class="choice"><input type="radio" name="verdict" value="a">A · Das Dinosauriersterben ist mit diesen Belegen vollständig erklärt.</label><label class="choice"><input type="radio" name="verdict" value="b">B · Vor rund 66 Millionen Jahren gab es einen gewaltigen Einschlag; seine Folgen für die Lebewesen müssen wir noch untersuchen.</label><label class="choice"><input type="radio" name="verdict" value="c">C · Die drei Befunde haben sicher nichts miteinander zu tun.</label><button id="check" class="ghost">Entscheidung prüfen</button><div id="feedback" class="feedback hidden" role="status"></div><div class="book"><b>📓 Forscherheft:</b> Schreibe deine Entscheidung auf und begründe sie mit <b>mindestens zwei unterschiedlichen Belegen</b>. Ergänze eine offene Forschungsfrage.</div></div><div class="record"><h3>Dein Beweisprotokoll</h3><p>1. <b>Iridium:</b> Auffällige Spuren in Grenzschichten.</p><p>2. <b>Geschockter Quarz:</b> Hinweise auf extremen Stoßdruck.</p><p>3. <b>Chicxulub:</b> Geologisch nachgewiesene Einschlagstruktur.</p><p><b>Wichtig:</b> Die Spuren belegen ein Einschlagereignis. Sie erklären für sich allein noch nicht, wie das weltweite Massenaussterben ablief. Genau das untersuchst du in Mission 3.</p><details class="prior"><summary>🧭 Vorwissen: Was bedeutet „Hypothese“?</summary><p>Eine <b>Hypothese</b> ist eine begründete Vermutung, die man anhand von Beobachtungen und Untersuchungen prüfen kann.</p></details></div></div><div class="help"><button>💡 Arbeitshilfen öffnen</button><div class="helps" hidden><details><summary>Hilfe 1 · Aussage prüfen</summary>Welche Aussage trennt das nachgewiesene Ereignis von den noch zu untersuchenden Folgen?</details><details><summary>Hilfe 2 · Belege vergleichen</summary>Beschreibe, was Iridium, Quarz und Krater jeweils zeigen. Welche Hinweise sind verschieden?</details><details><summary>Hilfe 3 · Satzstarter</summary>„Die Einschlaghypothese ist überzeugend, weil … und weil … . Noch nicht geklärt ist damit, …“</details></div></div><div class="controls"><button class="ghost" data-back>← Zurück</button><button class="primary" onclick="window.print()">Missionsseite drucken</button></div></section><footer class="source"><b>Wissenschaftliche Grundlage:</b> Lunar and Planetary Institute, <a href="https://www.lpi.usra.edu/science/kring/Chicxulub/discovery/">Chicxulub Discovery</a>; Bohor u. a. (1984), <a href="https://pubs.usgs.gov/publication/70014029">USGS: Mineralogic evidence for an impact event</a>; Sharpton u. a. (1992), <a href="https://www.usgs.gov/publications/new-links-between-chicxulub-impact-structure-and-cretaceoustertiary-boundary">USGS: Chicxulub und K–Pg-Grenze</a>; Goderis u. a. (2021), <a href="https://pubmed.ncbi.nlm.nih.gov/33627429/">Globally distributed iridium layer</a>. Bilder: Weltkarte, Schockquarz und die beiden ergänzten Yucatán-Abbildungen sind eingebettete Materialien; der Krater-Querschnitt ist ein eigenes didaktisches Schema. Für die vom Projekt bereitgestellten Yucatán-Abbildungen sind Urheber und Nutzungsrechte vor einer öffentlichen Weitergabe noch zu klären. Alle Inhalte und Grafiken sind offline eingebettet; Links dienen nur der Quellenkontrolle.</footer></main><script>(function(){let step=0,max=0;let stages=[...document.querySelectorAll('.stage')],nav=[...document.querySelectorAll('[data-step]')];function show(n){if(n<0||n>max)return;step=n;stages.forEach((e,i)=>e.classList.toggle('hidden',i!==n));nav.forEach((e,i)=>{e.disabled=i>max;e.classList.toggle('current',i===n)});document.querySelector('#bar').style.width=(n/3*100)+'%';window.scrollTo(0,0)}document.querySelectorAll('[data-next]').forEach(b=>b.addEventListener('click',()=>{max=Math.max(max,step+1);show(step+1)}));document.querySelectorAll('[data-back]').forEach(b=>b.addEventListener('click',()=>show(step-1)));nav.forEach((b,i)=>b.addEventListener('click',()=>show(i)));document.querySelectorAll('.help>button').forEach(b=>b.addEventListener('click',()=>{let panel=b.nextElementSibling;panel.hidden=!panel.hidden;b.setAttribute('aria-expanded',String(!panel.hidden))}));document.querySelector('#check').addEventListener('click',()=>{let v=document.querySelector('input[name="verdict"]:checked');let f=document.querySelector('#feedback');f.classList.remove('hidden');f.textContent=!v?'Wähle eine Aussage aus.':v.value==='b'?'Das ist die fachlich passende Entscheidung. Prüfe jetzt, ob du sie im analogen Forscherheft mit mindestens zwei unterschiedlichen Belegen begründen kannst.':'Überlege noch einmal: Belegen die Spuren einen Einschlag – oder erklären sie bereits alle Folgen für das Leben auf der Erde?';});})();</script></body></html>
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>AKTE 66 – Mission 2 · Spuren aus dem All</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #101a20;
+        color: #f5ead8;
+        font:
+          17px/1.55 system-ui,
+          Arial,
+          sans-serif;
+      }
+      button {
+        cursor: pointer;
+        font: inherit;
+      }
+      a {
+        color: #edc987;
+      }
+      .hero {
+        min-height: 245px;
+        background:
+          linear-gradient(90deg, #101a20ee, #101a2060),
+          url({{asset:img/mission-1/hero-grenzschicht.jpg}}) center/cover;
+        display: flex;
+        align-items: center;
+        padding: clamp(20px, 5vw, 65px);
+      }
+      .hero h1 {
+        font-family: Georgia, serif;
+        font-size: clamp(32px, 5vw, 58px);
+        margin: 0;
+        color: #ffdc9b;
+      }
+      .hero p {
+        max-width: 670px;
+      }
+      .wrap {
+        max-width: 1160px;
+        margin: 0 auto;
+        padding: 22px;
+      }
+      .top {
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+      .chip {
+        background: #27343b;
+        border: 1px solid #b68d55;
+        border-radius: 50px;
+        padding: 6px 14px;
+      }
+      .progress {
+        height: 8px;
+        border-radius: 9px;
+        background: #38454b;
+        margin: 15px 0 24px;
+        overflow: hidden;
+      }
+      .progress > div {
+        height: 100%;
+        background: #eaba70;
+        transition: width 0.2s;
+      }
+      .nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+      }
+      .nav button {
+        background: #1e2b32;
+        color: #faeddd;
+        border: 1px solid #906b3c;
+        border-radius: 8px;
+        padding: 9px 12px;
+      }
+      .nav button[disabled] {
+        opacity: 0.45;
+      }
+      .nav .current {
+        background: #e4b76f;
+        color: #161b1d;
+      }
+      .stage {
+        margin-top: 22px;
+      }
+      .hidden {
+        display: none !important;
+      }
+      .eyebrow {
+        color: #eebc6a;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        font-size: 13px;
+      }
+      .stage h2 {
+        font-family: Georgia, serif;
+        font-size: clamp(27px, 4vw, 40px);
+        margin: 5px 0 12px;
+      }
+      .lead {
+        max-width: 920px;
+        font-size: 19px;
+      }
+      .scene {
+        display: grid;
+        grid-template-columns: minmax(0, 1.07fr) minmax(0, 0.93fr);
+        gap: 18px;
+        align-items: start;
+      }
+      .panel {
+        border: 1px solid #89663d;
+        background: #18262e;
+        border-radius: 15px;
+        overflow: hidden;
+      }
+      .panel svg {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      .artcaption {
+        padding: 10px 17px;
+        color: #e4d6c4;
+        font-size: 13px;
+      }
+      .paper {
+        background: #fff0d5;
+        color: #20272b;
+        border: 2px solid #b99662;
+        border-radius: 14px;
+        padding: clamp(16px, 3vw, 28px);
+        box-shadow: 0 8px 25px #0005;
+      }
+      .paper h3 {
+        font-family: Georgia, serif;
+        font-size: 26px;
+        color: #503718;
+        margin: 0 0 8px;
+      }
+      .paper p {
+        margin: 9px 0;
+      }
+      .paper ol {
+        padding-left: 24px;
+      }
+      .paper li {
+        margin: 10px 0;
+      }
+      .book {
+        border-left: 5px solid #bc7e2b;
+        background: #fff9eb;
+        padding: 11px 14px;
+        margin-top: 16px;
+      }
+      .prior {
+        background: #fff9ed;
+        border: 1px solid #bd9f72;
+        color: #15252b;
+        border-radius: 9px;
+        padding: 10px 13px;
+        margin: 13px 0;
+      }
+      .prior summary {
+        cursor: pointer;
+        font-weight: 750;
+        color: #382b17;
+      }
+      .prior p,
+      .prior strong {
+        color: #16242a;
+      }
+      .help {
+        margin: 17px 0;
+      }
+      .help > button {
+        background: #2c3941;
+        color: #ffe6ac;
+        border: 1px solid #b78d54;
+        padding: 10px 14px;
+        border-radius: 9px;
+      }
+      .helps {
+        background: #fff6e5;
+        color: #18272c;
+        padding: 14px;
+        border-radius: 10px;
+        margin-top: 6px;
+      }
+      .helps details {
+        border-bottom: 1px solid #d2b992;
+        padding: 9px 3px;
+      }
+      .helps summary {
+        cursor: pointer;
+        font-weight: 700;
+      }
+      .controls {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        margin: 28px 0;
+        flex-wrap: wrap;
+      }
+      .primary {
+        background: #e5b56a;
+        color: #161b1d;
+        border: 0;
+        border-radius: 9px;
+        padding: 12px 20px;
+        font-weight: 750;
+      }
+      .ghost {
+        background: #26343a;
+        color: #fff2dd;
+        border: 1px solid #ac8558;
+        border-radius: 9px;
+        padding: 12px 20px;
+      }
+      .feedback {
+        margin: 12px 0;
+        padding: 11px;
+        background: #fff9ea;
+        color: #152b30;
+        border-left: 4px solid #946329;
+        border-radius: 4px;
+      }
+      .choice {
+        display: block;
+        padding: 10px;
+        background: #fffaf0;
+        margin: 9px 0;
+        border: 1px solid #d6bd92;
+        border-radius: 9px;
+      }
+      .choice input {
+        margin-right: 10px;
+        accent-color: #775020;
+      }
+      input[type="checkbox"] {
+        accent-color: #674623;
+        transform: scale(1.2);
+      }
+      .record {
+        background: #20313a;
+        padding: 16px;
+        border: 1px solid #a88051;
+        border-radius: 12px;
+      }
+      .record b {
+        color: #ffd390;
+      }
+      .source {
+        font-size: 13px;
+        margin-top: 24px;
+        border-top: 1px solid #6c6558;
+        padding-top: 17px;
+        color: #cbd7d4;
+      }
+      .badge {
+        display: inline-block;
+        background: #26464b;
+        color: #d5f5df;
+        padding: 3px 9px;
+        border-radius: 20px;
+        font-size: 12px;
+      }
+      .small {
+        font-size: 14px;
+      }
+      .note {
+        border-left: 4px solid #d9b878;
+        padding: 10px 15px;
+        background: #25333a;
+      }
+      .hotspot {
+        cursor: pointer;
+        outline: none;
+      }
+      .hotspot:focus-visible circle {
+        stroke: #fff;
+        stroke-width: 6px;
+      }
+      @media (max-width: 770px) {
+        .scene {
+          grid-template-columns: 1fr;
+        }
+        .hero {
+          min-height: 200px;
+        }
+        .wrap {
+          padding: 14px;
+        }
+        .panel {
+          max-width: 100%;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          scroll-behavior: auto !important;
+          transition: none !important;
+        }
+      }
+      .real-world-map {
+        display: block;
+        width: 100%;
+        height: auto;
+        background: #e8f2f7;
+        border-radius: 10px;
+      }
+      .panel .artcaption {
+        color: #d9ddd6;
+      }
+      /* Wissenschaftliche Bildtafel – Station 2, Beweisstück 3 */
+      .research-visuals {
+        background: #172830;
+        padding: 12px;
+        display: grid;
+        gap: 15px;
+      }
+      .evidence-figure {
+        margin: 0;
+        border-radius: 11px;
+        overflow: hidden;
+        background: #0f1f28;
+        border: 1px solid #8b6c47;
+      }
+      .evidence-figure img.full-evidence,
+      .evidence-figure .image-canvas img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      .image-canvas {
+        position: relative;
+        background: #d3eafa;
+      }
+      .map-annotation {
+        position: absolute;
+        left: 75%;
+        top: 68%;
+        padding: 3px 7px;
+        background: #fff9e9;
+        color: #63390f;
+        border: 2px solid #a35a2a;
+        border-radius: 7px;
+        font-size: clamp(11px, 1.6vw, 16px);
+        font-weight: 750;
+        box-shadow: 0 2px 8px #0003;
+        pointer-events: none;
+      }
+      .evidence-figure .artcaption {
+        background: #233641;
+        color: #fff2db;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      .evidence-figure .artcaption strong {
+        color: #ffce80;
+      }
+      .cross-section svg {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      .quartz-compare {
+        background: #f3ecdf;
+        color: #24333a;
+        border-radius: 12px;
+        padding: 10px;
+        margin: 12px 0;
+      }
+      .quartz-compare p {
+        color: #24333a;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div>
+        <div class="eyebrow">AKTE 66 · Expedition ins verlorene Zeitalter</div>
+        <h1>Mission 2: Spuren aus dem All</h1>
+        <p>
+          Eine ungewöhnliche Gesteinsspur aus Italien führt euch über mehrere Kontinente bis zu einem
+          verborgenen Krater. Welche Befunde passen zusammen?
+        </p>
+      </div>
+    </header>
+    <main class="wrap">
+      <div class="top">
+        <span class="chip">🔎 Ermitteln · Vergleichen · Begründen</span
+        ><span class="chip">📓 Ergebnisse ausschließlich ins analoge Forscherheft</span>
+      </div>
+      <div class="progress"><div id="bar" style="width: 0%"></div></div>
+      <nav class="nav" aria-label="Missionsabschnitte">
+        <button data-step="0" class="current">1 · Die Spur</button
+        ><button data-step="1" disabled>2 · Quarz</button><button data-step="2" disabled>3 · Krater</button
+        ><button data-step="3" disabled>4 · Urteil</button>
+      </nav>
+      <section class="stage" id="s0">
+        <div class="eyebrow">Beweisstück 1 von 3</div>
+        <h2>Eine Spur an mehreren Orten</h2>
+        <p class="lead">
+          Aus Mission 1 kennst du den ungewöhnlich hohen Iridiumwert bei Gubbio in Italien. Auch in Montana
+          (USA) wurden Gesteine an der Kreide-Paläogen-Grenze untersucht. Der Chicxulub-Krater liegt auf der
+          Halbinsel Yucatán in Mexiko. Vergleiche die Orte und ihre unterschiedlichen Spuren.
+        </p>
+        <div class="scene">
+          <div class="panel">
+            <img
+              class="real-world-map"
+              src="{{asset:img/mission-2/weltkarte-fundorte.webp}}"
+              alt="Weltkarte mit tatsächlichen Küstenlinien und den markierten heutigen Orten: Montana, USA; Gubbio, Italien; Yucatán, Mexiko." />
+            <div class="artcaption">
+              Heutige Weltkarte mit realen Küstenlinien (Kartengrundlage: Basemap/GSHHG). Die Markierung
+              Yucatán bezeichnet den Einschlagsort Chicxulub; Montana und Gubbio sind Orte geologischer
+              Untersuchungen. Nicht alle drei Punkte stehen für dieselbe Art von Beleg.
+            </div>
+          </div>
+          <div class="paper">
+            <h3>Ermittlungsauftrag</h3>
+            <details class="prior">
+              <summary>🧭 Vorwissen: Was ist eine Kreide-Paläogen-Grenze?</summary>
+              <p>
+                So nennen Forschende den Übergang zwischen zwei erdgeschichtlichen Zeitabschnitten vor
+                ungefähr <b>66 Millionen Jahren</b>. In Gesteinen kann man Spuren dieses Übergangs
+                untersuchen.
+              </p>
+            </details>
+            <p>
+              Eine ungewöhnlich hohe Iridiumkonzentration wurde in Grenzschichten an vielen Orten
+              nachgewiesen. An anderen Orten fanden Forschende weitere Hinweise auf einen Einschlag. Der
+              Krater bei Yucatán ist eine andere Art von Beleg.
+            </p>
+            <ol>
+              <li>
+                Betrachte die Weltkarte. In welchen Ländern liegen Gubbio, Montana und Yucatán? Wie weit sind
+                die Orte ungefähr voneinander entfernt?
+              </li>
+              <li>
+                Vermute: Warum macht es einen Unterschied, ob man eine Spur nur an einem Ort oder an vielen
+                Orten entdeckt?
+              </li>
+              <li>Notiere eine Frage, die du mit dieser Beobachtung noch <b>nicht</b> beantworten kannst.</li>
+            </ol>
+            <div class="book">
+              <b>📓 Forscherheft:</b> Überschrift „Spur 1 – viele Fundorte“. Schreibe eine Vermutung mit
+              Begründung auf.
+            </div>
+            <details class="prior">
+              <summary>🌍 Zusatzentdeckung: Sah die Erde vor 66 Millionen Jahren genauso aus?</summary>
+              <p>
+                Nein. Die Kontinente bewegten sich im Laufe der Erdgeschichte langsam. Deshalb sah die Erde
+                damals anders aus. Vergleiche bei Gelegenheit eine wissenschaftliche Rekonstruktion:
+                <a
+                  href="https://commons.wikimedia.org/wiki/File:Mollweide_Paleographic_Map_of_Earth,_60_Ma_(Selandian_Age).png"
+                  target="_blank"
+                  rel="noopener"
+                  >PALEOMAP-Karte der Erde vor 60 Millionen Jahren</a
+                >
+                (CC BY 4.0). <b>Wichtig:</b> Diese Rekonstruktion zeigt die Erde rund 6 Millionen Jahre nach
+                dem Einschlag und ist kein exaktes Bild für 66 Millionen Jahre.
+              </p>
+              <p>
+                <b>Zusatzfrage:</b> Warum können wir die heutigen Fundorte nicht einfach unverändert auf eine
+                Karte der damaligen Erde übertragen?
+              </p>
+              <figure
+                style="
+                  margin: 16px 0 10px;
+                  padding: 12px;
+                  border-radius: 12px;
+                  background: #f4eedc;
+                  color: #17252a;
+                ">
+                <img
+                  src="{{asset:img/mission-2/infografik.webp}}"
+                  alt="Wissenschaftliche Rekonstruktion der Erde vor 60 Millionen Jahren in Mollweide-Projektion: Die Kontinente sind anders angeordnet als heute."
+                  style="
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                    object-fit: contain;
+                    border-radius: 8px;
+                    background: #0c2741;
+                  " />
+                <figcaption style="font-size: 0.85em; line-height: 1.5; margin-top: 8px; color: #263b43">
+                  Rekonstruktion der Erde vor <strong>60 Millionen Jahren</strong>, nicht zur Zeit des
+                  Einschlags vor etwa 66 Millionen Jahren. Bild: PALEOMAP / Wikimedia Commons,
+                  <a
+                    href="https://commons.wikimedia.org/wiki/File:Mollweide_Paleographic_Map_of_Earth,_60_Ma_(Selandian_Age).png"
+                    target="_blank"
+                    rel="noopener"
+                    style="color: #174f6b"
+                    >CC BY 4.0 – Quelle und Lizenz</a
+                  >. Die Karte ist offline eingebettet.
+                </figcaption>
+              </figure>
+              <p>
+                <b>Wenn du die beiden Karten vergleichst:</b> Suche zuerst Afrika und Südamerika. Beschreibe
+                dann einen Unterschied zwischen der heutigen Karte und der Rekonstruktion. Für die
+                Zusatzaufgabe reicht eine Beobachtung.
+              </p>
+            </details>
+          </div>
+        </div>
+        <div class="help">
+          <button>💡 Arbeitshilfen öffnen</button>
+          <div class="helps" hidden>
+            <details>
+              <summary>Hilfe 1 · Karte verstehen</summary>
+              Die Punkte stehen für Untersuchungsorte. Was unterscheidet einen örtlichen Befund von einer Spur
+              an mehreren weit entfernten Orten?
+            </details>
+            <details>
+              <summary>Hilfe 2 · Gedanken ordnen</summary>
+              Formuliere: „Weil die Spur an verschiedenen Orten vorkommt, vermute ich …“
+            </details>
+          </div>
+        </div>
+        <div class="controls">
+          <span></span><button class="primary" data-next>Weiter: Quarz untersuchen →</button>
+        </div>
+      </section>
+      <section class="stage hidden" id="s1">
+        <div class="eyebrow">Beweisstück 2 von 3</div>
+        <h2>Ein Kristall mit ungewöhnlichen Spuren</h2>
+        <p class="lead">
+          Eine Spezialuntersuchung liefert einen neuen Hinweis. In Quarzkristallen aus Grenzschichten
+          entdeckten Forschende feine, regelmäßig angeordnete Veränderungen. Sie entstehen bei einem extrem
+          starken, plötzlichen Druckstoß.
+        </p>
+        <div class="scene">
+          <div class="panel">
+            <figure style="margin: 0">
+              <img
+                src="{{asset:img/mission-2/druckstoss-foto.jpg}}"
+                alt="Mikroskopische Aufnahme eines Schockquarz-Korns mit vielen feinen parallelen Linien"
+                style="
+                  width: 100%;
+                  display: block;
+                  border-radius: 18px;
+                  border: 2px solid rgba(255, 230, 180, 0.35);
+                  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+                  background: #1a1a1a;
+                " />
+              <figcaption class="artcaption">
+                Mikroskopische Aufnahme von Schockquarz: Die feinen parallelen Linien sind typische
+                Deformationsmerkmale nach extrem hohem Druck.
+              </figcaption>
+            </figure>
+          </div>
+          <div class="paper">
+            <h3>Spur im Kristall</h3>
+            <div
+              class="quartz-compare"
+              role="group"
+              aria-label="Schematische Gegenüberstellung von Quarz ohne und mit Stoßdruckspuren">
+              <svg
+                viewBox="0 0 740 270"
+                role="img"
+                aria-label="Links ein stark vereinfachtes Modell eines Quarzkristalls ohne Stoßdruckspuren. Rechts ein Quarzkristall mit vielen eng benachbarten parallelen Linien als schematische Stoßdruckspuren. Beide sind keine Mikroskopaufnahmen."
+                style="display: block; width: 100%; max-width: 740px; margin: auto">
+                <rect x="2" y="2" width="360" height="263" rx="12" fill="#e9e0ce" stroke="#7d7c76" />
+                <rect x="378" y="2" width="360" height="263" rx="12" fill="#e9e0ce" stroke="#7d7c76" />
+                <text
+                  x="182"
+                  y="34"
+                  text-anchor="middle"
+                  fill="#23333a"
+                  font-family="sans-serif"
+                  font-size="21"
+                  font-weight="bold">
+                  A · ohne Schockspuren
+                </text>
+                <text
+                  x="560"
+                  y="34"
+                  text-anchor="middle"
+                  fill="#23333a"
+                  font-family="sans-serif"
+                  font-size="21"
+                  font-weight="bold">
+                  B · mit Schockspuren
+                </text>
+                <path
+                  d="M120 77 L182 55 L246 82 L262 190 L186 221 L111 186 Z"
+                  fill="#d9edf0"
+                  stroke="#52717b"
+                  stroke-width="4" />
+                <path
+                  d="M494 77 L556 55 L620 82 L636 190 L560 221 L485 186 Z"
+                  fill="#d9edf0"
+                  stroke="#52717b"
+                  stroke-width="4" />
+                <g stroke="#bc7a43" stroke-width="3" opacity=".95">
+                  <path d="M515 81 L550 208" />
+                  <path d="M527 74 L562 212" />
+                  <path d="M539 71 L574 208" />
+                  <path d="M551 68 L586 202" />
+                  <path d="M564 69 L599 197" />
+                  <path d="M576 72 L610 187" />
+                </g>
+                <text
+                  x="182"
+                  y="251"
+                  text-anchor="middle"
+                  fill="#23333a"
+                  font-family="sans-serif"
+                  font-size="16">
+                  vereinfacht dargestellt
+                </text>
+                <text
+                  x="560"
+                  y="251"
+                  text-anchor="middle"
+                  fill="#23333a"
+                  font-family="sans-serif"
+                  font-size="16">
+                  parallele Linien im Kristall
+                </text>
+              </svg>
+              <p style="font-size: 0.86em; margin: 7px 0 13px">
+                <b>Abbildungen A und B:</b> Didaktische Schemata zum Vergleich;
+                <b>keine echten Mikroskopbilder</b>. Die echte Mikroskopaufnahme in dieser Station zeigt die
+                wissenschaftliche Spur.
+              </p>
+            </div>
+            <details class="prior">
+              <summary>🧭 Vorwissen: Quarz und Druckstoß</summary>
+              <p>
+                <b>Quarz</b> ist ein häufiges Mineral, das in vielen Gesteinen vorkommt. Ein
+                <b>Kristall</b> besteht aus regelmäßig angeordneten Teilchen. Bei einem extrem starken,
+                schlagartigen Druckstoß kann diese innere Ordnung beschädigt werden. Das lässt sich unter
+                speziellen Mikroskopen erkennen.
+              </p>
+            </details>
+            <ol>
+              <li>
+                <b>Vergleiche Abbildung A und B direkt über diesem Auftrag.</b> Was ist in B zu sehen, das in
+                A fehlt? Nenne einen sichtbaren Unterschied.
+                <small>(„Vergleichen“ heißt: Gemeinsamkeiten oder Unterschiede genau benennen.)</small>
+              </li>
+              <li>
+                Lies den Fachhinweis: Solche Schockspuren können bei einem sehr heftigen Einschlag entstehen.
+                <b>Erkläre in einem oder zwei Sätzen</b>, warum das zur Asteroidenvermutung passt.
+                <small
+                  >(„Erklären“ heißt: einen Zusammenhang mit „weil“ oder „deshalb“ verständlich
+                  machen.)</small
+                >
+              </li>
+              <li>
+                Überlege: Warum wäre die Entdeckung solcher Kristalle überzeugender als nur ein ungewöhnlicher
+                Iridiumwert?
+              </li>
+            </ol>
+            <div class="book">
+              <b>📓 Forscherheft:</b> Fertige eine <b>einfache Skizze</b> von Kristall B an: Umriss und einige
+              parallele Linien reichen. <b>Nicht ausmalen.</b> Schreibe darunter einen Satz: Was deutet diese
+              Spur an – und was beweist sie noch nicht allein?
+            </div>
+          </div>
+        </div>
+        <div class="note">
+          <b>Fachhinweis:</b> Die hier gemeinten sogenannten planaren Deformationsmerkmale sind
+          charakteristische Hinweise auf sehr hohe Stoßdrücke. Forschende haben sie in Quarz aus Ablagerungen
+          an der Grenze nachgewiesen.
+          <a href="https://www.lpi.usra.edu/science/kring/Chicxulub/discovery/"
+            >Lunar and Planetary Institute</a
+          >
+        </div>
+        <div class="help">
+          <button>💡 Arbeitshilfen öffnen</button>
+          <div class="helps" hidden>
+            <details>
+              <summary>Hilfe 1 · Zeichnung untersuchen</summary>
+              Vergleiche vor allem die vielen parallelen Linien im rechten Kristall.
+            </details>
+            <details>
+              <summary>Hilfe 2 · Begründung aufbauen</summary>
+              Verknüpfe zwei Informationen: „Ein starker Druckstoß kann …“ und „Ein Asteroideneinschlag
+              erzeugt …“
+            </details>
+            <details>
+              <summary>Hilfe 3 · Zwei Spuren verbinden</summary>
+              Frage dich: Zeigen die beiden Belege genau dasselbe – oder zwei unterschiedliche Folgen
+              desselben möglichen Ereignisses?
+            </details>
+          </div>
+        </div>
+        <div class="controls">
+          <button class="ghost" data-back>← Zurück</button
+          ><button class="primary" data-next>Weiter: Krater erforschen →</button>
+        </div>
+      </section>
+      <section class="stage hidden" id="s2">
+        <div class="eyebrow">Beweisstück 3 von 3</div>
+        <h2>Ein riesiger Krater unter der Erde</h2>
+        <p class="lead">
+          Auf der Halbinsel Yucatán in Mexiko liegt der etwa 180 Kilometer breite Chicxulub-Einschlagkrater.
+          Er ist heute größtenteils unter jüngeren Gesteinen verborgen. Unterschiedliche Hinweise – darunter
+          eine auffällige Anordnung von Cenoten, Bohrkerne und Messungen des Untergrunds – helfen Forschenden,
+          seine Form zu rekonstruieren.
+        </p>
+        <div class="scene">
+          <div class="panel research-visuals">
+            <figure class="evidence-figure">
+              <div class="image-canvas light-map">
+                <img
+                  src="{{asset:img/mission-2/light-map.webp}}"
+                  alt="Geografische Karte von Mexiko mit Umrissen der Bundesstaaten und der Halbinsel Yucatán im Osten"
+                  loading="eager" /><span class="map-annotation"
+                  >Yucatán <span aria-hidden="true">↙</span></span
+                >
+              </div>
+              <figcaption class="artcaption">
+                <strong>Abbildung A · Orientierung:</strong> Die Halbinsel Yucatán liegt im Osten Mexikos
+                zwischen dem Golf von Mexiko und dem Karibischen Meer.
+              </figcaption>
+            </figure>
+            <figure class="evidence-figure">
+              <img
+                class="full-evidence"
+                src="{{asset:img/mission-2/beweis-gesamt.jpg}}"
+                alt="Zweiteilige Abbildung der Halbinsel Yucatán. Oben ist der ungefähr kreisförmige Chicxulub-Bereich eingezeichnet. Unten ist ein halbkreisförmiger Verlauf von Cenoten mit gestrichelter Linie hervorgehoben."
+                loading="eager" />
+              <figcaption class="artcaption">
+                <strong>Abbildung B · Eine Spur an der Oberfläche:</strong> Die gestrichelte Linie folgt einem
+                Bogen von <em>Cenoten</em> (wassergefüllten Einbruchstellen im Kalkstein). Dieser Bogen
+                entspricht ungefähr einem Teil der verschütteten Kraterstruktur. Die gezeichneten Linien sind
+                eine Deutung; der Kraterrand ist auf der Erdoberfläche nicht direkt sichtbar.
+              </figcaption>
+            </figure>
+            <figure class="evidence-figure">
+              <div class="cross-section">
+                <svg
+                  viewBox="0 0 720 440"
+                  role="img"
+                  aria-label="Schematischer Querschnitt des unter Sediment verborgenen Chicxulub-Kraters auf Yucatán, mit ringförmiger Struktur und Bohrkernposition">
+                  <defs>
+                    <linearGradient id="ground" x2="0" y2="1">
+                      <stop stop-color="#9c865d" />
+                      <stop offset="1" stop-color="#4c4946" />
+                    </linearGradient>
+                  </defs>
+                  <rect width="720" height="440" fill="#162a35" />
+                  <text x="24" y="42" fill="#f8dba6" font-size="24">Der verborgene Einschlagkrater</text>
+                  <rect y="135" width="720" height="305" fill="url(#ground)" />
+                  <path
+                    d="M0 126 L160 125 Q220 143 280 185 Q360 242 440 185 Q510 140 570 126 L720 126 L720 174 Q570 182 488 235 Q365 323 235 239 Q144 179 0 178Z"
+                    fill="#b8aa86" />
+                  <path
+                    d="M0 200 Q160 210 234 278 Q355 374 488 278 Q584 202 720 212"
+                    stroke="#f0d59c"
+                    stroke-width="10"
+                    fill="none" />
+                  <path
+                    d="M0 318 Q185 306 275 355 Q359 392 453 351 Q545 307 720 321"
+                    fill="none"
+                    stroke="#604942"
+                    stroke-width="23" />
+                  <path d="M360 86V335" stroke="#f6d69b" stroke-width="4" stroke-dasharray="9 8" />
+                  <circle cx="360" cy="337" r="8" fill="#f6d69b" />
+                  <g fill="#fff1db" font-family="sans-serif" font-size="19">
+                    <text x="383" y="88">Bohrung</text>
+                    <text x="29" y="102">heutige Oberfläche</text>
+                    <text x="27" y="412">Querschnitt stark vereinfacht · kein maßstäbliches Profil</text>
+                  </g>
+                </svg>
+              </div>
+              <figcaption class="artcaption">
+                <strong>Abbildung C · Blick in den Untergrund:</strong> Eigener vereinfachter Querschnitt. Die
+                jüngeren Ablagerungen überdecken die verformten Gesteine; die Darstellung ist nicht
+                maßstabsgetreu.
+              </figcaption>
+            </figure>
+          </div>
+          <div class="paper">
+            <h3>Spurensuche auf und unter Yucatán</h3>
+            <details class="prior">
+              <summary>🧭 Vorwissen: Was sind Bohrkern und geophysikalische Messung?</summary>
+              <p>
+                Ein <b>Bohrkern</b> ist eine lange Gesteinsprobe aus einer Bohrung. An ihr lässt sich
+                untersuchen, welche Gesteine tief im Untergrund liegen. Mit
+                <b>geophysikalischen Messungen</b> erkunden Forschende den Untergrund, ohne ihn überall
+                freizulegen – etwa über Unterschiede der Schwerkraft.
+              </p>
+            </details>
+            <details class="prior">
+              <summary>🧭 Vorwissen: Was sind Cenoten?</summary>
+              <p>
+                Eine <b>Cenote</b> ist eine natürliche Einbruchstelle im Kalkstein, die oft mit Wasser gefüllt
+                ist. Mehrere Cenoten auf Yucatán liegen ungefähr auf einem Bogen. Dieser Verlauf kann Hinweise
+                auf Veränderungen des Untergrunds geben.
+              </p>
+            </details>
+            <ol>
+              <li>
+                <b>Orientiere dich:</b> Zeige auf Abbildung A die Halbinsel Yucatán. Beschreibe ihre Lage in
+                Mexiko.
+              </li>
+              <li>
+                <b>Entdecke eine Spur:</b> Suche in Abbildung B die gestrichelte Linie. Welche Form hat der
+                Verlauf der Cenoten?
+              </li>
+              <li>
+                <b>Erkläre den Zusammenhang:</b> Betrachte danach Abbildung C. Warum ist der Krater heute
+                nicht als großes Loch an der Oberfläche zu sehen?
+              </li>
+              <li>
+                <b>Begründe:</b> Warum müssen Forschende zusätzlich Bohrkerne und Messungen des Untergrunds
+                untersuchen, statt allein aus der Cenoten-Anordnung auf einen Einschlag zu schließen?
+              </li>
+            </ol>
+            <div class="book">
+              <b>📓 Forscherheft:</b> Schreibe „Spur 3 – Chicxulub“. Skizziere den Cenoten-Bogen und notiere
+              <b>zwei unterschiedliche Hinweise</b> auf den verborgenen Krater. Erkläre in einem Satz, warum
+              der Bogen allein noch kein sicherer Beweis wäre.
+            </div>
+          </div>
+        </div>
+        <div class="help">
+          <button>💡 Arbeitshilfen öffnen</button>
+          <div class="helps" hidden>
+            <details>
+              <summary>Hilfe 1 · Querschnitt lesen</summary>
+              Achte in Abbildung C darauf, welche Gesteine nahe der Oberfläche liegen und welche Gesteine
+              darunter verformt sind.
+            </details>
+            <details>
+              <summary>Hilfe 2 · Den Beleg erklären</summary>
+              Die Anordnung von Cenoten ist ein Hinweis. Bohrungen zeigen zudem Gesteine, die durch starken
+              Stoßdruck verändert oder teilweise geschmolzen wurden.
+            </details>
+            <details>
+              <summary>Hilfe 3 · Ursache und Spur</summary>
+              Überlege, welche Spuren ein großer Körper aus dem All sowohl am Einschlagsort als auch weit
+              entfernt hinterlassen könnte.
+            </details>
+          </div>
+        </div>
+        <div class="controls">
+          <button class="ghost" data-back>← Zurück</button
+          ><button class="primary" data-next>Weiter: Belege bewerten →</button>
+        </div>
+      </section>
+      <section class="stage hidden" id="s3">
+        <div class="eyebrow">Expeditionsentscheidung</div>
+        <h2>Welche Erklärung trägt die Beweise?</h2>
+        <p class="lead">
+          Euer Team legt die drei Spuren nebeneinander: Iridiumanreicherung, geschockten Quarz und den
+          Chicxulub-Krater. Jetzt braucht die Expeditionsleitung ein begründetes Urteil.
+        </p>
+        <div class="scene">
+          <div class="paper">
+            <h3>Entscheide und begründe</h3>
+            <p><b>Welche Aussage wird durch die drei Belege am besten gestützt?</b></p>
+            <label class="choice"
+              ><input type="radio" name="verdict" value="a" />A · Das Dinosauriersterben ist mit diesen
+              Belegen vollständig erklärt.</label
+            ><label class="choice"
+              ><input type="radio" name="verdict" value="b" />B · Vor rund 66 Millionen Jahren gab es einen
+              gewaltigen Einschlag; seine Folgen für die Lebewesen müssen wir noch untersuchen.</label
+            ><label class="choice"
+              ><input type="radio" name="verdict" value="c" />C · Die drei Befunde haben sicher nichts
+              miteinander zu tun.</label
+            ><button id="check" class="ghost">Entscheidung prüfen</button>
+            <div id="feedback" class="feedback hidden" role="status"></div>
+            <div class="book">
+              <b>📓 Forscherheft:</b> Schreibe deine Entscheidung auf und begründe sie mit
+              <b>mindestens zwei unterschiedlichen Belegen</b>. Ergänze eine offene Forschungsfrage.
+            </div>
+          </div>
+          <div class="record">
+            <h3>Dein Beweisprotokoll</h3>
+            <p>1. <b>Iridium:</b> Auffällige Spuren in Grenzschichten.</p>
+            <p>2. <b>Geschockter Quarz:</b> Hinweise auf extremen Stoßdruck.</p>
+            <p>3. <b>Chicxulub:</b> Geologisch nachgewiesene Einschlagstruktur.</p>
+            <p>
+              <b>Wichtig:</b> Die Spuren belegen ein Einschlagereignis. Sie erklären für sich allein noch
+              nicht, wie das weltweite Massenaussterben ablief. Genau das untersuchst du in Mission 3.
+            </p>
+            <details class="prior">
+              <summary>🧭 Vorwissen: Was bedeutet „Hypothese“?</summary>
+              <p>
+                Eine <b>Hypothese</b> ist eine begründete Vermutung, die man anhand von Beobachtungen und
+                Untersuchungen prüfen kann.
+              </p>
+            </details>
+          </div>
+        </div>
+        <div class="help">
+          <button>💡 Arbeitshilfen öffnen</button>
+          <div class="helps" hidden>
+            <details>
+              <summary>Hilfe 1 · Aussage prüfen</summary>
+              Welche Aussage trennt das nachgewiesene Ereignis von den noch zu untersuchenden Folgen?
+            </details>
+            <details>
+              <summary>Hilfe 2 · Belege vergleichen</summary>
+              Beschreibe, was Iridium, Quarz und Krater jeweils zeigen. Welche Hinweise sind verschieden?
+            </details>
+            <details>
+              <summary>Hilfe 3 · Satzstarter</summary>
+              „Die Einschlaghypothese ist überzeugend, weil … und weil … . Noch nicht geklärt ist damit, …“
+            </details>
+          </div>
+        </div>
+        <div class="controls">
+          <button class="ghost" data-back>← Zurück</button
+          ><button class="primary" onclick="window.print()">Missionsseite drucken</button>
+        </div>
+      </section>
+      <footer class="source">
+        <b>Wissenschaftliche Grundlage:</b> Lunar and Planetary Institute,
+        <a href="https://www.lpi.usra.edu/science/kring/Chicxulub/discovery/">Chicxulub Discovery</a>; Bohor
+        u. a. (1984),
+        <a href="https://pubs.usgs.gov/publication/70014029">USGS: Mineralogic evidence for an impact event</a
+        >; Sharpton u. a. (1992),
+        <a
+          href="https://www.usgs.gov/publications/new-links-between-chicxulub-impact-structure-and-cretaceoustertiary-boundary"
+          >USGS: Chicxulub und K–Pg-Grenze</a
+        >; Goderis u. a. (2021),
+        <a href="https://pubmed.ncbi.nlm.nih.gov/33627429/">Globally distributed iridium layer</a>. Bilder:
+        Weltkarte, Schockquarz und die beiden ergänzten Yucatán-Abbildungen sind eingebettete Materialien; der
+        Krater-Querschnitt ist ein eigenes didaktisches Schema. Für die vom Projekt bereitgestellten
+        Yucatán-Abbildungen sind Urheber und Nutzungsrechte vor einer öffentlichen Weitergabe noch zu klären.
+        Alle Inhalte und Grafiken sind offline eingebettet; Links dienen nur der Quellenkontrolle.
+      </footer>
+    </main>
+    <script>
+      (function () {
+        let step = 0,
+          max = 0;
+        let stages = [...document.querySelectorAll(".stage")],
+          nav = [...document.querySelectorAll("[data-step]")];
+        function show(n) {
+          if (n < 0 || n > max) return;
+          step = n;
+          stages.forEach((e, i) => e.classList.toggle("hidden", i !== n));
+          nav.forEach((e, i) => {
+            e.disabled = i > max;
+            e.classList.toggle("current", i === n);
+          });
+          document.querySelector("#bar").style.width = (n / 3) * 100 + "%";
+          window.scrollTo(0, 0);
+        }
+        document.querySelectorAll("[data-next]").forEach((b) =>
+          b.addEventListener("click", () => {
+            max = Math.max(max, step + 1);
+            show(step + 1);
+          }),
+        );
+        document
+          .querySelectorAll("[data-back]")
+          .forEach((b) => b.addEventListener("click", () => show(step - 1)));
+        nav.forEach((b, i) => b.addEventListener("click", () => show(i)));
+        document.querySelectorAll(".help>button").forEach((b) =>
+          b.addEventListener("click", () => {
+            let panel = b.nextElementSibling;
+            panel.hidden = !panel.hidden;
+            b.setAttribute("aria-expanded", String(!panel.hidden));
+          }),
+        );
+        document.querySelector("#check").addEventListener("click", () => {
+          let v = document.querySelector('input[name="verdict"]:checked');
+          let f = document.querySelector("#feedback");
+          f.classList.remove("hidden");
+          f.textContent = !v
+            ? "Wähle eine Aussage aus."
+            : v.value === "b"
+              ? "Das ist die fachlich passende Entscheidung. Prüfe jetzt, ob du sie im analogen Forscherheft mit mindestens zwei unterschiedlichen Belegen begründen kannst."
+              : "Überlege noch einmal: Belegen die Spuren einen Einschlag – oder erklären sie bereits alle Folgen für das Leben auf der Erde?";
+        });
+      })();
+    </script>
+  </body>
+</html>

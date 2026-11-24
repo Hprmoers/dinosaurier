@@ -1,22 +1,1447 @@
-<!DOCTYPE html>
-<html lang="de"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="dark light" name="color-scheme"/><title>AKTE 66 · Mission 3 – Eine Welt gerät aus dem Gleichgewicht</title><style>
-:root{--night:#10191d;--pine:#173c37;--gold:#dfb36b;--parchment:#fff7e8;--ink:#25312c;--muted:#bfd0c5;--edge:#7d6b4c;--rust:#a95a37}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% 0,#21433d 0,#101a1e 62%);color:#f8f0e2;font:16px/1.58 system-ui,-apple-system,Segoe UI,sans-serif}button{font:inherit;cursor:pointer}button:focus-visible,summary:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #ffc75b;outline-offset:3px}a{color:#f4d69a}.hero{position:relative;min-height:290px;background:linear-gradient(90deg,rgba(10,20,20,.96) 0%,rgba(10,20,20,.48) 60%,rgba(10,20,20,.15)),url('{{asset:img/mission-3/hero-landschaft.jpg}}') center 48%/cover no-repeat;border-bottom:2px solid #a07c47}.hero-inner{max-width:1240px;margin:auto;padding:38px 24px 44px}.eyebrow{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:#f3cd85;font-weight:800}.hero h1{font:700 clamp(32px,5vw,64px)/1.08 Georgia,serif;margin:12px 0;text-shadow:0 4px 18px #0b1111}.hero p{max-width:610px;font-size:18px;margin:10px 0}.shell{max-width:1260px;margin:0 auto;padding:22px 22px 60px}.progress-area{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;margin:0 0 19px}.steps{display:flex;gap:7px;flex-wrap:wrap}.step-tab{background:#17272a;border:1px solid #69736b;color:#f7e7cb;border-radius:8px;padding:10px 13px;font-weight:700}.step-tab.current{background:#e0b675;color:#1e2925;border-color:#e0b675}.step-tab:disabled{opacity:.5;cursor:not-allowed}.step-counter{color:#dcc6a0;font-size:14px}.stage{animation:rise .35s ease-out}.stage.hidden,.hidden{display:none!important}@keyframes rise{from{opacity:.2;transform:translateY(8px)}to{opacity:1;transform:none}}.toprow{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap}.toprow h2{font:700 clamp(27px,3vw,40px) Georgia,serif;margin:8px 0 13px}.lead{max-width:900px;color:#f7e5cb;font-size:17px;line-height:1.6;margin:0 0 20px}.scene{display:grid;grid-template-columns:minmax(0,1.22fr) minmax(325px,1fr);gap:22px;align-items:start}.panel{border:1px solid #99805a;border-radius:16px;background:#17292b;overflow:hidden;box-shadow:0 20px 44px #06101277}.panel img{display:block;width:100%;height:auto}.panel figcaption,.caption{font-size:13px;color:#dae5de;padding:12px 15px;background:#12232a;line-height:1.55}.paper{background:var(--parchment);color:var(--ink);border-radius:13px;padding:26px 25px 24px;box-shadow:inset 0 0 0 1px #dac7a3,0 20px 38px #09151666;min-width:0}.paper h3{font:700 27px/1.2 Georgia,serif;color:#3c2c1f;margin:0 0 12px}.paper h4{font-size:17px;margin:15px 0 6px;color:#3d2c1d}.paper p{margin:9px 0}.paper ol,.paper ul{padding-left:22px}.paper li{margin:8px 0}.tag{display:inline-block;font-size:11px;text-transform:uppercase;letter-spacing:1px;padding:5px 9px;border-radius:30px;background:#f3e5cf;color:#6b4524;font-weight:900;margin-bottom:11px}.notice,.book{padding:14px 16px;border-radius:9px;margin-top:20px}.book{background:#e5eddf;border-left:5px solid #326850;color:#182f29}.notice{border:1px solid #9a8560;background:#192727;color:#faf0db}.paper details.prior{background:#fffaf0;border:1px solid #cdb48a;border-radius:9px;margin:11px 0;padding:10px 12px;color:#1f2c26}.paper details.prior summary{cursor:pointer;color:#47341e;font-weight:750}.paper details.prior p,.paper details.prior li{color:#20312b}.help{margin:18px 0;border:1px solid #aa8a53;border-radius:10px;overflow:hidden}.help>button{display:block;width:100%;border:0;background:#28473d;color:#ffe4aa;text-align:left;font-weight:700;padding:12px 17px}.helps{padding:14px;background:#102a28}.helps[hidden]{display:none}.helps details{margin:7px 0;background:#fef4e3;color:#27362d;border-radius:8px;padding:11px 13px}.helps summary{font-weight:750;cursor:pointer}.helps p{margin:8px 0 0}.controls{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:24px 0}.btn{border:1px solid #e4bb75;border-radius:10px;padding:13px 18px;font-weight:750;background:#1e322f;color:#f6ead4}.btn.primary{background:linear-gradient(#f2c884,#d99e4d);color:#272b23}.btn:disabled{opacity:.48;cursor:not-allowed}.choice{display:flex;align-items:flex-start;gap:9px;border:1px solid #d6bfa0;background:#fffcf4;padding:11px 12px;border-radius:9px;margin:10px 0;cursor:pointer}.choice input{margin-top:6px;accent-color:#386f57}.feedback{margin-top:13px;padding:12px 14px;border-radius:9px;background:#e8efe0;color:#18372c;border-left:4px solid #528369}.feedback.warn{background:#fff0e0;color:#6e351d;border-color:#c07c49}.imagebuttons{display:flex;flex-wrap:wrap;gap:9px;padding:11px 13px;background:#11282d}.imagebuttons button{padding:8px 13px;border-radius:9px;border:1px solid #c79b5f;background:#223f3d;color:#f6e9ce}.imagebuttons button.active{background:#e1b975;color:#202a21}.network-wrap{border:1px solid #9d835e;border-radius:14px;background:#fdf7ea;padding:18px;color:#26362b}.foodnodes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.foodnode{border:2px solid #cdb78f;padding:14px 9px;background:white;border-radius:12px;text-align:center;min-height:112px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px}.foodnode .emoji{font-size:31px;line-height:1.1}.foodnode .small{font-size:12px;color:#5f6258}.arrowexplain{font-size:13px;color:#39453b;background:#f3e9d6;padding:10px;margin:12px 0;border-radius:8px}.connections{display:grid;gap:8px;margin-top:12px}.connection{display:flex;align-items:center;gap:11px;padding:11px 13px;border:1px solid #cab696;border-radius:8px;background:#fffdf8;color:#23372e;text-align:left;min-height:47px}.connection[aria-pressed=true]{background:#d9ecdf;border-color:#48846d;box-shadow:inset 4px 0 #48846d}.connection .mark{display:inline-grid;place-items:center;border-radius:50%;width:25px;height:25px;min-width:25px;background:#e8dbc3;font-weight:800}.connection[aria-pressed=true] .mark{background:#48846d;color:white}.model{padding:20px;border:1px solid #a48c62;border-radius:14px;background:#102c2c}.model-header{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:16px}.model-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.model-card{border:1px solid #7c967f;border-radius:12px;padding:16px 10px;text-align:center;background:#1b3c32;min-height:150px}.model-card .emoji{font-size:35px;display:block;margin-bottom:10px}.model-card b{display:block;color:#fff3d6}.model-card .state{font-size:13px;color:#c1e7d3}.model-track{margin:15px 0 8px;color:#f9e9cd;font-size:14px}.light-options{display:flex;gap:8px;flex-wrap:wrap}.light-options button{border:1px solid #bfa271;border-radius:9px;padding:10px 13px;background:#223e3d;color:white}.light-options button.active{background:#efc37a;color:#1b2924;font-weight:800}.sequence{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:13px 0 0}.sequence span{padding:7px 10px;border-radius:9px;background:#e7ddc8;color:#29392f;font-weight:700;font-size:13px}.sequence .arr{background:transparent;font-size:20px}.observation{padding:13px;border-left:4px solid #b9945e;background:#e6eddf;border-radius:8px;font-size:14px;margin-top:13px;color:#23332c}.footer{margin-top:30px;border-top:1px solid #51655f;padding:17px 4px;color:#c5d2cd;font-size:13px}.footer a{color:#f2d09b}.spacer{height:4px;background:#263c36;border-radius:5px;overflow:hidden;margin:15px 0}.fill{height:100%;width:0;background:#ddb36b;transition:width .2s}.flex-note{display:flex;align-items:center;gap:10px}.light-warning{font-size:13px;color:#f1dcad;margin-top:9px}@media(max-width:900px){.scene{grid-template-columns:1fr}.foodnodes{grid-template-columns:repeat(3,1fr)}.hero{min-height:250px}.hero-inner{padding:28px 17px 30px}.shell{padding:15px 13px 36px}}@media(max-width:590px){body{font-size:15px}.paper{padding:20px 17px}.foodnodes,.model-grid{grid-template-columns:1fr}.foodnode{min-height:75px}.foodnode .emoji{font-size:24px}.model-card{min-height:100px}.model-card .emoji{font-size:24px}.step-tab{font-size:12px;padding:7px}.panel figcaption{font-size:12px}.hero p{font-size:15px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}@media print{body{background:white;color:black}.hero{background:none!important;min-height:0}.hero h1,.hero p{color:black}.paper,.model,.network-wrap{box-shadow:none}.controls,.help,.steps,.imagebuttons{display:none!important}.stage.hidden{display:block!important;break-before:page}.shell{max-width:100%;padding:0}.footer{color:#333}}
-</style><style>
-/* AKTE 66 Forschungsreise 1.2: sprachsensibles, ruhiges Arbeitsgeruest */
-.lernreise12-output{margin:10px 0 16px;padding:11px 14px;border:1px solid rgba(109,143,145,.32);border-left:4px solid #448f88;border-radius:9px;background:rgba(74,137,133,.075);color:inherit;line-height:1.55;font-size:.96em}
-.lernreise12-output strong{font-weight:750}
-.lernreise12-help{margin:0 0 16px;border:1px solid rgba(124,134,138,.34);border-radius:8px;background:rgba(127,145,144,.045);font-size:.94em;line-height:1.5}
-.lernreise12-help summary{cursor:pointer;padding:9px 12px;font-weight:650;list-style-position:inside}
-.lernreise12-help p{margin:0;padding:0 12px 12px;max-width:78ch}
-.lernreise12-output,.lernreise12-help{max-width:85ch}
-@media print{.lernreise12-help p{display:block}.lernreise12-output{break-inside:avoid}}
-</style></head><body><header class="hero"><div class="hero-inner"><div class="eyebrow">AKTE 66 · Expedition ins verlorene Zeitalter · Mission 3</div><h1>Die Welt gerät<br/>aus dem Gleichgewicht</h1><p>Eine lebendige Landschaft. Eine Katastrophe, die den Himmel verdunkelt. Wie hängt das Leben der Tiere vom Licht ab?</p><p style="font-size:13px;color:#e7d9bd">Forschung: Hell-Creek-Lebensraum am Ende der Kreidezeit · ca. 66 Millionen Jahre vor heute</p></div></header>
-<main class="shell"><div class="progress-area"><div aria-label="Forschungsschritte" class="steps"><button class="step-tab current" data-step="0">01 · Beobachten</button><button class="step-tab" data-step="1" disabled="">02 · Vernetzen</button><button class="step-tab" data-step="2" disabled="">03 · Erproben</button><button class="step-tab" data-step="3" disabled="">04 · Begründen</button></div><div class="step-counter" id="counter">Abschnitt 1 von 4</div></div><div class="spacer"><div class="fill" id="progress"></div></div>
-<section class="stage" id="s0"><div class="toprow"><div><div class="eyebrow">Forschungsort · Nordamerika</div><h2>Was lebt an diesem Fluss?</h2></div></div><p class="lead">Die Expedition hat die Landschaft der späten Kreidezeit rekonstruiert. Sieh dir zuerst das Museumsdiorama an. Es zeigt eine nach Fossilien gestaltete Vorstellung eines damaligen Lebensraums – keine Fotografie der Vergangenheit.</p><div class="scene"><figure class="panel" style="margin:0"><img alt="Museumsdiorama: bewaldeter Flusslebensraum mit zwei kleinen dinosaurierähnlichen Raubtieren, Pflanzen und Baumstämmen" id="openingImage" src="{{asset:img/mission-3/museum-oeffnungsbild.jpg}}"/><figcaption id="openingCaption">Museumsdiorama der Hell-Creek-Formation, Milwaukee Public Museum. Foto: Michael Barera, CC BY-SA 4.0. Die Darstellung ist eine wissenschaftlich orientierte Rekonstruktion.</figcaption><div class="imagebuttons"><button aria-pressed="true" class="active" id="museumBtn">Museumsdiorama</button><button aria-pressed="false" id="artBtn">Künstlerische Landschaft</button></div></figure><div class="paper"><div class="tag">Dein erster Forschungsauftrag</div><h3>Untersuche den Lebensraum</h3><ol><li><b>Beschreibe</b> mindestens drei Dinge, die du im Museumsbild erkennst: Tiere, Pflanzen oder Bestandteile des Lebensraums.</li><li><b>Vergleiche</b> die zweite Landschaftsdarstellung. Welche Tiergruppen und Pflanzen erkennst du dort?</li><li><b>Vermute</b>: Welche Lebewesen brauchen andere Lebewesen als Nahrung? Nenne zwei mögliche Beziehungen.</li></ol><div class="lernreise12-output" data-station="3" data-task="1"><strong>Woran erkennst du, dass du fertig bist? </strong>Im Forscherheft: mindestens 3 Beobachtungen, 1 Vergleich der beiden Landschaften und 2 begründete Vermutungen zu Nahrung.</div><details class="lernreise12-help"><summary>Auftrag unklar? Begriffe und Vorgehen kurz erklärt</summary><p>Beschreiben: Nur aufschreiben, was zu sehen ist. Vergleichen: Sage, was gleich oder verschieden ist. Vermuten: Formuliere eine mögliche Erklärung – du musst sie noch nicht beweisen.</p></details><details class="prior"><summary>🧭 Vorwissen: Was bedeutet „Ökosystem“?</summary><p>Ein <b>Ökosystem</b> ist ein Lebensraum mit seinen Lebewesen und den Bedingungen, unter denen sie leben – etwa Wasser, Boden, Temperatur und Sonnenlicht. Alle Teile können einander beeinflussen.</p></details><details class="prior"><summary>🧭 Vorwissen: Was ist hier sicher, was nur rekonstruiert?</summary><p>Fossilien belegen, dass bestimmte Arten in der Hell-Creek-Region lebten. Wie genau eine einzelne Landschaft aussah oder welche Tiere gerade nebeneinander standen, wird von Fachleuten anhand von Funden rekonstruiert. Die beiden Bilder sind deshalb <b>keine Beweisfotos</b>.</p></details><div class="book"><b>📓 Analoges Forscherheft:</b> Zeichne eine kleine Landschaftsskizze. Beschrifte mindestens drei Lebewesen oder Umweltbestandteile und notiere zwei begründete Vermutungen über Nahrung.</div></div></div><div class="help"><button aria-expanded="false" type="button">💡 Arbeitshilfen bei Bedarf öffnen</button><div class="helps" hidden=""><details><summary>Hilfe 1 · Genau hinsehen</summary><p>Suche zuerst nach Pflanzen und Wasser. Betrachte dann die Körpermerkmale der Tiere, zum Beispiel Zähne und Beine.</p></details><details><summary>Hilfe 2 · Nahrung vermuten</summary><p>Überlege: Was könnte ein Pflanzenfresser fressen? Was könnte ein Fleischfresser fressen? Sage dazu, worauf sich deine Vermutung stützt.</p></details><details><summary>Hilfe 3 · Satzstarter</summary><p>„Ich sehe … . Ich vermute, dass … , weil … .“</p></details></div></div><div class="controls"><span></span><button class="btn primary" data-next="">Weiter zum Nahrungsnetz →</button></div></section>
-<section class="stage hidden" id="s1"><div class="toprow"><div><div class="eyebrow">Forschungsgerät · Beziehungen erkennen</div><h2>Wer ist auf wen angewiesen?</h2></div></div><p class="lead">Die Expedition untersucht jetzt nicht einzelne Tiere, sondern ihre Nahrungsbeziehungen. Eine Verbindung zeigt, <b>woher Nahrung und Energie kommen</b>. Im Spiel werden Tiergruppen und Pflanzen zusammengefasst, nicht einzelne Arten exakt nachgebildet.</p><div class="scene"><div class="network-wrap"><div class="tag">Vereinfachtes Modell</div><div class="foodnodes"><div class="foodnode"><span class="emoji">🌿</span><b>Pflanzen</b><span class="small">nutzen Licht</span></div><div class="foodnode"><span class="emoji">🦕</span><b>Große Pflanzenfresser</b><span class="small">fressen Pflanzen</span></div><div class="foodnode"><span class="emoji">🦖</span><b>Große Fleischfresser</b><span class="small">fressen Tiere</span></div><div class="foodnode"><span class="emoji">🪲</span><b>Kleine Pflanzenfresser</b><span class="small">z. B. Insekten</span></div><div class="foodnode"><span class="emoji">🐸</span><b>Kleine Jäger</b><span class="small">fressen kleine Tiere</span></div><div class="foodnode"><span class="emoji">🍄</span><b>Zersetzer</b><span class="small">bauen tote Reste ab</span></div></div><div class="arrowexplain"><b>So liest du die Pfeile:</b> <b>Pflanzen → Pflanzenfresser</b> bedeutet: Die Pflanzen sind Nahrung für die Pflanzenfresser. Der Pfeil zeigt in die Richtung, in der Nahrung und Energie weitergegeben werden.</div><h4 style="margin:18px 0 7px">Wähle die passenden Verbindungen aus:</h4><div class="connections" id="connections"></div><button class="btn" id="checkNetwork" style="margin-top:15px">Verbindungen überprüfen</button><div class="feedback hidden" id="networkFeedback" role="status"></div></div><div class="paper"><div class="tag">Deine Untersuchung</div><h3>Baue ein Nahrungsnetz</h3><ol><li><b>Betrachte</b> die sechs Gruppen im Modell.</li><li><b>Wähle</b> die Verbindungen, die fachlich sinnvoll sind. Einige vorgeschlagene Pfeile sind bewusst falsch.</li><li><b>Prüfe</b> dein Netz und verbessere es, falls nötig.</li><li><b>Begründe</b>: Warum sind viele Lebewesen indirekt von Pflanzen abhängig?</li></ol><div class="lernreise12-output" data-station="3" data-task="2"><strong>Woran erkennst du, dass du fertig bist? </strong>Im Forscherheft: 1 kurze Erklärung, warum das Nahrungsnetz von Pflanzen abhängt. Im Modell: die Pfeile prüfen und bei Fehlern verbessern.</div><details class="lernreise12-help"><summary>Auftrag unklar? Begriffe und Vorgehen kurz erklärt</summary><p>Begründen bedeutet: Sage nicht nur, dass es so ist, sondern warum. Suche im Nahrungsnetz einen Weg von Pflanzen zu einem Tier. Pfeile zeigen die Richtung des Nahrungs- und Energietransfers.</p></details><details class="prior"><summary>🧭 Vorwissen: Was ist der Unterschied zwischen Nahrungskette und Nahrungsnetz?</summary><p>Eine <b>Nahrungskette</b> zeigt einen einzigen Weg, zum Beispiel Pflanze → Pflanzenfresser → Fleischfresser. In einem <b>Nahrungsnetz</b> sind mehrere solcher Wege miteinander verbunden: Tiere können unterschiedliche Nahrung nutzen.</p></details><details class="prior"><summary>🧭 Vorwissen: Was machen Zersetzer?</summary><p>Pilze und Bakterien bauen abgestorbene Lebewesen und Reste ab. Dabei gelangen Nährstoffe in den Boden oder das Wasser, die Pflanzen wieder aufnehmen können. Das ist nicht dasselbe wie Sonnenenergie.</p></details><div class="book"><b>📓 Analoges Forscherheft:</b> Zeichne dein überprüftes Nahrungsnetz mit Pfeilen. Notiere darunter zwei Sätze: „Diese Gruppe braucht …, weil …“ und „Ohne Pflanzen könnte …“.</div></div></div><div class="help"><button aria-expanded="false" type="button">💡 Arbeitshilfen bei Bedarf öffnen</button><div class="helps" hidden=""><details><summary>Hilfe 1 · Start</summary><p>Beginne bei den Pflanzen. Wer kann Pflanzen fressen?</p></details><details><summary>Hilfe 2 · Pfeilrichtung</summary><p>Wenn ein Tier die Pflanze frisst, zeigt der Pfeil von der <b>Pflanze zum Tier</b>.</p></details><details><summary>Hilfe 3 · Fehler prüfen</summary><p>Ein Fleischfresser benötigt Nahrung; er liefert Pflanzen aber keine Sonnenenergie. Überlege bei jedem Pfeil: Wer wird hier gefressen?</p></details></div></div><div class="controls"><button class="btn" data-back="">← Zurück</button><button class="btn primary" data-next="" disabled="" id="nextNetwork">Weiter zur Simulation →</button></div></section>
-<section class="stage hidden" id="s2"><div class="toprow"><div><div class="eyebrow">Forschungslabor · Szenario-Test</div><h2>Was geschieht, wenn es dunkel wird?</h2></div></div><p class="lead">Nach dem Asteroideneinschlag gelangten große Mengen von Staub und anderen Teilchen in die Atmosphäre. Dadurch erreichte zeitweise deutlich weniger Sonnenlicht die Erdoberfläche. Untersuche, was das für das Nahrungsnetz bedeuten könnte.</p><div class="scene"><div class="model"><div class="model-header"><div><div class="eyebrow">Vereinfachtes Wirkungsmodell</div><b>Verändere die Lichtbedingungen</b></div><span id="lightLabel" style="color:#f2d18d;font-weight:800">Helles Tageslicht</span></div><div class="light-options"><button class="active" data-light="normal">☀️ Viel Licht</button><button data-light="less">🌤️ Weniger Licht</button><button data-light="dark">🌑 Stark verdunkelt</button></div><div class="light-warning">Dieses Modell zeigt mögliche Zusammenhänge, keine gemessenen Bestandszahlen und keine genaue Zeitskala.</div><div class="model-track"><strong>1. Was ändert sich zunächst?</strong></div><div class="model-grid"><div class="model-card"><span class="emoji">🌿</span><b>Pflanzenproduktion</b><div class="state" id="plantsState">normal</div></div><div class="model-card"><span class="emoji">🦕</span><b>Nahrung für Pflanzenfresser</b><div class="state" id="herbState">vorhanden</div></div><div class="model-card"><span class="emoji">🦖</span><b>Nahrung für Fleischfresser</b><div class="state" id="carnState">vorhanden</div></div></div><div aria-live="polite" class="observation" id="modelExplanation">Bei ausreichend Licht können Pflanzen Fotosynthese betreiben. So entsteht die Grundlage für viele Nahrungsbeziehungen.</div><div class="sequence"><span>Licht</span><span class="arr">→</span><span>Fotosynthese</span><span class="arr">→</span><span>Pflanzennahrung</span><span class="arr">→</span><span>Tiere</span></div></div><div class="paper"><div class="tag">Erst denken, dann testen</div><h3>Triff eine Vorhersage</h3><p><b>Was wird wahrscheinlich zuerst direkt beeinträchtigt, wenn über längere Zeit viel weniger Sonnenlicht ankommt?</b></p><label class="choice"><input name="predict" type="radio" value="predator"/> Fleischfresser, weil sie kein Sonnenlicht speichern.</label><label class="choice"><input name="predict" type="radio" value="plant"/> Die Fotosynthese der Pflanzen, weil sie Licht benötigt.</label><label class="choice"><input name="predict" type="radio" value="all"/> Alle Lebewesen verlieren zur gleichen Zeit sofort ihre Nahrung.</label><button class="btn" id="checkPredict">Vorhersage prüfen</button><div class="feedback hidden" id="predictFeedback" role="status"></div><hr style="border:0;border-top:1px solid #d5c7aa;margin:18px 0"/><h4>Erprobe danach die drei Lichtbedingungen.</h4><ol><li><b>Vergleiche</b> die drei Zustände und beschreibe die Veränderungen.</li><li><b>Erkläre</b> die zeitliche Abfolge: Warum sind Pflanzenfresser und Fleischfresser nicht unbedingt sofort auf dieselbe Weise betroffen?</li><li><b>Überlege</b>, welche Lebewesen möglicherweise weitere Nahrungsquellen haben.</li></ol><div class="lernreise12-output" data-station="3" data-task="3"><strong>Woran erkennst du, dass du fertig bist? </strong>Im Forscherheft: 1 Beobachtung zu den Lichtbedingungen, 1 Erklärung der zeitlichen Folgen und 1 mögliche Ausnahme.</div><details class="lernreise12-help"><summary>Auftrag unklar? Begriffe und Vorgehen kurz erklärt</summary><p>Vergleichen: Betrachte die drei Lichtbedingungen nacheinander. Erklären: Nenne eine Ursache und ihre Folge. Du kannst schreiben: „Wenn …, dann …, weil …“.</p></details><details class="prior"><summary>🧭 Vorwissen: Was ist Fotosynthese?</summary><p>Grüne Pflanzen nutzen <b>Lichtenergie</b>, um aus Wasser und Kohlenstoffdioxid energiereiche Stoffe herzustellen. Diese Stoffe dienen der Pflanze selbst und anderen Lebewesen als Nahrung. Ohne Licht ist dieser Aufbau stark eingeschränkt.</p></details><div class="book"><b>📓 Analoges Forscherheft:</b> Schreibe deine Vorhersage auf. Zeichne danach eine dreigliedrige Ursache-Wirkungs-Kette und erkläre sie mit eigenen Worten. Kennzeichne deine Simulation als <b>Modell</b>.</div></div></div><div class="help"><button aria-expanded="false" type="button">💡 Arbeitshilfen bei Bedarf öffnen</button><div class="helps" hidden=""><details><summary>Hilfe 1 · Woran hängen Pflanzen?</summary><p>Suche in der Vorwissenshilfe, welchen Bestandteil Pflanzen für die Fotosynthese unbedingt benötigen.</p></details><details><summary>Hilfe 2 · Zeitlich denken</summary><p>Ein Tier verliert nicht im selben Moment alle Nahrung, nur weil weniger Pflanzen neu wachsen. Überlege, was zunächst noch vorhanden sein kann.</p></details><details><summary>Hilfe 3 · Satzstarter</summary><p>„Weniger Sonnenlicht führt zuerst dazu, dass … . Dadurch steht später für … weniger … zur Verfügung.“</p></details></div></div><div class="controls"><button class="btn" data-back="">← Zurück</button><button class="btn primary" data-next="" disabled="" id="nextModel">Weiter zur Forschungsentscheidung →</button></div></section>
-<section class="stage hidden" id="s3"><div class="toprow"><div><div class="eyebrow">Auswertung · Expedition</div><h2>Wie belastbar ist deine Erklärung?</h2></div></div><p class="lead">Dein Modell verbindet Sonnenlicht, Pflanzen und Tiere. Jetzt brauchst du eine wissenschaftliche Schlussfolgerung – und musst erkennen, was das Modell <em>nicht</em> sicher zeigen kann.</p><div class="scene"><div class="paper"><div class="tag">Die Forschungsfrage</div><h3>Die Folgen des Einschlags erklären</h3><ol><li><b>Erkläre</b> mithilfe deines Nahrungsnetzes, wie eine länger anhaltende Verdunkelung die Ernährung großer Dinosaurier erschweren konnte.</li><li><b>Begründe</b>, warum ein Nahrungsnetz mehr erklärt als die Aussage „Alle Tiere hatten kein Futter mehr“.</li><li><b>Prüfe</b> eine Grenze des Modells: Warum kann es nicht vorhersagen, welche Tierarten tatsächlich überlebten?</li></ol><div class="lernreise12-output" data-station="3" data-task="4"><strong>Woran erkennst du, dass du fertig bist? </strong>Im Forscherheft: eine Ursache-Folge-Kette und 1 Grenze des Modells. Ein sachlicher Satz pro Teil genügt.</div><details class="lernreise12-help"><summary>Auftrag unklar? Begriffe und Vorgehen kurz erklärt</summary><p>Prüfen bedeutet: Frage dich, was das Modell wirklich zeigt und was nicht. Begründen bedeutet: Nenne einen konkreten Zusammenhang im Nahrungsnetz als Beleg. Ein Modell ist eine Vereinfachung, kein vollständiger Bericht über alle Tierarten.</p></details><p><b>Forscherentscheidung:</b> Welche Aussage ist am besten begründet?</p><label class="choice"><input name="conclude" type="radio" value="a"/> Ohne Sonnenlicht sterben immer sofort alle Lebewesen.</label><label class="choice"><input name="conclude" type="radio" value="b"/> Weniger Licht kann die Pflanzenproduktion verringern und so über verschiedene Wege Nahrungsnetze beeinträchtigen. Wie stark einzelne Arten betroffen waren, braucht weitere Belege.</label><label class="choice"><input name="conclude" type="radio" value="c"/> Licht und Ernährung stehen in keinem Zusammenhang.</label><button class="btn" id="checkConclusion">Entscheidung überprüfen</button><div class="feedback hidden" id="conclusionFeedback" role="status"></div><div class="book"><b>📓 Analoges Forscherheft:</b> Verfasse einen Forschungsabschnitt von etwa 5–7 Sätzen: <b>Beobachtung – Ursache – Folgen – Grenze des Modells</b>. Nutze dazu dein Nahrungsnetz und die Simulation.</div></div><div class="panel" style="padding:25px"><div class="eyebrow">Eine wissenschaftliche Grenze</div><h3 style="font:700 27px Georgia,serif;margin-top:10px;color:#ffe5b4">Ein Modell ist keine Zeitmaschine.</h3><p>Die dargestellten Nahrungswege sind vereinfacht. Im wirklichen Hell-Creek-Ökosystem gab es viel mehr Pflanzen, Tiere, Nahrungsquellen und Wechselwirkungen. Auch der Lichtverlust war kein überall gleich verlaufendes Ereignis.</p><p>Das Modell hilft, einen <b>möglichen Zusammenhang</b> zu verstehen. Welche Arten genau warum ausstarben oder überlebten, muss zusätzlich mit Fossilien und weiteren wissenschaftlichen Befunden untersucht werden.</p><div class="notice">🎒 <b>Expeditionsfund:</b> Du hast untersucht, wie ein geologisches Ereignis biologische Folgen haben kann. Die nächsten Missionen verknüpfen solche Teil-Erklärungen miteinander.</div></div></div><div class="help"><button aria-expanded="false" type="button">💡 Arbeitshilfen bei Bedarf öffnen</button><div class="helps" hidden=""><details><summary>Hilfe 1 · Gliederung</summary><p>Schreibe zuerst, <b>was</b> verändert wurde. Dann erläutere die Folge für Pflanzen, anschließend für Pflanzenfresser und zuletzt für Fleischfresser.</p></details><details><summary>Hilfe 2 · Argumentieren</summary><p>Begründe eine Aussage mit einer Verbindung aus deinem Nahrungsnetz. Verwende „weil“, „dadurch“ oder „deshalb“.</p></details><details><summary>Hilfe 3 · Grenze des Modells</summary><p>Im Modell stehen Gruppen statt einzelner Arten. Was kann deshalb nicht genau vorhergesagt werden?</p></details></div></div><div class="controls"><button class="btn" data-back="">← Zurück zur Simulation</button><button class="btn primary" onclick="window.print()" type="button">Forschungsaufträge drucken</button></div></section>
-<footer class="footer"><strong>Quellen und Transparenz</strong><p>Museumsdiorama: Milwaukee Public Museum (Hell Creek), Foto von Michael Barera, <a href="https://commons.wikimedia.org/wiki/File:Milwaukee_Public_Museum_October_2023_33_(Exploring_Life_on_Earth--Hell_Creek_Formation_Montana_65_Million_Years_Ago).jpg">CC BY-SA 4.0</a>. Landschaft: eigens erzeugte künstlerische Rekonstruktion; kein historisches Foto. Simulation und Pfeilnetz: eigens erstellte, bewusst vereinfachte didaktische Modelle ohne reale Bestandszahlen. Fachliche Grundlage: <a href="https://www.lpi.usra.edu/science/kring/Chicxulub/global-effects/">Lunar and Planetary Institute – Globale Folgen von Chicxulub</a>; <a href="https://pubmed.ncbi.nlm.nih.gov/24821785/">Vellekoop et al. (2014) – kurzfristige Abkühlung nach dem Einschlag</a>. Alle Bilder und Funktionen sind in dieser Datei gespeichert. Die Quellenlinks sind nur freiwillige Zusatzinformationen, nicht zum Spielen erforderlich.</p></footer></main>
-<script>
-(()=>{'use strict';const stepEls=[...document.querySelectorAll('.stage')],tabs=[...document.querySelectorAll('[data-step]')];let step=0,unlocked=0;let networkOK=false,predictOK=false,simExplored=new Set();function show(n){if(n<0||n>unlocked)return;step=n;stepEls.forEach((el,i)=>el.classList.toggle('hidden',i!==n));tabs.forEach((el,i)=>{el.disabled=i>unlocked;el.classList.toggle('current',i===n);el.setAttribute('aria-current',i===n?'step':'false')});document.querySelector('#counter').textContent='Abschnitt '+(n+1)+' von 4';document.querySelector('#progress').style.width=(n/3*100)+'%';scrollTo(0,0)}document.querySelectorAll('[data-next]').forEach(b=>b.addEventListener('click',()=>{unlocked=Math.max(unlocked,step+1);show(step+1)}));document.querySelectorAll('[data-back]').forEach(b=>b.addEventListener('click',()=>show(step-1)));tabs.forEach((t,i)=>t.addEventListener('click',()=>show(i)));document.querySelectorAll('.help>button').forEach(b=>b.addEventListener('click',()=>{const el=b.nextElementSibling;el.hidden=!el.hidden;b.setAttribute('aria-expanded',String(!el.hidden))}));const museum='{{asset:img/mission-3/museum-oeffnungsbild.jpg}}';const land='{{asset:img/mission-3/hero-landschaft.jpg}}';const introImage=document.querySelector('#openingImage'),introCap=document.querySelector('#openingCaption');function switchImage(which){let isMuseum=which==='museum';introImage.src=isMuseum?museum:land;introImage.alt=isMuseum?'Museumsdiorama mit kleinen Dinosauriern und Pflanzen in einer rekonstruierten Hell-Creek-Landschaft':'Künstlerische Rekonstruktion einer Kreidezeit-Landschaft mit Pflanzenfressern, Fleischfresser, Bäumen und Gewässer';introCap.textContent=isMuseum?'Museumsdiorama der Hell-Creek-Formation, Milwaukee Public Museum. Foto: Michael Barera, CC BY-SA 4.0. Wissenschaftlich orientierte Rekonstruktion.':'Eigens gestaltete künstlerische Rekonstruktion zur Orientierung. Die gemeinsame Darstellung dieser Tiere ist kein direkter fossiler Nachweis.';for(let [id,val] of [['museumBtn','museum'],['artBtn','art']]){let active=val===which;document.getElementById(id).classList.toggle('active',active);document.getElementById(id).setAttribute('aria-pressed',String(active))}}document.querySelector('#museumBtn').onclick=()=>switchImage('museum');document.querySelector('#artBtn').onclick=()=>switchImage('art');const relations=[{t:'Pflanzen → große Pflanzenfresser',v:true},{t:'Pflanzen → kleine Pflanzenfresser',v:true},{t:'Große Pflanzenfresser → große Fleischfresser',v:true},{t:'Kleine Pflanzenfresser → kleine Jäger',v:true},{t:'Fleischfresser → Sonnenlicht für Pflanzen',v:false},{t:'Abgestorbene Pflanzen- und Tierreste → Zersetzer',v:true},{t:'Große Fleischfresser → lebende Pflanzen als Hauptnahrung',v:false}];const conn=document.querySelector('#connections');relations.forEach((r,i)=>{const b=document.createElement('button');b.type='button';b.className='connection';b.setAttribute('aria-pressed','false');b.dataset.index=i;b.innerHTML='<span class="mark">+</span><span>'+r.t+'</span>';b.onclick=()=>{let active=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',String(active));b.querySelector('.mark').textContent=active?'✓':'+';document.querySelector('#networkFeedback').classList.add('hidden');document.querySelector('#nextNetwork').disabled=true};conn.appendChild(b)});document.querySelector('#checkNetwork').onclick=()=>{let buttons=[...conn.querySelectorAll('button')];let wrong=buttons.filter((b,i)=> (b.getAttribute('aria-pressed')==='true')!==relations[i].v);let f=document.querySelector('#networkFeedback');f.classList.remove('hidden');f.classList.toggle('warn',wrong.length>0);if(wrong.length){f.textContent='Noch '+wrong.length+' Verbindung(en) passen nicht. Prüfe bei jedem Pfeil: Wer liefert hier Nahrung oder Energie – und wer nutzt sie? Die Hilfen unterstützen dich.'}else{f.textContent='Dein Nahrungsnetz ist in diesem Modell schlüssig. Übertrage die passenden Pfeile jetzt ins analoge Forscherheft und begründe die Abhängigkeit von den Pflanzen.';networkOK=true;document.querySelector('#nextNetwork').disabled=false}};document.querySelector('#checkPredict').onclick=()=>{let selected=document.querySelector('input[name=predict]:checked');let f=document.querySelector('#predictFeedback');f.classList.remove('hidden');if(!selected){f.classList.add('warn');f.textContent='Triff zuerst eine Vorhersage.'}else if(selected.value==='plant'){f.classList.remove('warn');f.textContent='Das ist gut begründet: Ohne genügend Licht ist Fotosynthese stark eingeschränkt. Die Folgen für Tiere zeigen sich über die Nahrungsketten und nicht notwendigerweise zeitgleich.';predictOK=true;updateModelNext()}else{f.classList.add('warn');f.textContent='Überlege, welcher Vorgang das Licht direkt benötigt. Öffne bei Bedarf die Vorwissenshilfe zur Fotosynthese.'}};const conditions={normal:{label:'Helles Tageslicht',states:['normal','vorhanden','vorhanden'],text:'Bei ausreichend Licht können Pflanzen Fotosynthese betreiben. So entsteht die Grundlage vieler Nahrungsbeziehungen.',bg:'#1b3c32'},less:{label:'Weniger Sonnenlicht',states:['verringert','mit Verzögerung weniger','später weniger'],text:'Pflanzen können bei vermindertem Licht weniger neue Biomasse aufbauen. Pflanzenfresser finden zunächst eventuell noch Nahrung; bei anhaltendem Lichtmangel werden die Vorräte knapper. Danach können auch Fleischfresser betroffen sein.',bg:'#47503a'},dark:{label:'Starke Verdunkelung',states:['stark eingeschränkt','Nahrungsengpässe wahrscheinlich','Folgen über das Nahrungsnetz'],text:'Bei länger anhaltender starker Verdunkelung ist die Fotosynthese stark beeinträchtigt. Über die Nahrungsbeziehungen können sich schwerwiegende Folgen ausbreiten. Wie schnell und stark dies abläuft, hängt vom Lebensraum und weiteren Nahrungsquellen ab.',bg:'#403d3b'}};function updateModelNext(){document.querySelector('#nextModel').disabled=!(predictOK&&simExplored.size===3)}document.querySelectorAll('[data-light]').forEach(b=>b.onclick=()=>{let val=b.dataset.light;simExplored.add(val);let d=conditions[val];document.querySelector('#lightLabel').textContent=d.label;document.querySelector('#plantsState').textContent=d.states[0];document.querySelector('#herbState').textContent=d.states[1];document.querySelector('#carnState').textContent=d.states[2];document.querySelector('#modelExplanation').textContent=d.text;document.querySelectorAll('.model-card').forEach(card=>card.style.background=d.bg);document.querySelectorAll('[data-light]').forEach(x=>x.classList.toggle('active',x===b));updateModelNext()});document.querySelector('#checkConclusion').onclick=()=>{let selected=document.querySelector('input[name=conclude]:checked'),f=document.querySelector('#conclusionFeedback');f.classList.remove('hidden');if(!selected){f.classList.add('warn');f.textContent='Wähle zuerst eine Aussage aus.'}else if(selected.value==='b'){f.classList.remove('warn');f.textContent='Diese Erklärung unterscheidet nachvollziehbare Modellzusammenhänge von noch offenen Fragen. Formuliere nun deine eigene Begründung im analogen Forscherheft.'}else{f.classList.add('warn');f.textContent='Prüfe noch einmal: Zeigt das Modell, dass alle Lebewesen sofort aussterben – oder dass Nahrungsketten auf verschiedene Weise betroffen sein können?'}};show(0)})();
-</script></body></html>
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <meta content="dark light" name="color-scheme" />
+    <title>AKTE 66 · Mission 3 – Eine Welt gerät aus dem Gleichgewicht</title>
+    <style>
+      :root {
+        --night: #10191d;
+        --pine: #173c37;
+        --gold: #dfb36b;
+        --parchment: #fff7e8;
+        --ink: #25312c;
+        --muted: #bfd0c5;
+        --edge: #7d6b4c;
+        --rust: #a95a37;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: radial-gradient(ellipse at 50% 0, #21433d 0, #101a1e 62%);
+        color: #f8f0e2;
+        font:
+          16px/1.58 system-ui,
+          -apple-system,
+          Segoe UI,
+          sans-serif;
+      }
+      button {
+        font: inherit;
+        cursor: pointer;
+      }
+      button:focus-visible,
+      summary:focus-visible,
+      a:focus-visible,
+      input:focus-visible {
+        outline: 3px solid #ffc75b;
+        outline-offset: 3px;
+      }
+      a {
+        color: #f4d69a;
+      }
+      .hero {
+        position: relative;
+        min-height: 290px;
+        background:
+          linear-gradient(
+            90deg,
+            rgba(10, 20, 20, 0.96) 0%,
+            rgba(10, 20, 20, 0.48) 60%,
+            rgba(10, 20, 20, 0.15)
+          ),
+          url("{{asset:img/mission-3/hero-landschaft.jpg}}") center 48% / cover no-repeat;
+        border-bottom: 2px solid #a07c47;
+      }
+      .hero-inner {
+        max-width: 1240px;
+        margin: auto;
+        padding: 38px 24px 44px;
+      }
+      .eyebrow {
+        font-size: 12px;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: #f3cd85;
+        font-weight: 800;
+      }
+      .hero h1 {
+        font:
+          700 clamp(32px, 5vw, 64px) / 1.08 Georgia,
+          serif;
+        margin: 12px 0;
+        text-shadow: 0 4px 18px #0b1111;
+      }
+      .hero p {
+        max-width: 610px;
+        font-size: 18px;
+        margin: 10px 0;
+      }
+      .shell {
+        max-width: 1260px;
+        margin: 0 auto;
+        padding: 22px 22px 60px;
+      }
+      .progress-area {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        flex-wrap: wrap;
+        margin: 0 0 19px;
+      }
+      .steps {
+        display: flex;
+        gap: 7px;
+        flex-wrap: wrap;
+      }
+      .step-tab {
+        background: #17272a;
+        border: 1px solid #69736b;
+        color: #f7e7cb;
+        border-radius: 8px;
+        padding: 10px 13px;
+        font-weight: 700;
+      }
+      .step-tab.current {
+        background: #e0b675;
+        color: #1e2925;
+        border-color: #e0b675;
+      }
+      .step-tab:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+      .step-counter {
+        color: #dcc6a0;
+        font-size: 14px;
+      }
+      .stage {
+        animation: rise 0.35s ease-out;
+      }
+      .stage.hidden,
+      .hidden {
+        display: none !important;
+      }
+      @keyframes rise {
+        from {
+          opacity: 0.2;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      .toprow {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .toprow h2 {
+        font:
+          700 clamp(27px, 3vw, 40px) Georgia,
+          serif;
+        margin: 8px 0 13px;
+      }
+      .lead {
+        max-width: 900px;
+        color: #f7e5cb;
+        font-size: 17px;
+        line-height: 1.6;
+        margin: 0 0 20px;
+      }
+      .scene {
+        display: grid;
+        grid-template-columns: minmax(0, 1.22fr) minmax(325px, 1fr);
+        gap: 22px;
+        align-items: start;
+      }
+      .panel {
+        border: 1px solid #99805a;
+        border-radius: 16px;
+        background: #17292b;
+        overflow: hidden;
+        box-shadow: 0 20px 44px #06101277;
+      }
+      .panel img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      .panel figcaption,
+      .caption {
+        font-size: 13px;
+        color: #dae5de;
+        padding: 12px 15px;
+        background: #12232a;
+        line-height: 1.55;
+      }
+      .paper {
+        background: var(--parchment);
+        color: var(--ink);
+        border-radius: 13px;
+        padding: 26px 25px 24px;
+        box-shadow:
+          inset 0 0 0 1px #dac7a3,
+          0 20px 38px #09151666;
+        min-width: 0;
+      }
+      .paper h3 {
+        font:
+          700 27px/1.2 Georgia,
+          serif;
+        color: #3c2c1f;
+        margin: 0 0 12px;
+      }
+      .paper h4 {
+        font-size: 17px;
+        margin: 15px 0 6px;
+        color: #3d2c1d;
+      }
+      .paper p {
+        margin: 9px 0;
+      }
+      .paper ol,
+      .paper ul {
+        padding-left: 22px;
+      }
+      .paper li {
+        margin: 8px 0;
+      }
+      .tag {
+        display: inline-block;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 5px 9px;
+        border-radius: 30px;
+        background: #f3e5cf;
+        color: #6b4524;
+        font-weight: 900;
+        margin-bottom: 11px;
+      }
+      .notice,
+      .book {
+        padding: 14px 16px;
+        border-radius: 9px;
+        margin-top: 20px;
+      }
+      .book {
+        background: #e5eddf;
+        border-left: 5px solid #326850;
+        color: #182f29;
+      }
+      .notice {
+        border: 1px solid #9a8560;
+        background: #192727;
+        color: #faf0db;
+      }
+      .paper details.prior {
+        background: #fffaf0;
+        border: 1px solid #cdb48a;
+        border-radius: 9px;
+        margin: 11px 0;
+        padding: 10px 12px;
+        color: #1f2c26;
+      }
+      .paper details.prior summary {
+        cursor: pointer;
+        color: #47341e;
+        font-weight: 750;
+      }
+      .paper details.prior p,
+      .paper details.prior li {
+        color: #20312b;
+      }
+      .help {
+        margin: 18px 0;
+        border: 1px solid #aa8a53;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      .help > button {
+        display: block;
+        width: 100%;
+        border: 0;
+        background: #28473d;
+        color: #ffe4aa;
+        text-align: left;
+        font-weight: 700;
+        padding: 12px 17px;
+      }
+      .helps {
+        padding: 14px;
+        background: #102a28;
+      }
+      .helps[hidden] {
+        display: none;
+      }
+      .helps details {
+        margin: 7px 0;
+        background: #fef4e3;
+        color: #27362d;
+        border-radius: 8px;
+        padding: 11px 13px;
+      }
+      .helps summary {
+        font-weight: 750;
+        cursor: pointer;
+      }
+      .helps p {
+        margin: 8px 0 0;
+      }
+      .controls {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin: 24px 0;
+      }
+      .btn {
+        border: 1px solid #e4bb75;
+        border-radius: 10px;
+        padding: 13px 18px;
+        font-weight: 750;
+        background: #1e322f;
+        color: #f6ead4;
+      }
+      .btn.primary {
+        background: linear-gradient(#f2c884, #d99e4d);
+        color: #272b23;
+      }
+      .btn:disabled {
+        opacity: 0.48;
+        cursor: not-allowed;
+      }
+      .choice {
+        display: flex;
+        align-items: flex-start;
+        gap: 9px;
+        border: 1px solid #d6bfa0;
+        background: #fffcf4;
+        padding: 11px 12px;
+        border-radius: 9px;
+        margin: 10px 0;
+        cursor: pointer;
+      }
+      .choice input {
+        margin-top: 6px;
+        accent-color: #386f57;
+      }
+      .feedback {
+        margin-top: 13px;
+        padding: 12px 14px;
+        border-radius: 9px;
+        background: #e8efe0;
+        color: #18372c;
+        border-left: 4px solid #528369;
+      }
+      .feedback.warn {
+        background: #fff0e0;
+        color: #6e351d;
+        border-color: #c07c49;
+      }
+      .imagebuttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+        padding: 11px 13px;
+        background: #11282d;
+      }
+      .imagebuttons button {
+        padding: 8px 13px;
+        border-radius: 9px;
+        border: 1px solid #c79b5f;
+        background: #223f3d;
+        color: #f6e9ce;
+      }
+      .imagebuttons button.active {
+        background: #e1b975;
+        color: #202a21;
+      }
+      .network-wrap {
+        border: 1px solid #9d835e;
+        border-radius: 14px;
+        background: #fdf7ea;
+        padding: 18px;
+        color: #26362b;
+      }
+      .foodnodes {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 9px;
+      }
+      .foodnode {
+        border: 2px solid #cdb78f;
+        padding: 14px 9px;
+        background: white;
+        border-radius: 12px;
+        text-align: center;
+        min-height: 112px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+      }
+      .foodnode .emoji {
+        font-size: 31px;
+        line-height: 1.1;
+      }
+      .foodnode .small {
+        font-size: 12px;
+        color: #5f6258;
+      }
+      .arrowexplain {
+        font-size: 13px;
+        color: #39453b;
+        background: #f3e9d6;
+        padding: 10px;
+        margin: 12px 0;
+        border-radius: 8px;
+      }
+      .connections {
+        display: grid;
+        gap: 8px;
+        margin-top: 12px;
+      }
+      .connection {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        padding: 11px 13px;
+        border: 1px solid #cab696;
+        border-radius: 8px;
+        background: #fffdf8;
+        color: #23372e;
+        text-align: left;
+        min-height: 47px;
+      }
+      .connection[aria-pressed="true"] {
+        background: #d9ecdf;
+        border-color: #48846d;
+        box-shadow: inset 4px 0 #48846d;
+      }
+      .connection .mark {
+        display: inline-grid;
+        place-items: center;
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        min-width: 25px;
+        background: #e8dbc3;
+        font-weight: 800;
+      }
+      .connection[aria-pressed="true"] .mark {
+        background: #48846d;
+        color: white;
+      }
+      .model {
+        padding: 20px;
+        border: 1px solid #a48c62;
+        border-radius: 14px;
+        background: #102c2c;
+      }
+      .model-header {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-bottom: 16px;
+      }
+      .model-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+      }
+      .model-card {
+        border: 1px solid #7c967f;
+        border-radius: 12px;
+        padding: 16px 10px;
+        text-align: center;
+        background: #1b3c32;
+        min-height: 150px;
+      }
+      .model-card .emoji {
+        font-size: 35px;
+        display: block;
+        margin-bottom: 10px;
+      }
+      .model-card b {
+        display: block;
+        color: #fff3d6;
+      }
+      .model-card .state {
+        font-size: 13px;
+        color: #c1e7d3;
+      }
+      .model-track {
+        margin: 15px 0 8px;
+        color: #f9e9cd;
+        font-size: 14px;
+      }
+      .light-options {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .light-options button {
+        border: 1px solid #bfa271;
+        border-radius: 9px;
+        padding: 10px 13px;
+        background: #223e3d;
+        color: white;
+      }
+      .light-options button.active {
+        background: #efc37a;
+        color: #1b2924;
+        font-weight: 800;
+      }
+      .sequence {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 7px;
+        margin: 13px 0 0;
+      }
+      .sequence span {
+        padding: 7px 10px;
+        border-radius: 9px;
+        background: #e7ddc8;
+        color: #29392f;
+        font-weight: 700;
+        font-size: 13px;
+      }
+      .sequence .arr {
+        background: transparent;
+        font-size: 20px;
+      }
+      .observation {
+        padding: 13px;
+        border-left: 4px solid #b9945e;
+        background: #e6eddf;
+        border-radius: 8px;
+        font-size: 14px;
+        margin-top: 13px;
+        color: #23332c;
+      }
+      .footer {
+        margin-top: 30px;
+        border-top: 1px solid #51655f;
+        padding: 17px 4px;
+        color: #c5d2cd;
+        font-size: 13px;
+      }
+      .footer a {
+        color: #f2d09b;
+      }
+      .spacer {
+        height: 4px;
+        background: #263c36;
+        border-radius: 5px;
+        overflow: hidden;
+        margin: 15px 0;
+      }
+      .fill {
+        height: 100%;
+        width: 0;
+        background: #ddb36b;
+        transition: width 0.2s;
+      }
+      .flex-note {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .light-warning {
+        font-size: 13px;
+        color: #f1dcad;
+        margin-top: 9px;
+      }
+      @media (max-width: 900px) {
+        .scene {
+          grid-template-columns: 1fr;
+        }
+        .foodnodes {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .hero {
+          min-height: 250px;
+        }
+        .hero-inner {
+          padding: 28px 17px 30px;
+        }
+        .shell {
+          padding: 15px 13px 36px;
+        }
+      }
+      @media (max-width: 590px) {
+        body {
+          font-size: 15px;
+        }
+        .paper {
+          padding: 20px 17px;
+        }
+        .foodnodes,
+        .model-grid {
+          grid-template-columns: 1fr;
+        }
+        .foodnode {
+          min-height: 75px;
+        }
+        .foodnode .emoji {
+          font-size: 24px;
+        }
+        .model-card {
+          min-height: 100px;
+        }
+        .model-card .emoji {
+          font-size: 24px;
+        }
+        .step-tab {
+          font-size: 12px;
+          padding: 7px;
+        }
+        .panel figcaption {
+          font-size: 12px;
+        }
+        .hero p {
+          font-size: 15px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *:before,
+        *:after {
+          animation: none !important;
+          transition: none !important;
+          scroll-behavior: auto !important;
+        }
+      }
+      @media print {
+        body {
+          background: white;
+          color: black;
+        }
+        .hero {
+          background: none !important;
+          min-height: 0;
+        }
+        .hero h1,
+        .hero p {
+          color: black;
+        }
+        .paper,
+        .model,
+        .network-wrap {
+          box-shadow: none;
+        }
+        .controls,
+        .help,
+        .steps,
+        .imagebuttons {
+          display: none !important;
+        }
+        .stage.hidden {
+          display: block !important;
+          break-before: page;
+        }
+        .shell {
+          max-width: 100%;
+          padding: 0;
+        }
+        .footer {
+          color: #333;
+        }
+      }
+    </style>
+    <style>
+      /* AKTE 66 Forschungsreise 1.2: sprachsensibles, ruhiges Arbeitsgeruest */
+      .lernreise12-output {
+        margin: 10px 0 16px;
+        padding: 11px 14px;
+        border: 1px solid rgba(109, 143, 145, 0.32);
+        border-left: 4px solid #448f88;
+        border-radius: 9px;
+        background: rgba(74, 137, 133, 0.075);
+        color: inherit;
+        line-height: 1.55;
+        font-size: 0.96em;
+      }
+      .lernreise12-output strong {
+        font-weight: 750;
+      }
+      .lernreise12-help {
+        margin: 0 0 16px;
+        border: 1px solid rgba(124, 134, 138, 0.34);
+        border-radius: 8px;
+        background: rgba(127, 145, 144, 0.045);
+        font-size: 0.94em;
+        line-height: 1.5;
+      }
+      .lernreise12-help summary {
+        cursor: pointer;
+        padding: 9px 12px;
+        font-weight: 650;
+        list-style-position: inside;
+      }
+      .lernreise12-help p {
+        margin: 0;
+        padding: 0 12px 12px;
+        max-width: 78ch;
+      }
+      .lernreise12-output,
+      .lernreise12-help {
+        max-width: 85ch;
+      }
+      @media print {
+        .lernreise12-help p {
+          display: block;
+        }
+        .lernreise12-output {
+          break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero-inner">
+        <div class="eyebrow">AKTE 66 · Expedition ins verlorene Zeitalter · Mission 3</div>
+        <h1>Die Welt gerät<br />aus dem Gleichgewicht</h1>
+        <p>
+          Eine lebendige Landschaft. Eine Katastrophe, die den Himmel verdunkelt. Wie hängt das Leben der
+          Tiere vom Licht ab?
+        </p>
+        <p style="font-size: 13px; color: #e7d9bd">
+          Forschung: Hell-Creek-Lebensraum am Ende der Kreidezeit · ca. 66 Millionen Jahre vor heute
+        </p>
+      </div>
+    </header>
+    <main class="shell">
+      <div class="progress-area">
+        <div aria-label="Forschungsschritte" class="steps">
+          <button class="step-tab current" data-step="0">01 · Beobachten</button
+          ><button class="step-tab" data-step="1" disabled="">02 · Vernetzen</button
+          ><button class="step-tab" data-step="2" disabled="">03 · Erproben</button
+          ><button class="step-tab" data-step="3" disabled="">04 · Begründen</button>
+        </div>
+        <div class="step-counter" id="counter">Abschnitt 1 von 4</div>
+      </div>
+      <div class="spacer"><div class="fill" id="progress"></div></div>
+      <section class="stage" id="s0">
+        <div class="toprow">
+          <div>
+            <div class="eyebrow">Forschungsort · Nordamerika</div>
+            <h2>Was lebt an diesem Fluss?</h2>
+          </div>
+        </div>
+        <p class="lead">
+          Die Expedition hat die Landschaft der späten Kreidezeit rekonstruiert. Sieh dir zuerst das
+          Museumsdiorama an. Es zeigt eine nach Fossilien gestaltete Vorstellung eines damaligen Lebensraums –
+          keine Fotografie der Vergangenheit.
+        </p>
+        <div class="scene">
+          <figure class="panel" style="margin: 0">
+            <img
+              alt="Museumsdiorama: bewaldeter Flusslebensraum mit zwei kleinen dinosaurierähnlichen Raubtieren, Pflanzen und Baumstämmen"
+              id="openingImage"
+              src="{{asset:img/mission-3/museum-oeffnungsbild.jpg}}" />
+            <figcaption id="openingCaption">
+              Museumsdiorama der Hell-Creek-Formation, Milwaukee Public Museum. Foto: Michael Barera, CC BY-SA
+              4.0. Die Darstellung ist eine wissenschaftlich orientierte Rekonstruktion.
+            </figcaption>
+            <div class="imagebuttons">
+              <button aria-pressed="true" class="active" id="museumBtn">Museumsdiorama</button
+              ><button aria-pressed="false" id="artBtn">Künstlerische Landschaft</button>
+            </div>
+          </figure>
+          <div class="paper">
+            <div class="tag">Dein erster Forschungsauftrag</div>
+            <h3>Untersuche den Lebensraum</h3>
+            <ol>
+              <li>
+                <b>Beschreibe</b> mindestens drei Dinge, die du im Museumsbild erkennst: Tiere, Pflanzen oder
+                Bestandteile des Lebensraums.
+              </li>
+              <li>
+                <b>Vergleiche</b> die zweite Landschaftsdarstellung. Welche Tiergruppen und Pflanzen erkennst
+                du dort?
+              </li>
+              <li>
+                <b>Vermute</b>: Welche Lebewesen brauchen andere Lebewesen als Nahrung? Nenne zwei mögliche
+                Beziehungen.
+              </li>
+            </ol>
+            <div class="lernreise12-output" data-station="3" data-task="1">
+              <strong>Woran erkennst du, dass du fertig bist? </strong>Im Forscherheft: mindestens 3
+              Beobachtungen, 1 Vergleich der beiden Landschaften und 2 begründete Vermutungen zu Nahrung.
+            </div>
+            <details class="lernreise12-help">
+              <summary>Auftrag unklar? Begriffe und Vorgehen kurz erklärt</summary>
+              <p>
+                Beschreiben: Nur aufschreiben, was zu sehen ist. Vergleichen: Sage, was gleich oder
+                verschieden ist. Vermuten: Formuliere eine mögliche Erklärung – du musst sie noch nicht
+                beweisen.
+              </p>
+            </details>
+            <details class="prior">
+              <summary>🧭 Vorwissen: Was bedeutet „Ökosystem“?</summary>
+              <p>
+                Ein <b>Ökosystem</b> ist ein Lebensraum mit seinen Lebewesen und den Bedingungen, unter denen
+                sie leben – etwa Wasser, Boden, Temperatur und Sonnenlicht. Alle Teile können einander
+                beeinflussen.
+              </p>
+            </details>
+            <details class="prior">
+              <summary>🧭 Vorwissen: Was ist hier sicher, was nur rekonstruiert?</summary>
+              <p>
+                Fossilien belegen, dass bestimmte Arten in der Hell-Creek-Region lebten. Wie genau eine
+                einzelne Landschaft aussah oder welche Tiere gerade nebeneinander standen, wird von Fachleuten
+                anhand von Funden rekonstruiert. Die beiden Bilder sind deshalb <b>keine Beweisfotos</b>.
+              </p>
+            </details>
+            <div class="book">
+              <b>📓 Analoges Forscherheft:</b> Zeichne eine kleine Landschaftsskizze. Beschrifte mindestens
+              drei Lebewesen oder Umweltbestandteile und notiere zwei begründete Vermutungen über Nahrung.
+            </div>
+          </div>
+        </div>
+        <div class="help">
+          <button aria-expanded="false" type="button">💡 Arbeitshilfen bei Bedarf öffnen</button>
+          <div class="helps" hidden="">
+            <details>
+              <summary>Hilfe 1 · Genau hinsehen</summary>
+              <p>
+                Suche zuerst nach Pflanzen und Wasser. Betrachte dann die Körpermerkmale der Tiere, zum
+                Beispiel Zähne und Beine.
+              </p>
+            </details>
+            <details>
+              <summary>Hilfe 2 · Nahrung vermuten</summary>
+              <p>
+                Überlege: Was könnte ein Pflanzenfresser fressen? Was könnte ein Fleischfresser fressen? Sage
+                dazu, worauf sich deine Vermutung stützt.
+              </p>
+            </details>
+            <details>
+              <summary>Hilfe 3 · Satzstarter</summary>
+              <p>„Ich sehe … . Ich vermute, dass … , weil … .“</p>
+            </details>
+          </div>
+        </div>
+        <div class="controls">
+          <span></span><button class="btn primary" data-next="">Weiter zum Nahrungsnetz →</button>
+        </div>
+      </section>
+      <section class="stage hidden" id="s1">
+        <div class="toprow">
+          <div>
+            <div class="eyebrow">Forschungsgerät · Beziehungen erkennen</div>
+            <h2>Wer ist auf wen angewiesen?</h2>
+          </div>
+        </div>
+        <p class="lead">
+          Die Expedition untersucht jetzt nicht einzelne Tiere, sondern ihre Nahrungsbeziehungen. Eine
+          Verbindung zeigt, <b>woher Nahrung und Energie kommen</b>. Im Spiel werden Tiergruppen und Pflanzen
+          zusammengefasst, nicht einzelne Arten exakt nachgebildet.
+        </p>
+        <div class="scene">
+          <div class="network-wrap">
+            <div class="tag">Vereinfachtes Modell</div>
+            <div class="foodnodes">
+              <div class="foodnode">
+                <span class="emoji">🌿</span><b>Pflanzen</b><span class="small">nutzen Licht</span>
+              </div>
+              <div class="foodnode">
+                <span class="emoji">🦕</span><b>Große Pflanzenfresser</b
+                ><span class="small">fressen Pflanzen</span>
+              </div>
+              <div class="foodnode">
+                <span class="emoji">🦖</span><b>Große Fleischfresser</b
+                ><span class="small">fressen Tiere</span>
+              </div>
+              <div class="foodnode">
+                <span class="emoji">🪲</span><b>Kleine Pflanzenfresser</b
+                ><span class="small">z. B. Insekten</span>
+              </div>
+              <div class="foodnode">
+                <span class="emoji">🐸</span><b>Kleine Jäger</b
+                ><span class="small">fressen kleine Tiere</span>
+              </div>
+              <div class="foodnode">
+                <span class="emoji">🍄</span><b>Zersetzer</b><span class="small">bauen tote Reste ab</span>
+              </div>
+            </div>
+            <div class="arrowexplain">
+              <b>So liest du die Pfeile:</b> <b>Pflanzen → Pflanzenfresser</b> bedeutet: Die Pflanzen sind
+              Nahrung für die Pflanzenfresser. Der Pfeil zeigt in die Richtung, in der Nahrung und Energie
+              weitergegeben werden.
+            </div>
+            <h4 style="margin: 18px 0 7px">Wähle die passenden Verbindungen aus:</h4>
+            <div class="connections" id="connections"></div>
+            <button class="btn" id="checkNetwork" style="margin-top: 15px">Verbindungen überprüfen</button>
+            <div class="feedback hidden" id="networkFeedback" role="status"></div>
+          </div>
+          <div class="paper">
+            <div class="tag">Deine Untersuchung</div>
+            <h3>Baue ein Nahrungsnetz</h3>
+            <ol>
+              <li><b>Betrachte</b> die sechs Gruppen im Modell.</li>
+              <li>
+                <b>Wähle</b> die Verbindungen, die fachlich sinnvoll sind. Einige vorgeschlagene Pfeile sind
+                bewusst falsch.
+              </li>
+              <li><b>Prüfe</b> dein Netz und verbessere es, falls nötig.</li>
+              <li><b>Begründe</b>: Warum sind viele Lebewesen indirekt von Pflanzen abhängig?</li>
+            </ol>
+            <div class="lernreise12-output" data-station="3" data-task="2">
+              <strong>Woran erkennst du, dass du fertig bist? </strong>Im Forscherheft: 1 kurze Erklärung,
+              warum das Nahrungsnetz von Pflanzen abhängt. Im Modell: die Pfeile prüfen und bei Fehlern
+              verbessern.
+            </div>
+            <details class="lernreise12-help">
+              <summary>Auftrag unklar? Begriffe und Vorgehen kurz erklärt</summary>
+              <p>
+                Begründen bedeutet: Sage nicht nur, dass es so ist, sondern warum. Suche im Nahrungsnetz einen
+                Weg von Pflanzen zu einem Tier. Pfeile zeigen die Richtung des Nahrungs- und Energietransfers.
+              </p>
+            </details>
+            <details class="prior">
+              <summary>
+                🧭 Vorwissen: Was ist der Unterschied zwischen Nahrungskette und Nahrungsnetz?
+              </summary>
+              <p>
+                Eine <b>Nahrungskette</b> zeigt einen einzigen Weg, zum Beispiel Pflanze → Pflanzenfresser →
+                Fleischfresser. In einem <b>Nahrungsnetz</b> sind mehrere solcher Wege miteinander verbunden:
+                Tiere können unterschiedliche Nahrung nutzen.
+              </p>
+            </details>
+            <details class="prior">
+              <summary>🧭 Vorwissen: Was machen Zersetzer?</summary>
+              <p>
+                Pilze und Bakterien bauen abgestorbene Lebewesen und Reste ab. Dabei gelangen Nährstoffe in
+                den Boden oder das Wasser, die Pflanzen wieder aufnehmen können. Das ist nicht dasselbe wie
+                Sonnenenergie.
+              </p>
+            </details>
+            <div class="book">
+              <b>📓 Analoges Forscherheft:</b> Zeichne dein überprüftes Nahrungsnetz mit Pfeilen. Notiere
+              darunter zwei Sätze: „Diese Gruppe braucht …, weil …“ und „Ohne Pflanzen könnte …“.
+            </div>
+          </div>
+        </div>
+        <div class="help">
+          <button aria-expanded="false" type="button">💡 Arbeitshilfen bei Bedarf öffnen</button>
+          <div class="helps" hidden="">
+            <details>
+              <summary>Hilfe 1 · Start</summary>
+              <p>Beginne bei den Pflanzen. Wer kann Pflanzen fressen?</p>
+            </details>
+            <details>
+              <summary>Hilfe 2 · Pfeilrichtung</summary>
+              <p>Wenn ein Tier die Pflanze frisst, zeigt der Pfeil von der <b>Pflanze zum Tier</b>.</p>
+            </details>
+            <details>
+              <summary>Hilfe 3 · Fehler prüfen</summary>
+              <p>
+                Ein Fleischfresser benötigt Nahrung; er liefert Pflanzen aber keine Sonnenenergie. Überlege
+                bei jedem Pfeil: Wer wird hier gefressen?
+              </p>
+            </details>
+          </div>
+        </div>
+        <div class="controls">
+          <button class="btn" data-back="">← Zurück</button
+          ><button class="btn primary" data-next="" disabled="" id="nextNetwork">
+            Weiter zur Simulation →
+          </button>
+        </div>
+      </section>
+      <section class="stage hidden" id="s2">
+        <div class="toprow">
+          <div>
+            <div class="eyebrow">Forschungslabor · Szenario-Test</div>
+            <h2>Was geschieht, wenn es dunkel wird?</h2>
+          </div>
+        </div>
+        <p class="lead">
+          Nach dem Asteroideneinschlag gelangten große Mengen von Staub und anderen Teilchen in die
+          Atmosphäre. Dadurch erreichte zeitweise deutlich weniger Sonnenlicht die Erdoberfläche. Untersuche,
+          was das für das Nahrungsnetz bedeuten könnte.
+        </p>
+        <div class="scene">
+          <div class="model">
+            <div class="model-header">
+              <div>
+                <div class="eyebrow">Vereinfachtes Wirkungsmodell</div>
+                <b>Verändere die Lichtbedingungen</b>
+              </div>
+              <span id="lightLabel" style="color: #f2d18d; font-weight: 800">Helles Tageslicht</span>
+            </div>
+            <div class="light-options">
+              <button class="active" data-light="normal">☀️ Viel Licht</button
+              ><button data-light="less">🌤️ Weniger Licht</button
+              ><button data-light="dark">🌑 Stark verdunkelt</button>
+            </div>
+            <div class="light-warning">
+              Dieses Modell zeigt mögliche Zusammenhänge, keine gemessenen Bestandszahlen und keine genaue
+              Zeitskala.
+            </div>
+            <div class="model-track"><strong>1. Was ändert sich zunächst?</strong></div>
+            <div class="model-grid">
+              <div class="model-card">
+                <span class="emoji">🌿</span><b>Pflanzenproduktion</b>
+                <div class="state" id="plantsState">normal</div>
+              </div>
+              <div class="model-card">
+                <span class="emoji">🦕</span><b>Nahrung für Pflanzenfresser</b>
+                <div class="state" id="herbState">vorhanden</div>
+              </div>
+              <div class="model-card">
+                <span class="emoji">🦖</span><b>Nahrung für Fleischfresser</b>
+                <div class="state" id="carnState">vorhanden</div>
+              </div>
+            </div>
+            <div aria-live="polite" class="observation" id="modelExplanation">
+              Bei ausreichend Licht können Pflanzen Fotosynthese betreiben. So entsteht die Grundlage für
+              viele Nahrungsbeziehungen.
+            </div>
+            <div class="sequence">
+              <span>Licht</span><span class="arr">→</span><span>Fotosynthese</span><span class="arr">→</span
+              ><span>Pflanzennahrung</span><span class="arr">→</span><span>Tiere</span>
+            </div>
+          </div>
+          <div class="paper">
+            <div class="tag">Erst denken, dann testen</div>
+            <h3>Triff eine Vorhersage</h3>
+            <p>
+              <b
+                >Was wird wahrscheinlich zuerst direkt beeinträchtigt, wenn über längere Zeit viel weniger
+                Sonnenlicht ankommt?</b
+              >
+            </p>
+            <label class="choice"
+              ><input name="predict" type="radio" value="predator" /> Fleischfresser, weil sie kein
+              Sonnenlicht speichern.</label
+            ><label class="choice"
+              ><input name="predict" type="radio" value="plant" /> Die Fotosynthese der Pflanzen, weil sie
+              Licht benötigt.</label
+            ><label class="choice"
+              ><input name="predict" type="radio" value="all" /> Alle Lebewesen verlieren zur gleichen Zeit
+              sofort ihre Nahrung.</label
+            ><button class="btn" id="checkPredict">Vorhersage prüfen</button>
+            <div class="feedback hidden" id="predictFeedback" role="status"></div>
+            <hr style="border: 0; border-top: 1px solid #d5c7aa; margin: 18px 0" />
+            <h4>Erprobe danach die drei Lichtbedingungen.</h4>
+            <ol>
+              <li><b>Vergleiche</b> die drei Zustände und beschreibe die Veränderungen.</li>
+              <li>
+                <b>Erkläre</b> die zeitliche Abfolge: Warum sind Pflanzenfresser und Fleischfresser nicht
+                unbedingt sofort auf dieselbe Weise betroffen?
+              </li>
+              <li><b>Überlege</b>, welche Lebewesen möglicherweise weitere Nahrungsquellen haben.</li>
+            </ol>
+            <div class="lernreise12-output" data-station="3" data-task="3">
+              <strong>Woran erkennst du, dass du fertig bist? </strong>Im Forscherheft: 1 Beobachtung zu den
+              Lichtbedingungen, 1 Erklärung der zeitlichen Folgen und 1 mögliche Ausnahme.
+            </div>
+            <details class="lernreise12-help">
+              <summary>Auftrag unklar? Begriffe und Vorgehen kurz erklärt</summary>
+              <p>
+                Vergleichen: Betrachte die drei Lichtbedingungen nacheinander. Erklären: Nenne eine Ursache
+                und ihre Folge. Du kannst schreiben: „Wenn …, dann …, weil …“.
+              </p>
+            </details>
+            <details class="prior">
+              <summary>🧭 Vorwissen: Was ist Fotosynthese?</summary>
+              <p>
+                Grüne Pflanzen nutzen <b>Lichtenergie</b>, um aus Wasser und Kohlenstoffdioxid energiereiche
+                Stoffe herzustellen. Diese Stoffe dienen der Pflanze selbst und anderen Lebewesen als Nahrung.
+                Ohne Licht ist dieser Aufbau stark eingeschränkt.
+              </p>
+            </details>
+            <div class="book">
+              <b>📓 Analoges Forscherheft:</b> Schreibe deine Vorhersage auf. Zeichne danach eine
+              dreigliedrige Ursache-Wirkungs-Kette und erkläre sie mit eigenen Worten. Kennzeichne deine
+              Simulation als <b>Modell</b>.
+            </div>
+          </div>
+        </div>
+        <div class="help">
+          <button aria-expanded="false" type="button">💡 Arbeitshilfen bei Bedarf öffnen</button>
+          <div class="helps" hidden="">
+            <details>
+              <summary>Hilfe 1 · Woran hängen Pflanzen?</summary>
+              <p>
+                Suche in der Vorwissenshilfe, welchen Bestandteil Pflanzen für die Fotosynthese unbedingt
+                benötigen.
+              </p>
+            </details>
+            <details>
+              <summary>Hilfe 2 · Zeitlich denken</summary>
+              <p>
+                Ein Tier verliert nicht im selben Moment alle Nahrung, nur weil weniger Pflanzen neu wachsen.
+                Überlege, was zunächst noch vorhanden sein kann.
+              </p>
+            </details>
+            <details>
+              <summary>Hilfe 3 · Satzstarter</summary>
+              <p>
+                „Weniger Sonnenlicht führt zuerst dazu, dass … . Dadurch steht später für … weniger … zur
+                Verfügung.“
+              </p>
+            </details>
+          </div>
+        </div>
+        <div class="controls">
+          <button class="btn" data-back="">← Zurück</button
+          ><button class="btn primary" data-next="" disabled="" id="nextModel">
+            Weiter zur Forschungsentscheidung →
+          </button>
+        </div>
+      </section>
+      <section class="stage hidden" id="s3">
+        <div class="toprow">
+          <div>
+            <div class="eyebrow">Auswertung · Expedition</div>
+            <h2>Wie belastbar ist deine Erklärung?</h2>
+          </div>
+        </div>
+        <p class="lead">
+          Dein Modell verbindet Sonnenlicht, Pflanzen und Tiere. Jetzt brauchst du eine wissenschaftliche
+          Schlussfolgerung – und musst erkennen, was das Modell <em>nicht</em> sicher zeigen kann.
+        </p>
+        <div class="scene">
+          <div class="paper">
+            <div class="tag">Die Forschungsfrage</div>
+            <h3>Die Folgen des Einschlags erklären</h3>
+            <ol>
+              <li>
+                <b>Erkläre</b> mithilfe deines Nahrungsnetzes, wie eine länger anhaltende Verdunkelung die
+                Ernährung großer Dinosaurier erschweren konnte.
+              </li>
+              <li>
+                <b>Begründe</b>, warum ein Nahrungsnetz mehr erklärt als die Aussage „Alle Tiere hatten kein
+                Futter mehr“.
+              </li>
+              <li>
+                <b>Prüfe</b> eine Grenze des Modells: Warum kann es nicht vorhersagen, welche Tierarten
+                tatsächlich überlebten?
+              </li>
+            </ol>
+            <div class="lernreise12-output" data-station="3" data-task="4">
+              <strong>Woran erkennst du, dass du fertig bist? </strong>Im Forscherheft: eine
+              Ursache-Folge-Kette und 1 Grenze des Modells. Ein sachlicher Satz pro Teil genügt.
+            </div>
+            <details class="lernreise12-help">
+              <summary>Auftrag unklar? Begriffe und Vorgehen kurz erklärt</summary>
+              <p>
+                Prüfen bedeutet: Frage dich, was das Modell wirklich zeigt und was nicht. Begründen bedeutet:
+                Nenne einen konkreten Zusammenhang im Nahrungsnetz als Beleg. Ein Modell ist eine
+                Vereinfachung, kein vollständiger Bericht über alle Tierarten.
+              </p>
+            </details>
+            <p><b>Forscherentscheidung:</b> Welche Aussage ist am besten begründet?</p>
+            <label class="choice"
+              ><input name="conclude" type="radio" value="a" /> Ohne Sonnenlicht sterben immer sofort alle
+              Lebewesen.</label
+            ><label class="choice"
+              ><input name="conclude" type="radio" value="b" /> Weniger Licht kann die Pflanzenproduktion
+              verringern und so über verschiedene Wege Nahrungsnetze beeinträchtigen. Wie stark einzelne Arten
+              betroffen waren, braucht weitere Belege.</label
+            ><label class="choice"
+              ><input name="conclude" type="radio" value="c" /> Licht und Ernährung stehen in keinem
+              Zusammenhang.</label
+            ><button class="btn" id="checkConclusion">Entscheidung überprüfen</button>
+            <div class="feedback hidden" id="conclusionFeedback" role="status"></div>
+            <div class="book">
+              <b>📓 Analoges Forscherheft:</b> Verfasse einen Forschungsabschnitt von etwa 5–7 Sätzen:
+              <b>Beobachtung – Ursache – Folgen – Grenze des Modells</b>. Nutze dazu dein Nahrungsnetz und die
+              Simulation.
+            </div>
+          </div>
+          <div class="panel" style="padding: 25px">
+            <div class="eyebrow">Eine wissenschaftliche Grenze</div>
+            <h3
+              style="
+                font:
+                  700 27px Georgia,
+                  serif;
+                margin-top: 10px;
+                color: #ffe5b4;
+              ">
+              Ein Modell ist keine Zeitmaschine.
+            </h3>
+            <p>
+              Die dargestellten Nahrungswege sind vereinfacht. Im wirklichen Hell-Creek-Ökosystem gab es viel
+              mehr Pflanzen, Tiere, Nahrungsquellen und Wechselwirkungen. Auch der Lichtverlust war kein
+              überall gleich verlaufendes Ereignis.
+            </p>
+            <p>
+              Das Modell hilft, einen <b>möglichen Zusammenhang</b> zu verstehen. Welche Arten genau warum
+              ausstarben oder überlebten, muss zusätzlich mit Fossilien und weiteren wissenschaftlichen
+              Befunden untersucht werden.
+            </p>
+            <div class="notice">
+              🎒 <b>Expeditionsfund:</b> Du hast untersucht, wie ein geologisches Ereignis biologische Folgen
+              haben kann. Die nächsten Missionen verknüpfen solche Teil-Erklärungen miteinander.
+            </div>
+          </div>
+        </div>
+        <div class="help">
+          <button aria-expanded="false" type="button">💡 Arbeitshilfen bei Bedarf öffnen</button>
+          <div class="helps" hidden="">
+            <details>
+              <summary>Hilfe 1 · Gliederung</summary>
+              <p>
+                Schreibe zuerst, <b>was</b> verändert wurde. Dann erläutere die Folge für Pflanzen,
+                anschließend für Pflanzenfresser und zuletzt für Fleischfresser.
+              </p>
+            </details>
+            <details>
+              <summary>Hilfe 2 · Argumentieren</summary>
+              <p>
+                Begründe eine Aussage mit einer Verbindung aus deinem Nahrungsnetz. Verwende „weil“, „dadurch“
+                oder „deshalb“.
+              </p>
+            </details>
+            <details>
+              <summary>Hilfe 3 · Grenze des Modells</summary>
+              <p>
+                Im Modell stehen Gruppen statt einzelner Arten. Was kann deshalb nicht genau vorhergesagt
+                werden?
+              </p>
+            </details>
+          </div>
+        </div>
+        <div class="controls">
+          <button class="btn" data-back="">← Zurück zur Simulation</button
+          ><button class="btn primary" onclick="window.print()" type="button">
+            Forschungsaufträge drucken
+          </button>
+        </div>
+      </section>
+      <footer class="footer">
+        <strong>Quellen und Transparenz</strong>
+        <p>
+          Museumsdiorama: Milwaukee Public Museum (Hell Creek), Foto von Michael Barera,
+          <a
+            href="https://commons.wikimedia.org/wiki/File:Milwaukee_Public_Museum_October_2023_33_(Exploring_Life_on_Earth--Hell_Creek_Formation_Montana_65_Million_Years_Ago).jpg"
+            >CC BY-SA 4.0</a
+          >. Landschaft: eigens erzeugte künstlerische Rekonstruktion; kein historisches Foto. Simulation und
+          Pfeilnetz: eigens erstellte, bewusst vereinfachte didaktische Modelle ohne reale Bestandszahlen.
+          Fachliche Grundlage:
+          <a href="https://www.lpi.usra.edu/science/kring/Chicxulub/global-effects/"
+            >Lunar and Planetary Institute – Globale Folgen von Chicxulub</a
+          >;
+          <a href="https://pubmed.ncbi.nlm.nih.gov/24821785/"
+            >Vellekoop et al. (2014) – kurzfristige Abkühlung nach dem Einschlag</a
+          >. Alle Bilder und Funktionen sind in dieser Datei gespeichert. Die Quellenlinks sind nur
+          freiwillige Zusatzinformationen, nicht zum Spielen erforderlich.
+        </p>
+      </footer>
+    </main>
+    <script>
+      (() => {
+        "use strict";
+        const stepEls = [...document.querySelectorAll(".stage")],
+          tabs = [...document.querySelectorAll("[data-step]")];
+        let step = 0,
+          unlocked = 0;
+        let networkOK = false,
+          predictOK = false,
+          simExplored = new Set();
+        function show(n) {
+          if (n < 0 || n > unlocked) return;
+          step = n;
+          stepEls.forEach((el, i) => el.classList.toggle("hidden", i !== n));
+          tabs.forEach((el, i) => {
+            el.disabled = i > unlocked;
+            el.classList.toggle("current", i === n);
+            el.setAttribute("aria-current", i === n ? "step" : "false");
+          });
+          document.querySelector("#counter").textContent = "Abschnitt " + (n + 1) + " von 4";
+          document.querySelector("#progress").style.width = (n / 3) * 100 + "%";
+          scrollTo(0, 0);
+        }
+        document.querySelectorAll("[data-next]").forEach((b) =>
+          b.addEventListener("click", () => {
+            unlocked = Math.max(unlocked, step + 1);
+            show(step + 1);
+          }),
+        );
+        document
+          .querySelectorAll("[data-back]")
+          .forEach((b) => b.addEventListener("click", () => show(step - 1)));
+        tabs.forEach((t, i) => t.addEventListener("click", () => show(i)));
+        document.querySelectorAll(".help>button").forEach((b) =>
+          b.addEventListener("click", () => {
+            const el = b.nextElementSibling;
+            el.hidden = !el.hidden;
+            b.setAttribute("aria-expanded", String(!el.hidden));
+          }),
+        );
+        const museum = "{{asset:img/mission-3/museum-oeffnungsbild.jpg}}";
+        const land = "{{asset:img/mission-3/hero-landschaft.jpg}}";
+        const introImage = document.querySelector("#openingImage"),
+          introCap = document.querySelector("#openingCaption");
+        function switchImage(which) {
+          let isMuseum = which === "museum";
+          introImage.src = isMuseum ? museum : land;
+          introImage.alt = isMuseum
+            ? "Museumsdiorama mit kleinen Dinosauriern und Pflanzen in einer rekonstruierten Hell-Creek-Landschaft"
+            : "Künstlerische Rekonstruktion einer Kreidezeit-Landschaft mit Pflanzenfressern, Fleischfresser, Bäumen und Gewässer";
+          introCap.textContent = isMuseum
+            ? "Museumsdiorama der Hell-Creek-Formation, Milwaukee Public Museum. Foto: Michael Barera, CC BY-SA 4.0. Wissenschaftlich orientierte Rekonstruktion."
+            : "Eigens gestaltete künstlerische Rekonstruktion zur Orientierung. Die gemeinsame Darstellung dieser Tiere ist kein direkter fossiler Nachweis.";
+          for (let [id, val] of [
+            ["museumBtn", "museum"],
+            ["artBtn", "art"],
+          ]) {
+            let active = val === which;
+            document.getElementById(id).classList.toggle("active", active);
+            document.getElementById(id).setAttribute("aria-pressed", String(active));
+          }
+        }
+        document.querySelector("#museumBtn").onclick = () => switchImage("museum");
+        document.querySelector("#artBtn").onclick = () => switchImage("art");
+        const relations = [
+          { t: "Pflanzen → große Pflanzenfresser", v: true },
+          { t: "Pflanzen → kleine Pflanzenfresser", v: true },
+          { t: "Große Pflanzenfresser → große Fleischfresser", v: true },
+          { t: "Kleine Pflanzenfresser → kleine Jäger", v: true },
+          { t: "Fleischfresser → Sonnenlicht für Pflanzen", v: false },
+          { t: "Abgestorbene Pflanzen- und Tierreste → Zersetzer", v: true },
+          { t: "Große Fleischfresser → lebende Pflanzen als Hauptnahrung", v: false },
+        ];
+        const conn = document.querySelector("#connections");
+        relations.forEach((r, i) => {
+          const b = document.createElement("button");
+          b.type = "button";
+          b.className = "connection";
+          b.setAttribute("aria-pressed", "false");
+          b.dataset.index = i;
+          b.innerHTML = '<span class="mark">+</span><span>' + r.t + "</span>";
+          b.onclick = () => {
+            let active = b.getAttribute("aria-pressed") !== "true";
+            b.setAttribute("aria-pressed", String(active));
+            b.querySelector(".mark").textContent = active ? "✓" : "+";
+            document.querySelector("#networkFeedback").classList.add("hidden");
+            document.querySelector("#nextNetwork").disabled = true;
+          };
+          conn.appendChild(b);
+        });
+        document.querySelector("#checkNetwork").onclick = () => {
+          let buttons = [...conn.querySelectorAll("button")];
+          let wrong = buttons.filter(
+            (b, i) => (b.getAttribute("aria-pressed") === "true") !== relations[i].v,
+          );
+          let f = document.querySelector("#networkFeedback");
+          f.classList.remove("hidden");
+          f.classList.toggle("warn", wrong.length > 0);
+          if (wrong.length) {
+            f.textContent =
+              "Noch " +
+              wrong.length +
+              " Verbindung(en) passen nicht. Prüfe bei jedem Pfeil: Wer liefert hier Nahrung oder Energie – und wer nutzt sie? Die Hilfen unterstützen dich.";
+          } else {
+            f.textContent =
+              "Dein Nahrungsnetz ist in diesem Modell schlüssig. Übertrage die passenden Pfeile jetzt ins analoge Forscherheft und begründe die Abhängigkeit von den Pflanzen.";
+            networkOK = true;
+            document.querySelector("#nextNetwork").disabled = false;
+          }
+        };
+        document.querySelector("#checkPredict").onclick = () => {
+          let selected = document.querySelector("input[name=predict]:checked");
+          let f = document.querySelector("#predictFeedback");
+          f.classList.remove("hidden");
+          if (!selected) {
+            f.classList.add("warn");
+            f.textContent = "Triff zuerst eine Vorhersage.";
+          } else if (selected.value === "plant") {
+            f.classList.remove("warn");
+            f.textContent =
+              "Das ist gut begründet: Ohne genügend Licht ist Fotosynthese stark eingeschränkt. Die Folgen für Tiere zeigen sich über die Nahrungsketten und nicht notwendigerweise zeitgleich.";
+            predictOK = true;
+            updateModelNext();
+          } else {
+            f.classList.add("warn");
+            f.textContent =
+              "Überlege, welcher Vorgang das Licht direkt benötigt. Öffne bei Bedarf die Vorwissenshilfe zur Fotosynthese.";
+          }
+        };
+        const conditions = {
+          normal: {
+            label: "Helles Tageslicht",
+            states: ["normal", "vorhanden", "vorhanden"],
+            text: "Bei ausreichend Licht können Pflanzen Fotosynthese betreiben. So entsteht die Grundlage vieler Nahrungsbeziehungen.",
+            bg: "#1b3c32",
+          },
+          less: {
+            label: "Weniger Sonnenlicht",
+            states: ["verringert", "mit Verzögerung weniger", "später weniger"],
+            text: "Pflanzen können bei vermindertem Licht weniger neue Biomasse aufbauen. Pflanzenfresser finden zunächst eventuell noch Nahrung; bei anhaltendem Lichtmangel werden die Vorräte knapper. Danach können auch Fleischfresser betroffen sein.",
+            bg: "#47503a",
+          },
+          dark: {
+            label: "Starke Verdunkelung",
+            states: [
+              "stark eingeschränkt",
+              "Nahrungsengpässe wahrscheinlich",
+              "Folgen über das Nahrungsnetz",
+            ],
+            text: "Bei länger anhaltender starker Verdunkelung ist die Fotosynthese stark beeinträchtigt. Über die Nahrungsbeziehungen können sich schwerwiegende Folgen ausbreiten. Wie schnell und stark dies abläuft, hängt vom Lebensraum und weiteren Nahrungsquellen ab.",
+            bg: "#403d3b",
+          },
+        };
+        function updateModelNext() {
+          document.querySelector("#nextModel").disabled = !(predictOK && simExplored.size === 3);
+        }
+        document.querySelectorAll("[data-light]").forEach(
+          (b) =>
+            (b.onclick = () => {
+              let val = b.dataset.light;
+              simExplored.add(val);
+              let d = conditions[val];
+              document.querySelector("#lightLabel").textContent = d.label;
+              document.querySelector("#plantsState").textContent = d.states[0];
+              document.querySelector("#herbState").textContent = d.states[1];
+              document.querySelector("#carnState").textContent = d.states[2];
+              document.querySelector("#modelExplanation").textContent = d.text;
+              document.querySelectorAll(".model-card").forEach((card) => (card.style.background = d.bg));
+              document.querySelectorAll("[data-light]").forEach((x) => x.classList.toggle("active", x === b));
+              updateModelNext();
+            }),
+        );
+        document.querySelector("#checkConclusion").onclick = () => {
+          let selected = document.querySelector("input[name=conclude]:checked"),
+            f = document.querySelector("#conclusionFeedback");
+          f.classList.remove("hidden");
+          if (!selected) {
+            f.classList.add("warn");
+            f.textContent = "Wähle zuerst eine Aussage aus.";
+          } else if (selected.value === "b") {
+            f.classList.remove("warn");
+            f.textContent =
+              "Diese Erklärung unterscheidet nachvollziehbare Modellzusammenhänge von noch offenen Fragen. Formuliere nun deine eigene Begründung im analogen Forscherheft.";
+          } else {
+            f.classList.add("warn");
+            f.textContent =
+              "Prüfe noch einmal: Zeigt das Modell, dass alle Lebewesen sofort aussterben – oder dass Nahrungsketten auf verschiedene Weise betroffen sein können?";
+          }
+        };
+        show(0);
+      })();
+    </script>
+  </body>
+</html>

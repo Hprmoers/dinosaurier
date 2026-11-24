@@ -1,28 +1,755 @@
-<!DOCTYPE html>
-<html lang="de"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>AKTE 66 – Mission 7 · Der Forschungskongress</title><style>
-:root{--dark:#0d1920;--gold:#d8a45c;--ink:#29271f;--paper:#fcf3df}*{box-sizing:border-box}body{margin:0;background:var(--dark);color:#f5ecde;font:17px/1.5 system-ui,-apple-system,Arial,sans-serif}button,select{font:inherit}button{cursor:pointer}button:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid #ffca76;outline-offset:3px}.hero{min-height:260px;padding:35px 5vw;background:linear-gradient(90deg,#101719f5,#101719dc 42%,#10171916),url({{asset:img/mission-7/hero-kongress.jpg}}) center/cover}.hero h1{font:700 clamp(2rem,4.4vw,3.5rem) Georgia,serif;color:#ffe2a4;margin:4px 0}.hero p{max-width:620px}.eyebrow{letter-spacing:.13em;text-transform:uppercase;color:#f2cb83;font-size:.85rem;font-weight:700}main{max-width:1210px;margin:auto;padding:22px}.layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:18px}.sidebar{background:#14252c;border:1px solid #70563a;border-radius:20px;padding:17px;height:max-content;position:sticky;top:14px}.sidebar button{display:block;width:100%;text-align:left;background:#20333d;color:#fff2d8;border:1px solid #655641;border-radius:12px;padding:11px;margin:9px 0}.sidebar button.current{background:#755129}.paper{background:var(--paper);color:var(--ink);border-radius:22px;padding:clamp(18px,3vw,35px);min-width:0;box-shadow:0 15px 28px #0005}.step{display:none}.step.active{display:block}.paper h2{font:700 2rem Georgia,serif;margin:0 0 13px}.paper h3{font:700 1.24rem Georgia,serif}.intro{font-size:1.08rem}.panel{background:#fffaf0;border:1px solid #d4ae71;padding:16px;border-radius:14px;margin:16px 0}.help{background:#f1e3c9;border:1px solid #c9a56d;padding:10px 14px;border-radius:12px;margin:12px 0}.help summary{font-weight:700;cursor:pointer}.task{background:#f2e3ca;border-left:5px solid #986326;padding:12px 17px;border-radius:12px;margin:15px 0}.book{background:#e7efe5;border-left:5px solid #3a7755;padding:13px 17px;border-radius:12px;margin:14px 0}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:17px}.btn{border:none;background:#185a46;color:white;padding:12px 17px;border-radius:12px;font-weight:700}.btn.alt{background:#3b4d57}.route{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}.route div{background:#e7d3aa;border-radius:12px;padding:12px;text-align:center;font-weight:700}.route small{display:block;font-weight:400;font-size:.85rem}.quality{display:grid;grid-template-columns:1fr 1fr;gap:11px}.quality article{background:#fffaf0;border:1px solid #d4b587;border-radius:13px;padding:14px}.quality strong{display:block}.quality select{width:100%;margin-top:8px;padding:8px;color:#222;background:#fff;border:1px solid #92744f;border-radius:8px}.question{background:#fffaf0;border:1px solid #ccb184;padding:16px;border-radius:15px;margin:10px 0}.question button{color:#fff;background:#3e5158;border:0;border-radius:10px;padding:9px 12px}.question .answer{display:none;margin-top:12px;padding:11px;border-radius:9px;background:#e7f0ec}.question .answer.show{display:block}.status{padding:13px;border-radius:12px;margin-top:12px;background:#f2e5cc;font-weight:650}.status.ok{background:#d9efdf;color:#145237}.muted{font-size:.9rem;color:#514b40}footer{color:#e0c7a1;text-align:center;padding:25px}@media(max-width:850px){.layout{grid-template-columns:1fr}.sidebar{position:static}.route,.quality{grid-template-columns:1fr}.hero{min-height:230px}}@media print{.hero,.sidebar,.actions,footer{display:none!important}.step{display:block!important;break-after:page}.paper{box-shadow:none}body{background:white}}
-</style><style>
-/* AKTE 66 Forschungsreise 1.2: sprachsensibles, ruhiges Arbeitsgeruest */
-.lernreise12-output{margin:10px 0 16px;padding:11px 14px;border:1px solid rgba(109,143,145,.32);border-left:4px solid #448f88;border-radius:9px;background:rgba(74,137,133,.075);color:inherit;line-height:1.55;font-size:.96em}
-.lernreise12-output strong{font-weight:750}
-.lernreise12-help{margin:0 0 16px;border:1px solid rgba(124,134,138,.34);border-radius:8px;background:rgba(127,145,144,.045);font-size:.94em;line-height:1.5}
-.lernreise12-help summary{cursor:pointer;padding:9px 12px;font-weight:650;list-style-position:inside}
-.lernreise12-help p{margin:0;padding:0 12px 12px;max-width:78ch}
-.lernreise12-output,.lernreise12-help{max-width:85ch}
-@media print{.lernreise12-help p{display:block}.lernreise12-output{break-inside:avoid}}
-</style></head><body><header class="hero"><div class="eyebrow">AKTE 66 · Expedition ins verlorene Zeitalter</div><h1>Mission 7 · Der Forschungskongress</h1><p>Du hast Spuren gesammelt, Hypothesen geprüft und Zusammenhänge rekonstruiert. Jetzt bereitest du deinen Fachvortrag vor – für deine Klasse und deine Lehrkraft als echtes Fachpublikum.</p></header><main><div class="layout"><aside class="sidebar"><div class="eyebrow">Kongressvorbereitung</div><button class="current" data-step="0">1 · Deine Forschungsrolle</button><button data-step="1">2 · Der Beweisgang</button><button data-step="2">3 · Vortrag üben</button><button data-step="3">4 · Fachfragen &amp; Heft-Check</button><p>Alles Schriftliche kommt in dein <b>analoges Forscherheft</b>. Hier gibt es keine digitale Abgabe.</p></aside><div class="paper">
-<section class="step active" id="s0"><div class="eyebrow">Vorbereitungsphase 1</div><h2>Deine Forschungsrolle</h2><p class="intro">Die Expedition lädt dich zum Kongress der Erdgeschichte ein. Du sprichst als Forschende oder Forschender und beantwortest eine zentrale Frage:</p><div class="panel"><strong>Warum starben vor rund 66 Millionen Jahren so viele Arten aus – und warum überlebten andere?</strong></div><p>Wähle eine Rolle, die zu deinen Interessen passt: Du kannst als geologisch Forschende, als Fachperson für Ökosysteme oder als Mitglied der Expeditionsleitung sprechen. Die wissenschaftlichen Anforderungen sind für alle gleich.</p><div class="task"><strong>Auftrag</strong><ol><li>Wähle eine Forschungsrolle und gib deinem Vortrag einen eigenen Titel.</li><li>Schlage dein analoges Forscherheft auf und markiere drei Ergebnisse, die du im Vortrag zeigen möchtest.</li><li>Überlege, mit welcher Beobachtung oder Forschungsfrage du dein Publikum neugierig machen kannst.</li></ol><div class="lernreise12-output" data-station="7" data-task="1"><strong>Woran erkennst du, dass du fertig bist? </strong>Im Forscherheft: 3 markierte Forschungsergebnisse und 1 Vortragstitel. Das ist die Materialauswahl, noch kein ausformulierter Vortrag.</div><details class="lernreise12-help"><summary>Auftrag unklar? Begriffe und Vorgehen kurz erklärt</summary><p>Wähle drei Ergebnisse, die wirklich etwas zur Leitfrage beitragen. Ein guter Vortrag beginnt mit einer klaren Frage oder einer überraschenden Beobachtung – nicht mit allen Details auf einmal.</p></details></div><details class="help"><summary>🧭 Vorwissenshilfe · Was ist ein Fachvortrag?</summary><p>Du erklärst eine Frage mit Fachwissen und Belegen. Ein Fachvortrag ist mehr als eine Nacherzählung: Du zeigst, <em>woher</em> du deine Erkenntnisse hast und <em>warum</em> du deine Schlussfolgerung für überzeugend hältst.</p></details><div class="book"><b>📓 Forscherheft:</b> Titel, gewählte Rolle, Leitfrage und die Seitenzahlen deiner drei ausgewählten Befunde.</div><div class="actions"><button class="btn" data-next="">Weiter · Beweisgang ordnen</button></div></section>
-<section class="step" id="s1"><div class="eyebrow">Vorbereitungsphase 2</div><h2>So wird aus Funden eine Erklärung</h2><p>Ein überzeugender Vortrag reiht keine Begriffe aneinander. Er zeigt, wie die Belege zusammenhängen.</p><div class="route"><div>Frage<small>Was ist zu erklären?</small></div><div>Belege<small>Was wurde gefunden?</small></div><div>Wirkung<small>Welche Folgen hatte es?</small></div><div>Prüfung<small>Was ist unsicher?</small></div><div>Urteil<small>Was ist am besten begründet?</small></div></div><div class="task"><strong>Auftrag</strong><ol><li>Hol deine Hypothese aus dem Expeditionsauftakt hervor: Vergleiche sie mit deinen Belegen. Was hat sich bestätigt, was musstest du anpassen?</li><li>Ordne deine drei ausgewählten Belege dieser Vortragsroute zu. Erkläre jeweils, was der Befund zeigt.</li><li>Erstelle eine Ursache-Wirkungs-Kette: Einschlag → Veränderungen der Umwelt → weniger Pflanzenproduktion → Folgen für Nahrungsbeziehungen.</li><li>Ergänze die Überlebensfrage: Warum waren nicht alle Organismengruppen gleich betroffen? Was wissen wir nicht sicher?</li><li>Beziehe die heutigen Vögel richtig ein: Sie sind Nachfahren überlebender Dinosaurierlinien.</li></ol><div class="lernreise12-output" data-station="7" data-task="2"><strong>Woran erkennst du, dass du fertig bist? </strong>Im Forscherheft: 3 ausgewählte Belege, eine einfache Ursache-Folge-Kette und ein überprüfter Vergleich mit deiner ersten Hypothese.</div><details class="lernreise12-help"><summary>Auftrag unklar? Begriffe und Vorgehen kurz erklärt</summary><p>Ein Beleg ist ein untersuchter Befund. Erklären heißt: Sage, was der Beleg für eure Forschungsfrage bedeutet. Ursache-Folge-Kette: Verbinde wenige Schlüsselwörter mit Pfeilen; keine aufwendige Zeichnung nötig.</p></details></div><details class="help"><summary>🧭 Vorwissenshilfe · Beleg oder Erklärung?</summary><p><b>Beleg:</b> ein untersuchter Befund, zum Beispiel Schockquarz oder eine gemessene Iridiumanreicherung. <b>Erklärung:</b> das, was aus mehreren Belegen begründet geschlossen wird. Ein Nahrungsnetz ist dagegen ein vereinfachtes Modell, mit dem man Folgen durchdenken kann.</p></details><details class="help"><summary>💡 Denkstütze · Ein Abschnitt fehlt mir</summary><p>Frage dich nacheinander: „Was weiß ich aus meinem Heft?“ – „Was bedeutet das?“ – „Wie passt es zur Leitfrage?“ Nutze einen Pfeil oder eine kleine Skizze, statt einen langen Text vorzuschreiben.</p></details><div class="book"><b>📓 Forscherheft:</b> Zeichne deine Vortragsroute mit fünf Stationen. Notiere zu jedem Abschnitt Stichworte und die passende Heftseite.</div><div class="actions"><button class="btn alt" data-back="">Zurück</button><button class="btn" data-next="">Weiter · Qualitätscheck</button></div></section>
-<section class="step" id="s2"><div class="eyebrow">Vorbereitungsphase 3</div><h2>Dein Vortrag muss überzeugen</h2><p>Diese sechs Qualitätsmarker gelten seit Beginn der Expedition. Nutze sie jetzt für einen Probedurchlauf. Du sprichst <b>4–5 Minuten</b>; danach beantwortest du etwa <b>2 Minuten Fachfragen</b>.</p><div class="quality">
-<article><strong>1 · Fachlich richtig</strong>Stimmen Ursache, Folgen, Nahrungsnetz und die Einordnung der Vögel?<select aria-label="Fachlichkeit"><option value="">Selbsteinschätzung wählen</option><option>sicher erfüllt</option><option>teilweise erfüllt</option><option>noch zu üben</option></select></article>
-<article><strong>2 · Mit Belegen</strong>Erkläre ich mindestens drei konkrete Befunde und ihre Bedeutung?<select aria-label="Belegführung"><option value="">Selbsteinschätzung wählen</option><option>sicher erfüllt</option><option>teilweise erfüllt</option><option>noch zu üben</option></select></article>
-<article><strong>3 · Zusammenhänge</strong>Erkläre ich Zwischenschritte der Wirkungskette, statt nur Ereignisse aufzuzählen?<select aria-label="Erklärung"><option value="">Selbsteinschätzung wählen</option><option>sicher erfüllt</option><option>teilweise erfüllt</option><option>noch zu üben</option></select></article>
-<article><strong>4 · Kritisches Denken</strong>Nenne ich eine Unsicherheit, Alternative oder Grenze des Modells?<select aria-label="Kritisches Denken"><option value="">Selbsteinschätzung wählen</option><option>sicher erfüllt</option><option>teilweise erfüllt</option><option>noch zu üben</option></select></article>
-<article><strong>5 · Verständlich sprechen</strong>Ist mein Aufbau klar, erkläre ich Fachbegriffe und spreche ich überwiegend frei?<select aria-label="Sprache"><option value="">Selbsteinschätzung wählen</option><option>sicher erfüllt</option><option>teilweise erfüllt</option><option>noch zu üben</option></select></article>
-<article><strong>6 · Zeigen &amp; antworten</strong>Helfen meine Heftskizzen beim Erklären? Kann ich Fragen mit Belegen beantworten?<select aria-label="Anschauung"><option value="">Selbsteinschätzung wählen</option><option>sicher erfüllt</option><option>teilweise erfüllt</option><option>noch zu üben</option></select></article>
-</div><div class="task"><strong>Auftrag</strong><ol><li>Halte deinen Vortrag probeweise laut – mit deinen Heftnotizen, aber ohne einen ausformulierten Text abzulesen.</li><li>Schätze dich bei jedem Qualitätsmarker ein.</li><li>Wähle <b>einen</b> Marker, den du als Nächstes verbesserst. Probiere diesen Teil noch einmal.</li></ol><div class="lernreise12-output" data-station="7" data-task="3"><strong>Woran erkennst du, dass du fertig bist? </strong>Nach der Probe: 1 Stärke und 1 konkreten Verbesserungspunkt festhalten. Dann den betroffenen Vortragsteil noch einmal sprechen.</div><details class="lernreise12-help"><summary>Auftrag unklar? Begriffe und Vorgehen kurz erklärt</summary><p>Ein Qualitätsmarker ist ein Merkmal eines guten Vortrags. Prüfe, ob du verständlich sprichst und Belege nennst. Eine Verbesserung reicht für diese Runde – du musst nicht alles gleichzeitig ändern.</p></details></div><details class="help"><summary>🧭 Vorwissenshilfe · Wie nutze ich Stichworte?</summary><p>Notiere Schlüsselwörter, nicht ganze Sätze. Sprich frei zu einer Skizze. Ein hilfreicher Satzanfang lautet: „Diesen Befund sehen wir hier … Er deutet darauf hin, dass …“</p></details><div class="book"><b>📓 Forscherheft:</b> Übertrage deine sechs Selbsteinschätzungen. Schreibe eine konkrete Verbesserung für den Probedurchlauf auf.</div><div class="actions"><button class="btn alt" data-back="">Zurück</button><button class="btn" data-next="">Weiter · Fachfragen</button></div></section>
-<section class="step" id="s3"><div class="eyebrow">Vorbereitungsphase 4</div><h2>Auf kritische Fragen vorbereitet sein</h2><p>Dein Fachpublikum besteht im Unterricht aus Mitschülerinnen, Mitschülern und Lehrkraft. Übe vorher mit zwei zufällig ausgewählten Fragen. Es gibt hier keine virtuelle Jury und keine automatische Benotung.</p><div id="questions"></div><button class="btn alt" id="draw">Zwei neue Übungsfragen ziehen</button><div class="task"><strong>Auftrag</strong><ol><li>Beantworte beide Fragen laut und nutze dein Forscherheft als Belegsammlung.</li><li>Markiere eine Frage, die du noch nicht überzeugend beantworten kannst.</li><li>Ergänze in deinem Heft den dafür fehlenden Hinweis. Nach dem realen Kongress notierst du, welche Rückfrage deine Erklärung verändert hat.</li></ol><div class="lernreise12-output" data-station="7" data-task="4"><strong>Woran erkennst du, dass du fertig bist? </strong>Im Forscherheft: Stichworte zu beiden kritischen Fragen und 1 weiterer Hinweis, den du noch nachschlagen musst.</div><details class="lernreise12-help"><summary>Auftrag unklar? Begriffe und Vorgehen kurz erklärt</summary><p>Kritische Fragen prüfen, wie gut deine Erklärung begründet ist. Wenn du etwas noch nicht weißt, sage, was die bisherigen Belege zeigen und welche zusätzliche Information fehlen würde.</p></details></div><details class="help"><summary>💡 Denkstütze · Wenn du die Antwort nicht weißt</summary><p>Eine gute wissenschaftliche Antwort darf ihre Grenze nennen: „Das zeigen unsere Belege … Zu dieser Frage können wir noch keine sichere Aussage machen, weil …“</p></details><div class="book"><b>📓 Forscherheft:</b> Heftseite mit Vortragsgliederung, Qualitätscheck und zwei kritischen Fragen sichern. Nach dem Vortrag folgt eine kurze Selbstreflexion.</div><div class="panel"><b>Abschluss-Check</b><div><label><input class="done" type="checkbox"/> Ich habe meine Hypothese aus dem Expeditionsauftakt mit meinem Ergebnis verglichen.</label></div><div><label><input class="done" type="checkbox"/> Meine Vortragsroute steht im Heft.</label></div><div><label><input class="done" type="checkbox"/> Ich habe mindestens drei Belege und eine Wirkungskette.</label></div><div><label><input class="done" type="checkbox"/> Ich habe den Vortrag laut geübt.</label></div><div><label><input class="done" type="checkbox"/> Meine Qualitätsmarker sind im Heft eingeschätzt.</label></div><div><label><input class="done" type="checkbox"/> Ich habe zwei Fachfragen geübt.</label></div></div><button class="btn" id="finish">Kongressvorbereitung abschließen</button><div aria-live="polite" class="status" id="status" role="status">Noch nicht abgeschlossen.</div><div class="actions"><button class="btn alt" data-back="">Zurück zum Qualitätscheck</button></div></section>
-</div></div></main><footer>AKTE 66 · Die Präsentation und das Feedback finden im realen Unterricht statt. Diese Datei funktioniert offline.</footer><script>
-(()=>{const steps=[...document.querySelectorAll('.step')],nav=[...document.querySelectorAll('[data-step]')];function show(n){steps.forEach((s,i)=>s.classList.toggle('active',n===i));nav.forEach((b,i)=>b.classList.toggle('current',n===i));requestAnimationFrame(()=>document.querySelector('.paper').scrollIntoView({behavior:'instant',block:'start'}))}nav.forEach((b,i)=>b.onclick=()=>show(i));document.querySelectorAll('[data-next]').forEach(b=>b.onclick=()=>show(Math.min(3,steps.findIndex(x=>x.classList.contains('active'))+1)));document.querySelectorAll('[data-back]').forEach(b=>b.onclick=()=>show(Math.max(0,steps.findIndex(x=>x.classList.contains('active'))-1)));
-const questions=['Warum beweist ein hoher Iridiumwert allein noch nicht das weltweite Massenaussterben?','Warum konnten manche Vogelgruppen überleben, andere aber nicht?','Was könnte eine Einschlaghypothese schwächen?','Welche Grenzen hat unser vereinfachtes Nahrungsnetz?','Warum ist die zeitliche Lage der Belege wichtig?','Weshalb können Einschlag und Vulkanismus unterschiedlich zum Geschehen beigetragen haben?'];let pair=[0,3];const box=document.getElementById('questions');function draw(){pair=[Math.floor(Math.random()*questions.length),Math.floor(Math.random()*questions.length)];if(pair[0]===pair[1])pair[1]=(pair[1]+1)%questions.length;box.innerHTML=pair.map((i,n)=>'<div class="question"><b>Frage '+(n+1)+':</b> '+questions[i]+'<div class="muted">Notiere Stichworte im analogen Forscherheft und beantworte die Frage laut.</div></div>').join('')}document.getElementById('draw').onclick=draw;draw();document.getElementById('finish').onclick=()=>{let remain=[...document.querySelectorAll('.done')].filter(x=>!x.checked).length;let s=document.getElementById('status');s.classList.toggle('ok',remain===0);s.textContent=remain?'Prüfe noch '+remain+' Punkte im Heft-Check. Du kannst deine Vorbereitung jederzeit fortsetzen.':'✓ Deine Kongressvorbereitung ist abgeschlossen. Der Fachvortrag und die Rückfragen finden vor deiner Klasse und Lehrkraft statt.'};})();
-</script></body></html>
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <title>AKTE 66 – Mission 7 · Der Forschungskongress</title>
+    <style>
+      :root {
+        --dark: #0d1920;
+        --gold: #d8a45c;
+        --ink: #29271f;
+        --paper: #fcf3df;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--dark);
+        color: #f5ecde;
+        font:
+          17px/1.5 system-ui,
+          -apple-system,
+          Arial,
+          sans-serif;
+      }
+      button,
+      select {
+        font: inherit;
+      }
+      button {
+        cursor: pointer;
+      }
+      button:focus-visible,
+      summary:focus-visible,
+      select:focus-visible {
+        outline: 3px solid #ffca76;
+        outline-offset: 3px;
+      }
+      .hero {
+        min-height: 260px;
+        padding: 35px 5vw;
+        background:
+          linear-gradient(90deg, #101719f5, #101719dc 42%, #10171916),
+          url({{asset:img/mission-7/hero-kongress.jpg}}) center/cover;
+      }
+      .hero h1 {
+        font:
+          700 clamp(2rem, 4.4vw, 3.5rem) Georgia,
+          serif;
+        color: #ffe2a4;
+        margin: 4px 0;
+      }
+      .hero p {
+        max-width: 620px;
+      }
+      .eyebrow {
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        color: #f2cb83;
+        font-size: 0.85rem;
+        font-weight: 700;
+      }
+      main {
+        max-width: 1210px;
+        margin: auto;
+        padding: 22px;
+      }
+      .layout {
+        display: grid;
+        grid-template-columns: 250px minmax(0, 1fr);
+        gap: 18px;
+      }
+      .sidebar {
+        background: #14252c;
+        border: 1px solid #70563a;
+        border-radius: 20px;
+        padding: 17px;
+        height: max-content;
+        position: sticky;
+        top: 14px;
+      }
+      .sidebar button {
+        display: block;
+        width: 100%;
+        text-align: left;
+        background: #20333d;
+        color: #fff2d8;
+        border: 1px solid #655641;
+        border-radius: 12px;
+        padding: 11px;
+        margin: 9px 0;
+      }
+      .sidebar button.current {
+        background: #755129;
+      }
+      .paper {
+        background: var(--paper);
+        color: var(--ink);
+        border-radius: 22px;
+        padding: clamp(18px, 3vw, 35px);
+        min-width: 0;
+        box-shadow: 0 15px 28px #0005;
+      }
+      .step {
+        display: none;
+      }
+      .step.active {
+        display: block;
+      }
+      .paper h2 {
+        font:
+          700 2rem Georgia,
+          serif;
+        margin: 0 0 13px;
+      }
+      .paper h3 {
+        font:
+          700 1.24rem Georgia,
+          serif;
+      }
+      .intro {
+        font-size: 1.08rem;
+      }
+      .panel {
+        background: #fffaf0;
+        border: 1px solid #d4ae71;
+        padding: 16px;
+        border-radius: 14px;
+        margin: 16px 0;
+      }
+      .help {
+        background: #f1e3c9;
+        border: 1px solid #c9a56d;
+        padding: 10px 14px;
+        border-radius: 12px;
+        margin: 12px 0;
+      }
+      .help summary {
+        font-weight: 700;
+        cursor: pointer;
+      }
+      .task {
+        background: #f2e3ca;
+        border-left: 5px solid #986326;
+        padding: 12px 17px;
+        border-radius: 12px;
+        margin: 15px 0;
+      }
+      .book {
+        background: #e7efe5;
+        border-left: 5px solid #3a7755;
+        padding: 13px 17px;
+        border-radius: 12px;
+        margin: 14px 0;
+      }
+      .actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 17px;
+      }
+      .btn {
+        border: none;
+        background: #185a46;
+        color: white;
+        padding: 12px 17px;
+        border-radius: 12px;
+        font-weight: 700;
+      }
+      .btn.alt {
+        background: #3b4d57;
+      }
+      .route {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 9px;
+      }
+      .route div {
+        background: #e7d3aa;
+        border-radius: 12px;
+        padding: 12px;
+        text-align: center;
+        font-weight: 700;
+      }
+      .route small {
+        display: block;
+        font-weight: 400;
+        font-size: 0.85rem;
+      }
+      .quality {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 11px;
+      }
+      .quality article {
+        background: #fffaf0;
+        border: 1px solid #d4b587;
+        border-radius: 13px;
+        padding: 14px;
+      }
+      .quality strong {
+        display: block;
+      }
+      .quality select {
+        width: 100%;
+        margin-top: 8px;
+        padding: 8px;
+        color: #222;
+        background: #fff;
+        border: 1px solid #92744f;
+        border-radius: 8px;
+      }
+      .question {
+        background: #fffaf0;
+        border: 1px solid #ccb184;
+        padding: 16px;
+        border-radius: 15px;
+        margin: 10px 0;
+      }
+      .question button {
+        color: #fff;
+        background: #3e5158;
+        border: 0;
+        border-radius: 10px;
+        padding: 9px 12px;
+      }
+      .question .answer {
+        display: none;
+        margin-top: 12px;
+        padding: 11px;
+        border-radius: 9px;
+        background: #e7f0ec;
+      }
+      .question .answer.show {
+        display: block;
+      }
+      .status {
+        padding: 13px;
+        border-radius: 12px;
+        margin-top: 12px;
+        background: #f2e5cc;
+        font-weight: 650;
+      }
+      .status.ok {
+        background: #d9efdf;
+        color: #145237;
+      }
+      .muted {
+        font-size: 0.9rem;
+        color: #514b40;
+      }
+      footer {
+        color: #e0c7a1;
+        text-align: center;
+        padding: 25px;
+      }
+      @media (max-width: 850px) {
+        .layout {
+          grid-template-columns: 1fr;
+        }
+        .sidebar {
+          position: static;
+        }
+        .route,
+        .quality {
+          grid-template-columns: 1fr;
+        }
+        .hero {
+          min-height: 230px;
+        }
+      }
+      @media print {
+        .hero,
+        .sidebar,
+        .actions,
+        footer {
+          display: none !important;
+        }
+        .step {
+          display: block !important;
+          break-after: page;
+        }
+        .paper {
+          box-shadow: none;
+        }
+        body {
+          background: white;
+        }
+      }
+    </style>
+    <style>
+      /* AKTE 66 Forschungsreise 1.2: sprachsensibles, ruhiges Arbeitsgeruest */
+      .lernreise12-output {
+        margin: 10px 0 16px;
+        padding: 11px 14px;
+        border: 1px solid rgba(109, 143, 145, 0.32);
+        border-left: 4px solid #448f88;
+        border-radius: 9px;
+        background: rgba(74, 137, 133, 0.075);
+        color: inherit;
+        line-height: 1.55;
+        font-size: 0.96em;
+      }
+      .lernreise12-output strong {
+        font-weight: 750;
+      }
+      .lernreise12-help {
+        margin: 0 0 16px;
+        border: 1px solid rgba(124, 134, 138, 0.34);
+        border-radius: 8px;
+        background: rgba(127, 145, 144, 0.045);
+        font-size: 0.94em;
+        line-height: 1.5;
+      }
+      .lernreise12-help summary {
+        cursor: pointer;
+        padding: 9px 12px;
+        font-weight: 650;
+        list-style-position: inside;
+      }
+      .lernreise12-help p {
+        margin: 0;
+        padding: 0 12px 12px;
+        max-width: 78ch;
+      }
+      .lernreise12-output,
+      .lernreise12-help {
+        max-width: 85ch;
+      }
+      @media print {
+        .lernreise12-help p {
+          display: block;
+        }
+        .lernreise12-output {
+          break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="eyebrow">AKTE 66 · Expedition ins verlorene Zeitalter</div>
+      <h1>Mission 7 · Der Forschungskongress</h1>
+      <p>
+        Du hast Spuren gesammelt, Hypothesen geprüft und Zusammenhänge rekonstruiert. Jetzt bereitest du
+        deinen Fachvortrag vor – für deine Klasse und deine Lehrkraft als echtes Fachpublikum.
+      </p>
+    </header>
+    <main>
+      <div class="layout">
+        <aside class="sidebar">
+          <div class="eyebrow">Kongressvorbereitung</div>
+          <button class="current" data-step="0">1 · Deine Forschungsrolle</button
+          ><button data-step="1">2 · Der Beweisgang</button><button data-step="2">3 · Vortrag üben</button
+          ><button data-step="3">4 · Fachfragen &amp; Heft-Check</button>
+          <p>
+            Alles Schriftliche kommt in dein <b>analoges Forscherheft</b>. Hier gibt es keine digitale Abgabe.
+          </p>
+        </aside>
+        <div class="paper">
+          <section class="step active" id="s0">
+            <div class="eyebrow">Vorbereitungsphase 1</div>
+            <h2>Deine Forschungsrolle</h2>
+            <p class="intro">
+              Die Expedition lädt dich zum Kongress der Erdgeschichte ein. Du sprichst als Forschende oder
+              Forschender und beantwortest eine zentrale Frage:
+            </p>
+            <div class="panel">
+              <strong
+                >Warum starben vor rund 66 Millionen Jahren so viele Arten aus – und warum überlebten
+                andere?</strong
+              >
+            </div>
+            <p>
+              Wähle eine Rolle, die zu deinen Interessen passt: Du kannst als geologisch Forschende, als
+              Fachperson für Ökosysteme oder als Mitglied der Expeditionsleitung sprechen. Die
+              wissenschaftlichen Anforderungen sind für alle gleich.
+            </p>
+            <div class="task">
+              <strong>Auftrag</strong>
+              <ol>
+                <li>Wähle eine Forschungsrolle und gib deinem Vortrag einen eigenen Titel.</li>
+                <li>
+                  Schlage dein analoges Forscherheft auf und markiere drei Ergebnisse, die du im Vortrag
+                  zeigen möchtest.
+                </li>
+                <li>
+                  Überlege, mit welcher Beobachtung oder Forschungsfrage du dein Publikum neugierig machen
+                  kannst.
+                </li>
+              </ol>
+              <div class="lernreise12-output" data-station="7" data-task="1">
+                <strong>Woran erkennst du, dass du fertig bist? </strong>Im Forscherheft: 3 markierte
+                Forschungsergebnisse und 1 Vortragstitel. Das ist die Materialauswahl, noch kein
+                ausformulierter Vortrag.
+              </div>
+              <details class="lernreise12-help">
+                <summary>Auftrag unklar? Begriffe und Vorgehen kurz erklärt</summary>
+                <p>
+                  Wähle drei Ergebnisse, die wirklich etwas zur Leitfrage beitragen. Ein guter Vortrag beginnt
+                  mit einer klaren Frage oder einer überraschenden Beobachtung – nicht mit allen Details auf
+                  einmal.
+                </p>
+              </details>
+            </div>
+            <details class="help">
+              <summary>🧭 Vorwissenshilfe · Was ist ein Fachvortrag?</summary>
+              <p>
+                Du erklärst eine Frage mit Fachwissen und Belegen. Ein Fachvortrag ist mehr als eine
+                Nacherzählung: Du zeigst, <em>woher</em> du deine Erkenntnisse hast und <em>warum</em> du
+                deine Schlussfolgerung für überzeugend hältst.
+              </p>
+            </details>
+            <div class="book">
+              <b>📓 Forscherheft:</b> Titel, gewählte Rolle, Leitfrage und die Seitenzahlen deiner drei
+              ausgewählten Befunde.
+            </div>
+            <div class="actions"><button class="btn" data-next="">Weiter · Beweisgang ordnen</button></div>
+          </section>
+          <section class="step" id="s1">
+            <div class="eyebrow">Vorbereitungsphase 2</div>
+            <h2>So wird aus Funden eine Erklärung</h2>
+            <p>
+              Ein überzeugender Vortrag reiht keine Begriffe aneinander. Er zeigt, wie die Belege
+              zusammenhängen.
+            </p>
+            <div class="route">
+              <div>Frage<small>Was ist zu erklären?</small></div>
+              <div>Belege<small>Was wurde gefunden?</small></div>
+              <div>Wirkung<small>Welche Folgen hatte es?</small></div>
+              <div>Prüfung<small>Was ist unsicher?</small></div>
+              <div>Urteil<small>Was ist am besten begründet?</small></div>
+            </div>
+            <div class="task">
+              <strong>Auftrag</strong>
+              <ol>
+                <li>
+                  Hol deine Hypothese aus dem Expeditionsauftakt hervor: Vergleiche sie mit deinen Belegen.
+                  Was hat sich bestätigt, was musstest du anpassen?
+                </li>
+                <li>
+                  Ordne deine drei ausgewählten Belege dieser Vortragsroute zu. Erkläre jeweils, was der
+                  Befund zeigt.
+                </li>
+                <li>
+                  Erstelle eine Ursache-Wirkungs-Kette: Einschlag → Veränderungen der Umwelt → weniger
+                  Pflanzenproduktion → Folgen für Nahrungsbeziehungen.
+                </li>
+                <li>
+                  Ergänze die Überlebensfrage: Warum waren nicht alle Organismengruppen gleich betroffen? Was
+                  wissen wir nicht sicher?
+                </li>
+                <li>
+                  Beziehe die heutigen Vögel richtig ein: Sie sind Nachfahren überlebender Dinosaurierlinien.
+                </li>
+              </ol>
+              <div class="lernreise12-output" data-station="7" data-task="2">
+                <strong>Woran erkennst du, dass du fertig bist? </strong>Im Forscherheft: 3 ausgewählte
+                Belege, eine einfache Ursache-Folge-Kette und ein überprüfter Vergleich mit deiner ersten
+                Hypothese.
+              </div>
+              <details class="lernreise12-help">
+                <summary>Auftrag unklar? Begriffe und Vorgehen kurz erklärt</summary>
+                <p>
+                  Ein Beleg ist ein untersuchter Befund. Erklären heißt: Sage, was der Beleg für eure
+                  Forschungsfrage bedeutet. Ursache-Folge-Kette: Verbinde wenige Schlüsselwörter mit Pfeilen;
+                  keine aufwendige Zeichnung nötig.
+                </p>
+              </details>
+            </div>
+            <details class="help">
+              <summary>🧭 Vorwissenshilfe · Beleg oder Erklärung?</summary>
+              <p>
+                <b>Beleg:</b> ein untersuchter Befund, zum Beispiel Schockquarz oder eine gemessene
+                Iridiumanreicherung. <b>Erklärung:</b> das, was aus mehreren Belegen begründet geschlossen
+                wird. Ein Nahrungsnetz ist dagegen ein vereinfachtes Modell, mit dem man Folgen durchdenken
+                kann.
+              </p>
+            </details>
+            <details class="help">
+              <summary>💡 Denkstütze · Ein Abschnitt fehlt mir</summary>
+              <p>
+                Frage dich nacheinander: „Was weiß ich aus meinem Heft?“ – „Was bedeutet das?“ – „Wie passt es
+                zur Leitfrage?“ Nutze einen Pfeil oder eine kleine Skizze, statt einen langen Text
+                vorzuschreiben.
+              </p>
+            </details>
+            <div class="book">
+              <b>📓 Forscherheft:</b> Zeichne deine Vortragsroute mit fünf Stationen. Notiere zu jedem
+              Abschnitt Stichworte und die passende Heftseite.
+            </div>
+            <div class="actions">
+              <button class="btn alt" data-back="">Zurück</button
+              ><button class="btn" data-next="">Weiter · Qualitätscheck</button>
+            </div>
+          </section>
+          <section class="step" id="s2">
+            <div class="eyebrow">Vorbereitungsphase 3</div>
+            <h2>Dein Vortrag muss überzeugen</h2>
+            <p>
+              Diese sechs Qualitätsmarker gelten seit Beginn der Expedition. Nutze sie jetzt für einen
+              Probedurchlauf. Du sprichst <b>4–5 Minuten</b>; danach beantwortest du etwa
+              <b>2 Minuten Fachfragen</b>.
+            </p>
+            <div class="quality">
+              <article>
+                <strong>1 · Fachlich richtig</strong>Stimmen Ursache, Folgen, Nahrungsnetz und die Einordnung
+                der Vögel?<select aria-label="Fachlichkeit">
+                  <option value="">Selbsteinschätzung wählen</option>
+                  <option>sicher erfüllt</option>
+                  <option>teilweise erfüllt</option>
+                  <option>noch zu üben</option>
+                </select>
+              </article>
+              <article>
+                <strong>2 · Mit Belegen</strong>Erkläre ich mindestens drei konkrete Befunde und ihre
+                Bedeutung?<select aria-label="Belegführung">
+                  <option value="">Selbsteinschätzung wählen</option>
+                  <option>sicher erfüllt</option>
+                  <option>teilweise erfüllt</option>
+                  <option>noch zu üben</option>
+                </select>
+              </article>
+              <article>
+                <strong>3 · Zusammenhänge</strong>Erkläre ich Zwischenschritte der Wirkungskette, statt nur
+                Ereignisse aufzuzählen?<select aria-label="Erklärung">
+                  <option value="">Selbsteinschätzung wählen</option>
+                  <option>sicher erfüllt</option>
+                  <option>teilweise erfüllt</option>
+                  <option>noch zu üben</option>
+                </select>
+              </article>
+              <article>
+                <strong>4 · Kritisches Denken</strong>Nenne ich eine Unsicherheit, Alternative oder Grenze des
+                Modells?<select aria-label="Kritisches Denken">
+                  <option value="">Selbsteinschätzung wählen</option>
+                  <option>sicher erfüllt</option>
+                  <option>teilweise erfüllt</option>
+                  <option>noch zu üben</option>
+                </select>
+              </article>
+              <article>
+                <strong>5 · Verständlich sprechen</strong>Ist mein Aufbau klar, erkläre ich Fachbegriffe und
+                spreche ich überwiegend frei?<select aria-label="Sprache">
+                  <option value="">Selbsteinschätzung wählen</option>
+                  <option>sicher erfüllt</option>
+                  <option>teilweise erfüllt</option>
+                  <option>noch zu üben</option>
+                </select>
+              </article>
+              <article>
+                <strong>6 · Zeigen &amp; antworten</strong>Helfen meine Heftskizzen beim Erklären? Kann ich
+                Fragen mit Belegen beantworten?<select aria-label="Anschauung">
+                  <option value="">Selbsteinschätzung wählen</option>
+                  <option>sicher erfüllt</option>
+                  <option>teilweise erfüllt</option>
+                  <option>noch zu üben</option>
+                </select>
+              </article>
+            </div>
+            <div class="task">
+              <strong>Auftrag</strong>
+              <ol>
+                <li>
+                  Halte deinen Vortrag probeweise laut – mit deinen Heftnotizen, aber ohne einen
+                  ausformulierten Text abzulesen.
+                </li>
+                <li>Schätze dich bei jedem Qualitätsmarker ein.</li>
+                <li>
+                  Wähle <b>einen</b> Marker, den du als Nächstes verbesserst. Probiere diesen Teil noch
+                  einmal.
+                </li>
+              </ol>
+              <div class="lernreise12-output" data-station="7" data-task="3">
+                <strong>Woran erkennst du, dass du fertig bist? </strong>Nach der Probe: 1 Stärke und 1
+                konkreten Verbesserungspunkt festhalten. Dann den betroffenen Vortragsteil noch einmal
+                sprechen.
+              </div>
+              <details class="lernreise12-help">
+                <summary>Auftrag unklar? Begriffe und Vorgehen kurz erklärt</summary>
+                <p>
+                  Ein Qualitätsmarker ist ein Merkmal eines guten Vortrags. Prüfe, ob du verständlich sprichst
+                  und Belege nennst. Eine Verbesserung reicht für diese Runde – du musst nicht alles
+                  gleichzeitig ändern.
+                </p>
+              </details>
+            </div>
+            <details class="help">
+              <summary>🧭 Vorwissenshilfe · Wie nutze ich Stichworte?</summary>
+              <p>
+                Notiere Schlüsselwörter, nicht ganze Sätze. Sprich frei zu einer Skizze. Ein hilfreicher
+                Satzanfang lautet: „Diesen Befund sehen wir hier … Er deutet darauf hin, dass …“
+              </p>
+            </details>
+            <div class="book">
+              <b>📓 Forscherheft:</b> Übertrage deine sechs Selbsteinschätzungen. Schreibe eine konkrete
+              Verbesserung für den Probedurchlauf auf.
+            </div>
+            <div class="actions">
+              <button class="btn alt" data-back="">Zurück</button
+              ><button class="btn" data-next="">Weiter · Fachfragen</button>
+            </div>
+          </section>
+          <section class="step" id="s3">
+            <div class="eyebrow">Vorbereitungsphase 4</div>
+            <h2>Auf kritische Fragen vorbereitet sein</h2>
+            <p>
+              Dein Fachpublikum besteht im Unterricht aus Mitschülerinnen, Mitschülern und Lehrkraft. Übe
+              vorher mit zwei zufällig ausgewählten Fragen. Es gibt hier keine virtuelle Jury und keine
+              automatische Benotung.
+            </p>
+            <div id="questions"></div>
+            <button class="btn alt" id="draw">Zwei neue Übungsfragen ziehen</button>
+            <div class="task">
+              <strong>Auftrag</strong>
+              <ol>
+                <li>Beantworte beide Fragen laut und nutze dein Forscherheft als Belegsammlung.</li>
+                <li>Markiere eine Frage, die du noch nicht überzeugend beantworten kannst.</li>
+                <li>
+                  Ergänze in deinem Heft den dafür fehlenden Hinweis. Nach dem realen Kongress notierst du,
+                  welche Rückfrage deine Erklärung verändert hat.
+                </li>
+              </ol>
+              <div class="lernreise12-output" data-station="7" data-task="4">
+                <strong>Woran erkennst du, dass du fertig bist? </strong>Im Forscherheft: Stichworte zu beiden
+                kritischen Fragen und 1 weiterer Hinweis, den du noch nachschlagen musst.
+              </div>
+              <details class="lernreise12-help">
+                <summary>Auftrag unklar? Begriffe und Vorgehen kurz erklärt</summary>
+                <p>
+                  Kritische Fragen prüfen, wie gut deine Erklärung begründet ist. Wenn du etwas noch nicht
+                  weißt, sage, was die bisherigen Belege zeigen und welche zusätzliche Information fehlen
+                  würde.
+                </p>
+              </details>
+            </div>
+            <details class="help">
+              <summary>💡 Denkstütze · Wenn du die Antwort nicht weißt</summary>
+              <p>
+                Eine gute wissenschaftliche Antwort darf ihre Grenze nennen: „Das zeigen unsere Belege … Zu
+                dieser Frage können wir noch keine sichere Aussage machen, weil …“
+              </p>
+            </details>
+            <div class="book">
+              <b>📓 Forscherheft:</b> Heftseite mit Vortragsgliederung, Qualitätscheck und zwei kritischen
+              Fragen sichern. Nach dem Vortrag folgt eine kurze Selbstreflexion.
+            </div>
+            <div class="panel">
+              <b>Abschluss-Check</b>
+              <div>
+                <label
+                  ><input class="done" type="checkbox" /> Ich habe meine Hypothese aus dem Expeditionsauftakt
+                  mit meinem Ergebnis verglichen.</label
+                >
+              </div>
+              <div>
+                <label><input class="done" type="checkbox" /> Meine Vortragsroute steht im Heft.</label>
+              </div>
+              <div>
+                <label
+                  ><input class="done" type="checkbox" /> Ich habe mindestens drei Belege und eine
+                  Wirkungskette.</label
+                >
+              </div>
+              <div>
+                <label><input class="done" type="checkbox" /> Ich habe den Vortrag laut geübt.</label>
+              </div>
+              <div>
+                <label
+                  ><input class="done" type="checkbox" /> Meine Qualitätsmarker sind im Heft
+                  eingeschätzt.</label
+                >
+              </div>
+              <div>
+                <label><input class="done" type="checkbox" /> Ich habe zwei Fachfragen geübt.</label>
+              </div>
+            </div>
+            <button class="btn" id="finish">Kongressvorbereitung abschließen</button>
+            <div aria-live="polite" class="status" id="status" role="status">Noch nicht abgeschlossen.</div>
+            <div class="actions"><button class="btn alt" data-back="">Zurück zum Qualitätscheck</button></div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer>
+      AKTE 66 · Die Präsentation und das Feedback finden im realen Unterricht statt. Diese Datei funktioniert
+      offline.
+    </footer>
+    <script>
+      (() => {
+        const steps = [...document.querySelectorAll(".step")],
+          nav = [...document.querySelectorAll("[data-step]")];
+        function show(n) {
+          steps.forEach((s, i) => s.classList.toggle("active", n === i));
+          nav.forEach((b, i) => b.classList.toggle("current", n === i));
+          requestAnimationFrame(() =>
+            document.querySelector(".paper").scrollIntoView({ behavior: "instant", block: "start" }),
+          );
+        }
+        nav.forEach((b, i) => (b.onclick = () => show(i)));
+        document
+          .querySelectorAll("[data-next]")
+          .forEach(
+            (b) =>
+              (b.onclick = () =>
+                show(Math.min(3, steps.findIndex((x) => x.classList.contains("active")) + 1))),
+          );
+        document
+          .querySelectorAll("[data-back]")
+          .forEach(
+            (b) =>
+              (b.onclick = () =>
+                show(Math.max(0, steps.findIndex((x) => x.classList.contains("active")) - 1))),
+          );
+        const questions = [
+          "Warum beweist ein hoher Iridiumwert allein noch nicht das weltweite Massenaussterben?",
+          "Warum konnten manche Vogelgruppen überleben, andere aber nicht?",
+          "Was könnte eine Einschlaghypothese schwächen?",
+          "Welche Grenzen hat unser vereinfachtes Nahrungsnetz?",
+          "Warum ist die zeitliche Lage der Belege wichtig?",
+          "Weshalb können Einschlag und Vulkanismus unterschiedlich zum Geschehen beigetragen haben?",
+        ];
+        let pair = [0, 3];
+        const box = document.getElementById("questions");
+        function draw() {
+          pair = [Math.floor(Math.random() * questions.length), Math.floor(Math.random() * questions.length)];
+          if (pair[0] === pair[1]) pair[1] = (pair[1] + 1) % questions.length;
+          box.innerHTML = pair
+            .map(
+              (i, n) =>
+                '<div class="question"><b>Frage ' +
+                (n + 1) +
+                ":</b> " +
+                questions[i] +
+                '<div class="muted">Notiere Stichworte im analogen Forscherheft und beantworte die Frage laut.</div></div>',
+            )
+            .join("");
+        }
+        document.getElementById("draw").onclick = draw;
+        draw();
+        document.getElementById("finish").onclick = () => {
+          let remain = [...document.querySelectorAll(".done")].filter((x) => !x.checked).length;
+          let s = document.getElementById("status");
+          s.classList.toggle("ok", remain === 0);
+          s.textContent = remain
+            ? "Prüfe noch " +
+              remain +
+              " Punkte im Heft-Check. Du kannst deine Vorbereitung jederzeit fortsetzen."
+            : "✓ Deine Kongressvorbereitung ist abgeschlossen. Der Fachvortrag und die Rückfragen finden vor deiner Klasse und Lehrkraft statt.";
+        };
+      })();
+    </script>
+  </body>
+</html>

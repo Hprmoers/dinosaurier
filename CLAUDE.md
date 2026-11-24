@@ -8,8 +8,9 @@ die App speichert nur Heft-Checks im `localStorage`.
 - **`index.html` im Wurzelverzeichnis nicht lesen/editieren** – Build-Ergebnis. Immer in `src/` arbeiten.
 - Bilder/Audio nie als Base64 anfassen: Dateien liegen in `assets/`, referenziert per
   `{{asset:img/...}}`.
-- Missionsdateien haben sehr lange Zeilen → gezielt mit `grep -n` / `grep -o '.\{0,80\}Suchwort.\{0,80\}'`
-  suchen statt ganze Dateien zu lesen.
+- Missionsdateien sind mit Prettier formatiert (300–2000 Zeilen) → mit `grep -n` die Stelle
+  suchen und nur den Ausschnitt lesen (Read mit offset/limit).
+- Bei optischen/HTML-Umbauten vorher `node tools/visual.cjs` als Referenz aufnehmen, danach vergleichen.
 - Nach jeder Änderung: `python3 tools/build.py`, `node tools/smoke.cjs`, `node tools/persist.cjs`, dann `src/` + `assets/` +
   `index.html` gemeinsam committen.
 
@@ -27,7 +28,7 @@ src/js/prolog-progress.js   Prolog, Ränge/Abzeichen, Abschlussdialog, Urkunde, 
 src/js/persistence.js       Ort + Missionsstand über Reload merken (Klicks aufzeichnen/abspielen)
 src/missions/mission-N.html eigenständige HTML-Seite je Mission (N = 1..7)
 assets/img|audio/...        alle Medien (karten/, trailer/, zentrale/, mission-N/)
-tools/                      build.py, import_single.py, rename_asset.py, smoke.cjs, persist.cjs
+tools/                      build.py, import_single.py, rename_asset.py, Tests (smoke/persist/visual)
 docs/                       ARCHITEKTUR.md, LEARNINGS.md (Projektgedächtnis)
 index.html                  BUILD-ERGEBNIS = ausgelieferte Web-Version (lädt Medien aus assets/)
 dist/                       Offline-Einzeldatei (nur bei Bedarf gebaut, nicht im Git)
@@ -35,12 +36,15 @@ dist/                       Offline-Einzeldatei (nur bei Bedarf gebaut, nicht im
 
 ## Befehle
 ```bash
-python3 tools/build.py            # src -> index.html (Web-Version, ~0,3 MB)
+python3 tools/build.py            # src -> index.html (Web-Version, ~0,4 MB)
 python3 tools/build.py --check    # ist index.html aktuell?
 python3 tools/build.py --offline  # dist/akte66-offline.html (alles eingebettet, ~19 MB)
 node tools/smoke.cjs [--shots]    # Chromium über lokalen HTTP-Server: Zentrale + 7 Missionen,
                                   # meldet JS-Fehler, 404s und nicht geladene Bilder
 node tools/persist.cjs [runden]   # Reload-Test: Ort + Missionsstand bleiben erhalten, Reset geht
+node tools/visual.cjs DIR         # 315 reproduzierbare Missions-Screenshots (vorher/nachher)
+python3 tools/visual_compare.py VORHER NACHHER   # pixelgenau vergleichen (Toleranz ±2)
+npx prettier@3.3.3 --write "src/missions/*.html"  # Formatierung (Konfig: .prettierrc.json)
 python3 tools/import_single.py X.html   # Einzeldatei (z. B. Web-Upload) -> src/ + assets/
 python3 tools/rename_asset.py alt neu   # Asset umbenennen inkl. Platzhalter
 ```
