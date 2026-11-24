@@ -21,8 +21,8 @@ from akte66 import (ASSETS, DATA_URI_RE, MIME_TO_EXT, MISSIONS_TOKEN, SRC, build
                     read, sha, write)
 
 STYLE_NAMES = ["css/main.css", "css/learning-goals.css"]
-SCRIPT_NAMES = ["js/app.js", "js/prolog-progress.js"]
-DOCS_MARK = "const documents="
+SCRIPT_NAMES = ["js/app.js", "js/prolog-progress.js", "js/persistence.js"]
+DOCS_RE = re.compile(r"const documents\s*=\s*")  # mit/ohne Leerzeichen (Original vs. Prettier)
 
 
 def known_assets() -> dict[str, str]:
@@ -71,8 +71,9 @@ def split_blocks(shell: str, files: dict[str, str]) -> str:
         else:
             name = SCRIPT_NAMES[n_script] if n_script < len(SCRIPT_NAMES) else f"js/script-{n_script + 1}.js"
             n_script += 1
-            if DOCS_MARK in body:  # Datenteil (Lernziele, Titel, Kartenbilder) separat
-                i = body.index(DOCS_MARK)
+            docs_match = DOCS_RE.search(body)
+            if docs_match:  # Datenteil (Lernziele, Titel, Kartenbilder) separat
+                i = docs_match.start()
                 files["js/data.js"], files[name] = body[:i], body[i:]
                 repl = "{{include:js/data.js}}{{include:" + name + "}}"
             else:
@@ -89,7 +90,11 @@ def main() -> int:
     original = read(source)
     known = known_assets()
 
-    a = original.index(DOCS_MARK) + len(DOCS_MARK)
+    docs_match = DOCS_RE.search(original)
+    if not docs_match:
+        print("FEHLER: 'const documents=' (Missions-Array) nicht gefunden in", source)
+        return 1
+    a = docs_match.end()
     docs, end = json.JSONDecoder().raw_decode(original, a)
     shell = original[:a] + MISSIONS_TOKEN + original[end:]
 

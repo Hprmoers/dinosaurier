@@ -2,6 +2,25 @@
 
 Neue Einträge oben anfügen. Format: `## JJJJ-MM-TT – Thema`, dann kurze Stichpunkte.
 
+## 2026-11-24 – Alle Quellen formatiert
+- `src/index.html`, `src/css/*.css`, `src/js/*.js` mit Prettier formatiert (z. B. `data.js`: 1 → 87 Zeilen,
+  `main.css`: max. Zeilenlänge 1682 → 102). Verbleibende lange Zeilen = lange Text-/HTML-Strings.
+- `src/index.html` nur mit `--embedded-language-formatting=off`: In `<style>`/`<script>` stehen nur
+  `{{include:…}}`-Platzhalter, die Prettier sonst als CSS/JS parsen würde.
+- Missions-Platzhalter in `app.js` ist jetzt ein String-Literal `"{{missions}}"` (gültiges JS für
+  Prettier). Build ersetzt inkl. Anführungszeichen; altes `{{missions}}` wird weiter akzeptiert.
+- **Falle:** Prettier „vereinfacht“ `'<\/script>'` zu `"</script>"` → das Inline-Script der Hauptseite
+  endet mitten im Code, der Rest erscheint als Text (Seite 312 px höher, auf dem Handy breiter).
+  Vom visuellen Test sofort erkannt. Fix: `"<" + "/script>"`; der Build prüft jetzt jede eingebundene
+  `.js`-Datei auf `</script` und bricht sonst ab (auch Kommentare zählen!).
+- `tools/import_single.py` erkennt `const documents=` jetzt mit oder ohne Leerzeichen und benennt
+  das 3. Script `js/persistence.js`. Rundlauf (Offline-Build → Import → Build) ist byte-identisch;
+  nach einem Import Prettier erneut laufen lassen (Leerzeilen an Include-Grenzen).
+- `tools/visual.cjs` deckt jetzt auch die Hauptseite ab: 14 Ansichten × Desktop 1280 px + Handy 390 px
+  (Trailer, Zentrale, Liste, Hilfen, Forscherheft, Prolog, Archiv gesperrt/frei, Einstellungen,
+  Urkunde gesperrt/fertig, Lernziel- und Abschlussdialog, Spielkopf) mit fester Uhrzeit
+  (`page.clock.setFixedTime`, wegen Datum auf der Urkunde). Gesamt 343 Screenshots, vorher/nachher gleich.
+
 ## 2026-11-24 – Missionsdateien formatiert
 - `src/missions/*.html` mit Prettier 3.3.3 formatiert (`.prettierrc.json`: printWidth 110,
   `htmlWhitespaceSensitivity: css` → Leerraum zwischen Inline-Elementen bleibt erhalten).
