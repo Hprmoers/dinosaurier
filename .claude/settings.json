@@ -1,8 +1,8 @@
 {
   "permissions": {
     "deny": [
-      "Read(./index.html)",
-      "Grep(./index.html)"
+      "Read(/index.html)",
+      "Grep(/index.html)"
     ]
   }
 }
