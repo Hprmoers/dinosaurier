@@ -104,7 +104,7 @@ def main() -> int:
     for name, body in files.items():
         write(SRC / name, body)
 
-    if build() != original:
+    if build(offline=True) != original:
         print("FEHLER: Build ist nicht byte-identisch mit", source)
         return 1
     print(f"OK: {source.name} importiert, Build ist byte-identisch.")

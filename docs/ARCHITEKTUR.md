@@ -5,10 +5,14 @@
 1. `{{include:pfad}}` → Inhalt von `src/pfad` (rekursiv)
 2. `{{missions}}` (in `src/js/app.js`, `const documents={{missions}};`) → JSON-Array der
    Dateien `src/missions/mission-1..N.html` (kodiert mit `</` → `<\/`)
-3. `{{asset:pfad}}` → `data:<mime>;base64,...` aus `assets/pfad`
+3. `{{asset:pfad}}` → Web-Build: `assets/pfad` (relative URL) · Offline-Build: `data:`-URI
 
-Ergebnis ist **eine** offline lauffähige `index.html` (wichtig für Schulgeräte/Weitergabe).
-Der Build ist deterministisch; der erste Import war byte-identisch mit der hochgeladenen Datei.
+- **Web-Version** (`index.html`, ausgeliefert über GitHub Pages): ~0,3 MB HTML, Bilder werden
+  einzeln, parallel und vom Browser gecacht geladen; Missionsbilder erst beim Öffnen der Mission.
+- **Offline-Version** (`--offline` → `dist/akte66-offline.html`): eine Datei mit allem eingebettet,
+  zum Weitergeben per USB-Stick/Mail ohne Internet.
+- Relative Asset-Pfade funktionieren auch in den Missionen, weil `srcdoc`-iframes die Basis-URL
+  der Elternseite erben.
 
 ## Ansichten (alle in `src/index.html`, Umschalten per `view(id)`)
 `trailer` (Vorspann mit Musik) → `cover` (Expeditionszentrale: großes Bild mit unsichtbaren

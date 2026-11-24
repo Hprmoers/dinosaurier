@@ -5,13 +5,17 @@ Prolog + 7 Missionen. Ergebnisse schreiben die Schüler in ein **analoges Forsch
 die App speichert nur Heft-Checks im `localStorage`.
 
 ## Goldene Regeln (Token sparen!)
-- **`index.html` im Wurzelverzeichnis NIE lesen/greppen** – generiert, ~21 MB (Base64-Bilder).
-  Immer in `src/` arbeiten.
+- **`index.html` im Wurzelverzeichnis nicht lesen/editieren** – Build-Ergebnis. Immer in `src/` arbeiten.
 - Bilder/Audio nie als Base64 anfassen: Dateien liegen in `assets/`, referenziert per
   `{{asset:img/...}}`.
 - Missionsdateien haben sehr lange Zeilen → gezielt mit `grep -n` / `grep -o '.\{0,80\}Suchwort.\{0,80\}'`
   suchen statt ganze Dateien zu lesen.
-- Nach jeder Änderung: `python3 tools/build.py` und `src/` + `assets/` + `index.html` gemeinsam committen.
+- Nach jeder Änderung: `python3 tools/build.py`, `node tools/smoke.cjs`, dann `src/` + `assets/` +
+  `index.html` gemeinsam committen.
+
+## Auslieferung
+GitHub Pages (Branch `main`, Wurzelordner) → https://hprmoers.github.io/dinosaurier/
+Merge nach `main` = live (Deployment ~1 Min.). `.nojekyll` sorgt für reines statisches Hosting.
 
 ## Struktur
 ```
@@ -24,14 +28,17 @@ src/missions/mission-N.html eigenständige HTML-Seite je Mission (N = 1..7)
 assets/img|audio/...        alle Medien (karten/, trailer/, zentrale/, mission-N/)
 tools/                      build.py, import_single.py, rename_asset.py, smoke.cjs
 docs/                       ARCHITEKTUR.md, LEARNINGS.md (Projektgedächtnis)
-index.html                  BUILD-ERGEBNIS (Einzeldatei, offline lauffähig) – nicht editieren
+index.html                  BUILD-ERGEBNIS = ausgelieferte Web-Version (lädt Medien aus assets/)
+dist/                       Offline-Einzeldatei (nur bei Bedarf gebaut, nicht im Git)
 ```
 
 ## Befehle
 ```bash
-python3 tools/build.py            # src + assets -> index.html
+python3 tools/build.py            # src -> index.html (Web-Version, ~0,3 MB)
 python3 tools/build.py --check    # ist index.html aktuell?
-node tools/smoke.cjs [--shots]    # Chromium: Zentrale + 7 Missionen laden, JS-Fehler melden
+python3 tools/build.py --offline  # dist/akte66-offline.html (alles eingebettet, ~19 MB)
+node tools/smoke.cjs [--shots]    # Chromium über lokalen HTTP-Server: Zentrale + 7 Missionen,
+                                  # meldet JS-Fehler, 404s und nicht geladene Bilder
 python3 tools/import_single.py X.html   # Einzeldatei (z. B. Web-Upload) -> src/ + assets/
 python3 tools/rename_asset.py alt neu   # Asset umbenennen inkl. Platzhalter
 ```

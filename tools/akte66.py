@@ -3,7 +3,8 @@
 Platzhalter in den Quelldateien (src/):
   {{include:<pfad>}}  -> Inhalt von src/<pfad> (rekursiv)
   {{missions}}        -> JS-Array mit den HTML-Strings aus src/missions/mission-N.html
-  {{asset:<pfad>}}    -> data:-URI der Datei assets/<pfad>
+  {{asset:<pfad>}}    -> Web-Build: relativer Pfad "assets/<pfad>"
+                         Offline-Build: data:-URI der Datei assets/<pfad>
 """
 from __future__ import annotations
 
@@ -16,7 +17,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "src"
 ASSETS = ROOT / "assets"
-OUTPUT = ROOT / "index.html"
+OUTPUT = ROOT / "index.html"  # Web-Version (GitHub Pages), lädt Medien aus assets/
+OFFLINE_OUTPUT = ROOT / "dist" / "akte66-offline.html"  # Einzeldatei, nicht im Git
 
 MIME_TO_EXT = {
     "image/jpeg": "jpg",
@@ -85,7 +87,7 @@ def resolve_includes(text: str, depth: int = 0) -> str:
     return INCLUDE_RE.sub(repl, text)
 
 
-def build() -> str:
+def build(offline: bool = False) -> str:
     html = resolve_includes(read(SRC / "index.html"))
     if MISSIONS_TOKEN in html:
         docs = [read(p) for p in mission_files()]
@@ -94,6 +96,10 @@ def build() -> str:
 
     def asset(m: re.Match) -> str:
         rel = m.group(1)
+        if not (ASSETS / rel).is_file():
+            raise SystemExit(f"Asset fehlt: assets/{rel}")
+        if not offline:
+            return "assets/" + rel
         if rel not in cache:
             cache[rel] = asset_data_uri(rel)
         return cache[rel]
