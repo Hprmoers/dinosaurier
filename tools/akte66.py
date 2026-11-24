@@ -2,7 +2,7 @@
 
 Platzhalter in den Quelldateien (src/):
   {{include:<pfad>}}  -> Inhalt von src/<pfad> (rekursiv)
-  {{missions}}        -> JS-Array mit den HTML-Strings aus src/missions/mission-N.html
+  "{{missions}}"      -> JS-Array mit den HTML-Strings aus src/missions/mission-N.html
   {{asset:<pfad>}}    -> Web-Build: relativer Pfad "assets/<pfad>"
                          Offline-Build: data:-URI der Datei assets/<pfad>
 """
@@ -34,7 +34,8 @@ EXT_TO_MIME = {v: k for k, v in MIME_TO_EXT.items()}
 
 INCLUDE_RE = re.compile(r"\{\{include:([^}]+)\}\}")
 ASSET_RE = re.compile(r"\{\{asset:([^}]+)\}\}")
-MISSIONS_TOKEN = "{{missions}}"
+MISSIONS_TOKEN = '"{{missions}}"'  # als JS-String-Literal, damit Prettier app.js parsen kann
+LEGACY_MISSIONS_TOKEN = "{{missions}}"
 DATA_URI_RE = re.compile(r"data:([a-z]+/[a-z0-9.+-]+);base64,([A-Za-z0-9+/=]+)")
 MISSION_FILE_RE = re.compile(r"mission-(\d+)\.html$")
 
@@ -82,16 +83,22 @@ def resolve_includes(text: str, depth: int = 0) -> str:
         p = SRC / m.group(1)
         if not p.is_file():
             raise SystemExit(f"Include fehlt: src/{m.group(1)}")
-        return resolve_includes(read(p), depth + 1)
+        text = read(p)
+        # JS wird inline in <script> eingebettet: ein "</script" darin würde das Script vorzeitig
+        # beenden und den Rest als Text auf der Seite anzeigen.
+        if p.suffix == ".js" and "</script" in text.lower():
+            raise SystemExit(f"src/{m.group(1)} enthält '</script' -> als \"<\" + \"/script>\" schreiben")
+        return resolve_includes(text, depth + 1)
 
     return INCLUDE_RE.sub(repl, text)
 
 
 def build(offline: bool = False) -> str:
     html = resolve_includes(read(SRC / "index.html"))
-    if MISSIONS_TOKEN in html:
-        docs = [read(p) for p in mission_files()]
-        html = html.replace(MISSIONS_TOKEN, encode_missions(docs), 1)
+    for token in (MISSIONS_TOKEN, LEGACY_MISSIONS_TOKEN):
+        if token in html:
+            html = html.replace(token, encode_missions([read(p) for p in mission_files()]), 1)
+            break
     cache: dict[str, str] = {}
 
     def asset(m: re.Match) -> str:

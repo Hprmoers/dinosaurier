@@ -3,7 +3,7 @@
 ## Build-Prinzip
 `tools/build.py` setzt `src/index.html` zusammen:
 1. `{{include:pfad}}` → Inhalt von `src/pfad` (rekursiv)
-2. `{{missions}}` (in `src/js/app.js`, `const documents={{missions}};`) → JSON-Array der
+2. `"{{missions}}"` (in `src/js/app.js`, `const documents = "{{missions}}";`) → JSON-Array der
    Dateien `src/missions/mission-1..N.html` (kodiert mit `</` → `<\/`)
 3. `{{asset:pfad}}` → Web-Build: `assets/pfad` (relative URL) · Offline-Build: `data:`-URI
 
