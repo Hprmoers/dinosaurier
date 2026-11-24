@@ -1,39 +1,1359 @@
-<!DOCTYPE html>
+<!doctype html>
 
-<html lang="de"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="#101a21" name="theme-color"/><title>AKTE 66 | Mission 6 – Die Überlebenden</title>
-<style>
-:root{--dark:#101a21;--dark2:#1a2b31;--gold:#e8b66b;--gold2:#f5d6a1;--paper:#fbf1dd;--ink:#272721;--line:#d1ab77;--blue:#2d5c69;--good:#155943;--muted:#697e83}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at top,#263b3d 0%,#101a21 63%);color:#f9f0df;font:17px/1.55 system-ui,-apple-system,'Segoe UI',sans-serif}button,select{font:inherit}button{cursor:pointer}button:focus-visible,select:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid #ffdf8b;outline-offset:3px}a{color:#80501b}.hero{height:320px;position:relative;background:linear-gradient(90deg,rgba(11,21,26,.95),rgba(11,21,26,.62) 45%,rgba(11,21,26,.04)),url('{{asset:img/mission-6/hero-fossiliensammlung.jpg}}') center 57%/cover;display:flex;align-items:center;padding:20px max(22px,calc((100vw - 1220px)/2))}.heroTitle{max-width:650px}.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.17em;font-size:.77rem;font-weight:800}.hero h1{font:700 clamp(2.4rem,5vw,4.6rem)/1 Georgia,serif;margin:8px 0;color:#ffe6ac;text-shadow:0 3px 15px #000}.hero p{font-size:1.08rem;max-width:53ch;color:#f4e9d6}.toolbar{max-width:1220px;padding:0 16px;margin:-20px auto 0;position:relative;z-index:3}.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;background:#0d171c;border:1px solid #695232;padding:12px;border-radius:18px;box-shadow:0 16px 36px #0008}.stepbtn{min-height:58px;padding:10px 8px;background:#1b2d33;border:1px solid #476169;border-radius:12px;color:#f3e6d0;font-size:.91rem;font-weight:700;text-align:center}.stepbtn[aria-current=step]{background:#614529;color:#fff2da;border-color:#f3c277}.stepbtn:disabled{opacity:.47;cursor:not-allowed}.progress{background:#2b4148;height:6px;margin-top:10px;border-radius:20px;overflow:hidden}.progress>div{width:0;height:100%;background:#f1ba63;transition:width .25s}.frame{max-width:1220px;margin:auto;padding:20px 16px 60px}.stage{display:none}.stage.active{display:block}.stageHeader{display:flex;justify-content:space-between;gap:14px;align-items:baseline;margin:12px 0 18px}.stageHeader h2{font:700 clamp(1.6rem,3vw,2.2rem) Georgia,serif;color:#f4d79e;margin:0}.smalltag{color:#f1d6aa;font-size:.95rem}.scene{display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);gap:16px;align-items:start}.imagepane{background:#10232a;border:1px solid #766448;border-radius:18px;overflow:hidden;box-shadow:0 14px 30px #0004}.imagepane img{width:100%;height:auto;display:block}.figcaption{font-size:.86rem;line-height:1.44;padding:10px 14px;color:#dfe7e1;background:#152831}.paper{background:linear-gradient(145deg,#fffaed,#f4e5c8);color:var(--ink);border:1px solid #b89157;border-radius:18px;box-shadow:0 10px 30px #0004;padding:clamp(18px,3vw,30px)}.paper h3{font:700 1.6rem Georgia,serif;margin:0 0 10px;color:#3e301b}.paper h4{font:700 1.15rem Georgia,serif;color:#443521;margin:14px 0 6px}.paper p{margin:10px 0}.paper ol{padding-left:1.4em}.paper li{margin:8px 0}.notebox{border-left:5px solid #9a7138;background:#fff7e9;padding:10px 14px;border-radius:10px;margin:16px 0}.heft{background:#e5f1eb;border:1px solid #9fc4ad;color:#1b493b;padding:12px 14px;border-radius:12px;margin:14px 0}.heft strong{display:block;margin-bottom:3px}.prior{background:#fffaf0;border:1px solid #d2b386;color:#26251f;border-radius:12px;padding:10px 13px;margin:11px 0}.prior summary{font-weight:750;color:#624214;cursor:pointer}.prior p,.prior li{color:#252821}.helpbox{background:#fffaf0;color:#24251f;border:1px solid #d2b386;border-radius:12px;margin:10px 0;padding:9px 12px}.helpbox summary{font-weight:750;cursor:pointer}.helpbox .prior{background:#f6edda}.buttons{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}.btn{border:1px solid #ad9168;padding:11px 16px;border-radius:13px;min-height:45px;font-weight:800}.btn.primary{background:#205d4b;color:#fff;border-color:#216751}.btn.secondary{background:#f0e0c3;color:#332612}.feedback{display:none;margin-top:12px;padding:12px 14px;border-radius:12px;color:#1f3428;background:#e8f2df;border:1px solid #8fb88e;font-weight:600}.feedback.show{display:block}.feedback.warn{background:#fff1d5;color:#583918;border-color:#c9a36b}.fullpaper{background:linear-gradient(145deg,#fcf2dd,#eddbb8);color:var(--ink);border:1px solid #c4a06a;border-radius:20px;padding:clamp(15px,2.5vw,28px)}.gridcards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.profile{background:#fffaf0;border:1px solid #caa976;border-radius:16px;overflow:hidden;display:flex;flex-direction:column}.profile h3{font:700 1.25rem Georgia,serif;margin:0}.profile .profileHead{background:#e7d2a8;padding:14px;display:flex;gap:12px;align-items:center}.profile .letter{display:grid;place-items:center;min-width:42px;height:42px;border-radius:999px;background:#263942;color:#fff3d8;font:700 1.5rem Georgia,serif}.profile p{margin:0;padding:14px}.profile .profileBody{padding:0 14px 15px;margin-top:auto}.profile select{width:100%;min-height:45px;padding:8px;border-radius:10px;border:1px solid #a88b61;background:#fff;color:#222}.profile label{font-size:.92rem;font-weight:750}.network{border:1px solid #567076;background:#12272f;padding:18px;border-radius:18px;color:#f7f4e7;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px}.network span{background:#253c43;border:1px solid #879795;border-radius:12px;padding:10px;font-weight:700}.network em{font-style:normal;color:#ffd492}.choice{background:#fff9ed;border:1px solid #ccb086;padding:11px;border-radius:12px;display:flex;gap:10px;align-items:flex-start;margin:9px 0}.choice input{margin-top:5px;min-width:19px;min-height:19px}.tree{background:#12262d;border:1px solid #75868b;border-radius:18px;padding:14px;min-width:0}.tree svg{width:100%;height:auto;display:block}.tree text{font-family:system-ui,-apple-system,sans-serif}.revision{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.reveal{border:1px solid #c69b60;border-radius:14px;overflow:hidden;background:#fff5e1}.reveal button{background:#725431;color:#fff8e6;border:none;width:100%;font-weight:750;padding:13px;text-align:left}.reveal .inside{padding:13px;display:none}.reveal.open .inside{display:block}.marker{display:inline-block;background:#30584e;color:#fff;padding:4px 9px;border-radius:20px;font-size:.82rem}.checklist label{display:flex;align-items:flex-start;gap:9px;margin:9px 0}.checklist input{margin-top:5px;min-width:19px;min-height:19px}.source{font-size:.9rem;color:#c8d0ce;margin-top:25px;line-height:1.6}.source a{color:#f7ce87}.mini{font-size:.94rem;color:#554d3f}.callout{padding:12px;border-left:4px solid #ab8754;background:#fff9ea;border-radius:10px}.visuallyHidden{position:absolute;clip:rect(0,0,0,0);width:1px;height:1px;overflow:hidden}
-@media(max-width:850px){.scene{grid-template-columns:1fr}.steps{grid-template-columns:repeat(3,minmax(0,1fr))}.hero{height:280px}.gridcards{grid-template-columns:1fr}.revision{grid-template-columns:1fr}}
-@media(max-width:500px){body{font-size:16px}.steps{grid-template-columns:repeat(2,minmax(0,1fr))}.stepbtn{font-size:.85rem}.hero{height:270px}.hero h1{font-size:2.5rem}.paper{padding:17px}.frame{padding:15px 10px 40px}.toolbar{padding:0 10px}.stageHeader{display:block}.fullpaper{padding:15px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.progress>div{transition:none}}
-[data-extension]{border-style:dashed!important;opacity:.93}[data-extension] .profileHead:after{content:"Zusatzforschung";font-size:.8rem;padding:3px 7px;border-radius:8px;background:#e9dfc7;color:#3b3020;margin-left:auto}</style><style>
-/* AKTE 66 Forschungsreise 1.2: sprachsensibles, ruhiges Arbeitsgeruest */
-.lernreise12-output{margin:10px 0 16px;padding:11px 14px;border:1px solid rgba(109,143,145,.32);border-left:4px solid #448f88;border-radius:9px;background:rgba(74,137,133,.075);color:inherit;line-height:1.55;font-size:.96em}
-.lernreise12-output strong{font-weight:750}
-.lernreise12-help{margin:0 0 16px;border:1px solid rgba(124,134,138,.34);border-radius:8px;background:rgba(127,145,144,.045);font-size:.94em;line-height:1.5}
-.lernreise12-help summary{cursor:pointer;padding:9px 12px;font-weight:650;list-style-position:inside}
-.lernreise12-help p{margin:0;padding:0 12px 12px;max-width:78ch}
-.lernreise12-output,.lernreise12-help{max-width:85ch}
-@media print{.lernreise12-help p{display:block}.lernreise12-output{break-inside:avoid}}
-</style></head>
-<body><header class="hero"><div class="heroTitle"><div class="eyebrow">AKTE 66 · Expedition ins verlorene Zeitalter</div><h1>Die Überlebenden</h1><p>In einer verlassenen Forschungssammlung stößt das Team auf ein Rätsel: Warum verschwanden manche Tiergruppen – während andere bis heute existieren?</p></div></header>
-<div class="toolbar"><nav aria-label="Abschnitte der Forschungsmission" class="steps"><button aria-current="step" class="stepbtn" data-step="0">01 · Sammlung</button><button class="stepbtn" data-step="1" disabled="">02 · Lebensstrategien</button><button class="stepbtn" data-step="2" disabled="">03 · Neue Hinweise</button><button class="stepbtn" data-step="3" disabled="">04 · Verwandtschaft</button><button class="stepbtn" data-step="4" disabled="">05 · Urteil</button></nav><div aria-hidden="true" class="progress"><div id="progressbar"></div></div></div>
-<main class="frame" id="mission"><section class="stage active" id="stage0"><div class="stageHeader"><h2>Ein rätselhafter Fund</h2><span class="smalltag">Forschungsschritt 1 von 5</span></div><div class="scene"><div class="imagepane"><img alt="Künstlerische Rekonstruktion einer Forschungssammlung mit Dinosaurierknochen, federartiger Struktur, Vogelzeichnungen und Expeditionsausrüstung" src="{{asset:img/mission-6/hero-fossiliensammlung.jpg}}"/><div class="figcaption">Künstlerische Expeditionsszene. Die Gegenstände dienen als Einstieg; sie sind keine zusammengehörigen Originalfunde.</div><img alt="Museumsdiorama zur Hell-Creek-Formation mit kleinen zweibeinigen Dinosauriern in einer bewaldeten Umgebung" src="{{asset:img/mission-6/hell-creek-dinosaurier.jpg}}"/><div class="figcaption">Museumsdiorama zur Hell-Creek-Formation, Montana: historische Rekonstruktion aus Fossilbefunden (Michael Barera, CC BY-SA 4.0). Solche Darstellungen sind keine Fotografien der Kreidezeit.</div></div><div class="paper"><h3>Der Museumsführer behauptet …</h3><p>„Vor 66 Millionen Jahren starben <strong>alle</strong> Dinosaurier aus. Danach lebten nur noch völlig andere Tiere.“</p><p>In der Sammlung findest du Hinweise auf große Dinosaurier, kleine gefiederte Tiere, Schildkröten, Vögel und Krokodil-Verwandte. Stimmt die Behauptung?</p><div class="notebox"><strong>Dein Forschungsauftrag</strong><ol><li>Betrachte beide Bilder. Nenne zwei Merkmale, die dir auffallen.</li><li>Überlege: Können Bilder allein zeigen, welche Arten das Massenaussterben überlebt haben?</li><li>Notiere deine <strong>erste Vermutung</strong> im analogen Forscherheft. Du darfst sie später ändern.</li></ol><div class="lernreise12-output" data-station="6" data-task="1"><strong>Woran erkennst du, dass du fertig bist? </strong>Im Forscherheft: 2 beobachtete Merkmale und 1 anfängliche Vermutung. Die Vermutung darf sich später verändern.</div><details class="lernreise12-help"><summary>Auftrag unklar? Begriffe und Vorgehen kurz erklärt</summary><p>Beobachten heißt: Was ist im Bild wirklich zu erkennen? Vermuten heißt: Welche Erklärung könnte stimmen? Bilder können eine Vermutung anregen, aber allein nicht zeigen, welche Arten überlebten.</p></details></div><details class="prior"><summary>Vorwissen: Was ist eine Art? Was ist ein Fossil?</summary><p>Eine <strong>Art</strong> bezeichnet eine Gruppe eng verwandter Lebewesen. Ein <strong>Fossil</strong> ist ein erhaltener Überrest oder eine Spur eines Lebewesens aus früherer Zeit, etwa ein versteinerter Knochen.</p></details><div class="heft"><strong>📓 Dein analoges Forscherheft</strong>Überschrift „Mission 6 – Die Überlebenden“. Notiere deine Vermutung und eine Frage, die du klären möchtest.</div><div class="buttons"><button class="btn primary" data-next="1">Vier Lebensweisen untersuchen →</button></div></div></div></section>
-<section class="stage" id="stage1"><div class="stageHeader"><h2>Wer hatte welche Schwierigkeiten?</h2><span class="smalltag">Forschungsschritt 2 von 5</span></div><div class="fullpaper"><h3>Zwei Fälle untersuchen – weitere Fälle freiwillig</h3><p>Nach dem Einschlag gelangte weniger Sonnenlicht zur Erdoberfläche. Pflanzen konnten zeitweise weniger energiereiche Stoffe herstellen. Das wirkte sich auf Nahrungsketten aus. Die folgenden Beispiele zeigen <strong>mögliche Lebensweisen</strong> und sind keine Messdaten einzelner Arten. Beginne mit A und B. C und D kannst du anschließend freiwillig erforschen.</p><div aria-label="Vereinfachte Nahrungskette" class="network"><span>☀ Sonnenlicht</span><em>→</em><span>🌿 Pflanzen</span><em>→</em><span>🦕 Pflanzenfresser</span><em>→</em><span>🦖 Räuber</span></div><details class="prior"><summary>Vorwissen: Was sind Nahrungskette, Vorrat und Detritus?</summary><p>In einer <strong>Nahrungskette</strong> wird vereinfacht gezeigt, wer sich von wem ernährt. Ein <strong>Vorrat</strong> ist Nahrung, die eine Zeit lang verfügbar bleibt, beispielsweise Samen. <strong>Detritus</strong> bezeichnet abgestorbene Pflanzenteile und anderes organisches Material; es kann über Kleinstlebewesen Teil einer Nahrungskette werden.</p></details><div class="gridcards" id="profiles">
-<div class="profile"><div class="profileHead"><span class="letter">A</span><h3>Großer Pflanzenfresser</h3></div><p>Braucht viel frische Pflanzenmasse. Wenn Blätter und andere Pflanzen stark zurückgehen, findet er weniger Nahrung.</p><div class="profileBody"><label for="riskA">Wie könnte sich der Nahrungsmangel auswirken?</label><select data-risk="" id="riskA"><option value="">Wähle eine Einschätzung …</option><option value="hoch">Eher hoch</option><option value="puffer">Möglicherweise abgefedert</option><option value="offen">Noch nicht sicher einzuschätzen</option></select></div></div>
-<div class="profile"><div class="profileHead"><span class="letter">B</span><h3>Kleiner samenfressender Vogel</h3></div><p>Könnte harte Samen aufnehmen, die auch nach einer schweren Umweltstörung noch zeitweise vorhanden sind. Aber Nahrung und Lebensraum bleiben unsicher.</p><div class="profileBody"><label for="riskB">Wie könnte sich der Nahrungsmangel auswirken?</label><select data-risk="" id="riskB"><option value="">Wähle eine Einschätzung …</option><option value="hoch">Eher hoch</option><option value="puffer">Möglicherweise abgefedert</option><option value="offen">Noch nicht sicher einzuschätzen</option></select></div></div>
-<div class="profile" data-extension=""><div class="profileHead"><span class="letter">C</span><h3>Tier im Süßwasser</h3></div><p>Einige Süßwasser-Nahrungswege konnten abgestorbene organische Stoffe nutzen. Das könnte die Abhängigkeit von frischen grünen Pflanzen zeitweise verringert haben.</p><div class="profileBody"><label for="riskC">Wie könnte sich der Nahrungsmangel auswirken?</label><select data-risk="" id="riskC"><option value="">Wähle eine Einschätzung …</option><option value="hoch">Eher hoch</option><option value="puffer">Möglicherweise abgefedert</option><option value="offen">Noch nicht sicher einzuschätzen</option></select></div></div>
-<div class="profile" data-extension=""><div class="profileHead"><span class="letter">D</span><h3>Großer Fleischfresser</h3></div><p>Ist auf größere Beutetiere angewiesen. Wenn deren Nahrung knapp wird und ihre Zahl sinkt, kann auch für den Räuber die Nahrung fehlen.</p><div class="profileBody"><label for="riskD">Wie könnte sich der Nahrungsmangel auswirken?</label><select data-risk="" id="riskD"><option value="">Wähle eine Einschätzung …</option><option value="hoch">Eher hoch</option><option value="puffer">Möglicherweise abgefedert</option><option value="offen">Noch nicht sicher einzuschätzen</option></select></div></div>
-</div><div class="notebox"><strong>Dein Forschungsauftrag</strong><ol><li>Lies zunächst nur die Fälle <strong>A (Pflanzenfresser)</strong> und <strong>B (samenfressender Vogel)</strong>.</li><li>Wähle jeweils eine Einschätzung: Wer könnte bei längerem Lichtmangel leichter Nahrung finden? Erkläre warum.</li><li><strong>Forscherheft:</strong> Schreibe zwei Sätze: „Der Pflanzenfresser könnte Schwierigkeiten bekommen, weil …“ und „Der samenfressende Vogel könnte einen Vorteil haben, weil …“. Ergänze: „Sicher wissen wir das nicht, denn …“.</li></ol><div class="lernreise12-output" data-station="6" data-task="2"><strong>Woran erkennst du, dass du fertig bist? </strong>Im Forscherheft: 2 begründete Sätze zu den Fällen A und B und 1 Satz zur Unsicherheit. Die zusätzlichen Fälle bleiben freiwillig.</div><details class="lernreise12-help"><summary>Auftrag unklar? Begriffe und Vorgehen kurz erklärt</summary><p>Vergleichen: Frage zuerst, welche Nahrung beide Tiere brauchen. Begründen: Sage, wie der Lichtmangel auf diese Nahrung wirken könnte. Du sollst keine Sicherheit vortäuschen, wenn mehrere Ergebnisse möglich sind.</p></details><p><strong>Zusatzforschung (freiwillig):</strong> Vergleiche auch die Fälle C und D. Eine Tabelle ist nicht nötig.</p></div><details class="helpbox"><summary>💡 Hilfe bei Schwierigkeiten</summary><p>Denke in zwei Fragen: <strong>Wovon lebt das Tier?</strong> Und: <strong>Wie stark hängt diese Nahrung von frisch wachsenden Pflanzen ab?</strong> Eine Vermutung ist erlaubt, solange du sie begründest.</p></details><div class="heft"><strong>📓 Forscherheft</strong>Notiere die beiden begründeten Sätze zu A und B und mindestens eine offene Frage. Die Zusatzfälle C und D sind freiwillig.</div><div class="buttons"><button class="btn secondary" data-back="0">← Zur Sammlung</button><button class="btn primary" id="riskBtn">Einschätzungen sichern →</button></div><div class="feedback" id="riskFeedback" role="status"></div></div></section>
-<section class="stage" id="stage2"><div class="stageHeader"><h2>Neue Spuren verändern das Bild</h2><span class="smalltag">Forschungsschritt 3 von 5</span></div><div class="scene"><div class="imagepane"><div style="padding:18px"><div class="tree"><svg aria-label="Schematische Darstellung von Nahrungswegen nach einem Rückgang der Pflanzenproduktion" role="img" viewbox="0 0 760 450"><rect fill="#152a32" height="450" rx="15" width="760"></rect><text fill="#ffdd9c" font-size="27" font-weight="750" x="30" y="42">Zwei mögliche Nahrungswege</text><g fill="none" stroke="#e6b76a" stroke-width="5"><path d="M186 130 V215"></path><path d="M570 130 V215"></path><path d="M186 300 V362"></path><path d="M570 300 V362"></path></g><g fill="#fcf4dd" font-family="sans-serif" font-size="22" text-anchor="middle"><rect fill="#315747" height="60" rx="15" width="300" x="36" y="76"></rect><text x="186" y="114">Gespeicherte Samen</text><rect fill="#315747" height="60" rx="15" width="300" x="412" y="76"></rect><text x="562" y="114">Abgestorbene Stoffe</text><rect fill="#3a5058" height="80" rx="15" width="300" x="36" y="215"></rect><text x="186" y="246">Samenfressende</text><text x="186" y="273">Vögel</text><rect fill="#3a5058" height="80" rx="15" width="300" x="412" y="215"></rect><text x="562" y="246">Kleinstlebewesen</text><text x="562" y="273">im Wasser</text><rect fill="#755a34" height="53" rx="15" width="300" x="36" y="361"></rect><text x="186" y="396">Mögliche Pufferung</text><rect fill="#755a34" height="53" rx="15" width="300" x="412" y="361"></rect><text x="562" y="396">Nahrung für Wassertiere</text></g></svg></div><div class="figcaption">Eigens erstelltes Wirkungsmodell. Es zeigt mögliche Nahrungswege, keine gemessenen Überlebensraten.</div></div></div><div class="paper"><h3>Die zweite Expedition meldet sich</h3><p>Die ersten Vergleiche sind hilfreich – aber vielleicht zu einfach. Jetzt treffen zwei zusätzliche Hinweise ein.</p><div class="revision"><div class="reveal" id="revBird"><button aria-expanded="false" data-reveal="revBird" type="button">✉ Hinweis 1 · Vögel öffnen</button><div class="inside"><p>Nach dem Massenaussterben blieben nur <strong>wenige Vogellinien</strong> übrig. Samen als haltbare Nahrung könnten manchen geholfen haben. Zugleich waren Wälder vielerorts zerstört. Die Fähigkeit zu fliegen oder klein zu sein reichte allein nicht aus.</p></div></div><div class="reveal" id="revWater"><button aria-expanded="false" data-reveal="revWater" type="button">✉ Hinweis 2 · Süßwasser öffnen</button><div class="inside"><p>Manche Süßwasser-Nahrungsketten konnten abgestorbenes organisches Material nutzen. Das könnte zeitweise geholfen haben. Auch diese Nahrung war jedoch nicht unbegrenzt vorhanden; verschiedene Arten waren unterschiedlich betroffen.</p></div></div></div><div class="notebox"><strong>Dein Forschungsauftrag</strong><ol><li>Öffne <strong>beide Hinweise</strong> und lies sie.</li><li>Überprüfe deine bisherigen Vermutungen aus dem Forscherheft (besonders zu Fall B; falls bearbeitet, auch zu Fall C). Welche Vermutung würdest du <strong>präzisieren oder ändern</strong>?</li><li>Vervollständige im Heft: „Zuerst dachte ich … . Nach dem neuen Hinweis meine ich … , weil … .“</li></ol><div class="lernreise12-output" data-station="6" data-task="3"><strong>Woran erkennst du, dass du fertig bist? </strong>Im Forscherheft: mindestens 1 überarbeitete Vermutung mit dem Satzmuster „Zuerst dachte ich … Jetzt vermute ich …, weil …“.</div><details class="lernreise12-help"><summary>Auftrag unklar? Begriffe und Vorgehen kurz erklärt</summary><p>Überprüfen: Vergleiche eine frühere Vermutung mit einem neuen Hinweis. Präzisieren heißt: eine Aussage genauer machen. Du darfst deine erste Idee ändern – wichtig ist der Grund dafür.</p></details></div><details class="helpbox"><summary>💡 Hilfe: Eine Vermutung verbessern</summary><p>Eine wissenschaftliche Vermutung zu ändern ist kein Fehler. Du zeigst damit, dass du neue Belege ernst nimmst. Formuliere möglichst: „Der Vorteil <em>könnte</em> helfen, <em>garantiert aber nicht</em> das Überleben.“</p></details><div class="heft"><strong>📓 Forscherheft</strong>Verbessere mindestens eine Einschätzung mit einem neuen Argument. Markiere die Änderung sichtbar.</div><div class="buttons"><button class="btn secondary" data-back="1">← Vorherige Profile</button><button class="btn primary" id="revealNext">Weiter: Wer gehört zu den Dinosauriern? →</button></div><div class="feedback" id="revealFeedback" role="status"></div></div></div></section>
-<section class="stage" id="stage3"><div class="stageHeader"><h2>Eine unerwartete Verwandtschaft</h2><span class="smalltag">Forschungsschritt 4 von 5</span></div><div class="scene"><div class="imagepane"><div class="tree"><svg aria-label="Vereinfachter Verwandtschaftsbaum: Dinosaurier umfassen mehrere Linien; innerhalb der Theropoden entstanden die Vögel, die heute noch leben" role="img" viewbox="0 0 740 520"><rect fill="#10232c" height="520" rx="12" width="740"></rect><text fill="#f6d9a2" font-size="25" font-weight="750" x="24" y="38">Ein Stammbaum – stark vereinfacht</text><g fill="none" stroke="#c9b283" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"><path d="M365 105 V142 M175 142 H560 M175 142 V205 M560 142 V205 M560 258 V299 M430 299 H650 M430 299 V355 M650 299 V355"></path></g><g font-size="23" font-weight="700" text-anchor="middle"><rect fill="#7a5430" height="55" rx="13" width="262" x="234" y="62"></rect><text fill="#fff2d8" x="365" y="96">Dinosaurier</text><rect fill="#335263" height="78" rx="13" width="290" x="30" y="200"></rect><text fill="#fff2d8" x="175" y="233">andere Dinosaurier-</text><text fill="#fff2d8" x="175" y="263">gruppen</text><rect fill="#335263" height="76" rx="13" width="296" x="412" y="202"></rect><text fill="#fff2d8" x="560" y="234">Theropoden</text><text fill="#f8dfb3" font-size="17" x="560" y="260">z. B. T. rex und Vogel-Linien</text><rect fill="#3b5360" height="76" rx="13" width="260" x="280" y="350"></rect><text fill="#fff2d8" x="410" y="382">nichtvogelartige</text><text fill="#fff2d8" x="410" y="412">Theropoden †</text><rect fill="#2d684e" height="76" rx="13" width="164" x="565" y="350"></rect><text fill="#fff2d8" x="647" y="382">Vögel</text><text fill="#fff2d8" x="647" y="411">leben heute</text></g><g fill="#bfcfd1" font-size="17"><text x="28" y="480">† = heute ausgestorbene Linien</text></g></svg></div><div class="figcaption">Ein stark vereinfachter Verwandtschaftsbaum: Vögel sind eine heute lebende Dinosauriergruppe. Nicht alle frühen vogelartigen Linien überlebten.</div></div><div class="paper"><h3>Waren wirklich alle Dinosaurier verschwunden?</h3><p>Der Museumsführer hat behauptet, alle Dinosaurier seien vor 66 Millionen Jahren ausgestorben. In der Forschung werden Vögel aber zu den Dinosauriern gezählt. Das ist durch zahlreiche gemeinsame Merkmale und Fossilien gut belegt.</p><div class="notebox"><strong>Dein Forschungsauftrag</strong><ol><li>Untersuche den Stammbaum. <strong>Wo</strong> zweigt die Vogel-Linie ab?</li><li>Vergleiche die drei Aussagen darunter. Wähle die fachlich zutreffende.</li><li>Verbessere die Behauptung des Museumsführers in <strong>zwei eigenen Sätzen</strong> im Forscherheft.</li></ol><div class="lernreise12-output" data-station="6" data-task="4"><strong>Woran erkennst du, dass du fertig bist? </strong>Im Forscherheft: 2 Sätze, die die Behauptung des Museumsführers fachlich richtigstellen.</div><details class="lernreise12-help"><summary>Auftrag unklar? Begriffe und Vorgehen kurz erklärt</summary><p>Einen Stammbaum lesen: Verfolge den Ast einer Gruppe zurück zum gemeinsamen Ursprung. Vergleichen heißt hier: Prüfe die drei Aussagen darauf, welche zum Stammbaum passt.</p></details></div><div class="choice"><input id="birdA" name="bird" type="radio" value="a"/><label for="birdA">Vögel stammen direkt von Tyrannosaurus rex ab.</label></div><div class="choice"><input id="birdB" name="bird" type="radio" value="b"/><label for="birdB">Vögel gehören zu den Dinosauriern; die Nicht-Vogel-Dinosaurier starben aus.</label></div><div class="choice"><input id="birdC" name="bird" type="radio" value="c"/><label for="birdC">Vögel sehen nur ähnlich aus, sind aber mit Dinosauriern nicht verwandt.</label></div><details class="prior"><summary>Vorwissen: Was ist eine Abstammungslinie?</summary><p>Eine <strong>Abstammungslinie</strong> verbindet Lebewesen über viele Generationen und gemeinsame Vorfahren. Vögel entwickelten sich innerhalb kleiner, gefiederter Theropoden-Linien. Sie stammen <em>nicht direkt</em> vom Tyrannosaurus rex ab; beide haben weiter zurückliegende gemeinsame Vorfahren.</p></details><details class="helpbox"><summary>💡 Hilfe: Den Stammbaum lesen</summary><p>Beginne oben bei „Dinosaurier“, folge den Verzweigungen bis zu „Theropoden“ und dann zur Vogel-Linie. Ein Stammbaum zeigt Verwandtschaft, keine direkte Reihenfolge „T. rex → heutige Vögel“.</p></details><div class="buttons"><button class="btn secondary" data-back="2">← Neue Hinweise</button><button class="btn primary" id="birdCheck">Aussage prüfen →</button></div><div class="feedback" id="birdFeedback" role="status"></div></div></div></section>
-<section class="stage" id="stage4"><div class="stageHeader"><h2>Forschungsurteil sichern</h2><span class="smalltag">Forschungsschritt 5 von 5</span></div><div class="scene"><div class="imagepane"><img alt="Fossiliensammlung und Forschungsheft in warmem Expeditionslicht" src="{{asset:img/mission-6/hero-fossiliensammlung.jpg}}"/><div class="figcaption">Für die letzte Mission wird aus Beobachtungen und begründeten Vermutungen ein zusammenhängender Forschungsbericht im analogen Heft.</div><div style="padding:16px"><div class="network"><span>Nahrungsquelle</span><em>→</em><span>Verwundbarkeit</span><em>→</em><span>Neue Belege</span><em>→</em><span>Urteil</span></div></div></div><div class="paper"><h3>Dein Urteil zur Überlebensfrage</h3><p>Wissenschaftliche Aussagen müssen erklären, <strong>warum</strong> etwas plausibel ist – und wo die Grenzen der Erklärung liegen. Für die Überlebenden gab es keine einfache Regel.</p><div class="notebox"><strong>Dein Abschlussauftrag</strong><ol><li>Übertrage deine überarbeitete Vergleichsmatrix in dein analoges Forscherheft: <em>Nahrungsquelle – Risiko – möglicher Vorteil – Unsicherheit</em>.</li><li>Schreibe drei begründete Sätze: <strong>Wodurch</strong> könnten manche Lebewesen Vorteile gehabt haben? <strong>Warum</strong> reichte ein einzelner Vorteil nicht aus? <strong>Welche</strong> Dinosaurier gibt es heute noch?</li><li>Notiere eine Forschungsfrage, die offenbleibt.</li></ol><div class="lernreise12-output" data-station="6" data-task="5"><strong>Woran erkennst du, dass du fertig bist? </strong>Im Forscherheft: eine einfache Übersicht mit 4 Überschriften und 3 begründete Sätze. Eine offene Frage als letzter Punkt genügt.</div><details class="lernreise12-help"><summary>Auftrag unklar? Begriffe und Vorgehen kurz erklärt</summary><p>Vergleichsmatrix heißt hier nur: eine kleine Tabelle. Überschriften: Nahrungsquelle | Risiko | möglicher Vorteil | Unsicherheit. Stichworte genügen – keine aufwendige Gestaltung. Begründen: Nenne jeweils einen passenden Grund.</p></details></div><div class="callout"><strong>Denke daran:</strong> „Konnte helfen“ ist nicht dasselbe wie „garantierte das Überleben“. Deine Aussagen sollen zu den Befunden passen.</div><h4>Heft-Check</h4><div class="checklist"><label><input class="heftcheck" type="checkbox"/> Ich habe die Fälle A und B verglichen und begründet.</label><label><input class="heftcheck" type="checkbox"/> Ich habe eine erste Vermutung wegen neuer Hinweise überprüft.</label><label><input class="heftcheck" type="checkbox"/> Ich kann erklären, warum heutige Vögel Dinosaurier sind.</label><label><input class="heftcheck" type="checkbox"/> Ich habe eine Unsicherheit oder offene Frage festgehalten.</label></div><div class="buttons"><button class="btn secondary" data-back="3">← Verwandtschaft prüfen</button><button class="btn primary" id="finish">Mission 6 abschließen</button></div><div aria-live="polite" class="feedback" id="finishFeedback" role="status"></div></div></div></section>
-<footer class="source"><strong>Fachliche Grundlagen:</strong> <a href="https://www.nhm.ac.uk/discover/why-are-birds-the-only-surviving-dinosaurs.html">Natural History Museum: Why are birds the only surviving dinosaurs?</a>; <a href="https://www.amnh.org/exhibitions/dinosaurs-ancient-fossils/extinction/dinosaurs-survive">American Museum of Natural History: Dinosaurs Survive</a>; <a href="https://www.smithsonianmag.com/science-nature/why-birds-survived-and-dinosaurs-went-extinct-after-asteroid-hit-earth-180975801/">Smithsonian Magazine: Why Birds Survived</a>. Die Quellenlinks sind optional und benötigen Internet; alle Aufgaben und Bilder dieser Station funktionieren ohne Netz. Diorama-Foto: Michael Barera, <a href="https://commons.wikimedia.org/wiki/File:Milwaukee_Public_Museum_October_2023_33_(Exploring_Life_on_Earth--Hell_Creek_Formation_Montana_65_Million_Years_Ago).jpg">Wikimedia Commons, CC BY-SA 4.0</a>. Die Expeditionsgrafik ist eine eigens erzeugte künstlerische Darstellung.</footer></main>
-<script>
-(()=>{'use strict';let unlocked=0,current=0,finished=false;const stages=[...document.querySelectorAll('.stage')],buttons=[...document.querySelectorAll('.stepbtn')],bar=document.querySelector('#progressbar');let riskReady=false;let birdReady=false;const revealing=new Set();function go(i){if(i<0||i>unlocked)return;current=i;stages.forEach((s,j)=>s.classList.toggle('active',i===j));buttons.forEach((b,j)=>{b.disabled=j>unlocked;if(j===i)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current')});bar.style.width=(i/4*100)+'%';document.getElementById('mission').scrollIntoView({block:'start',behavior:'instant'});}function unlock(i){unlocked=Math.max(i,unlocked);go(i)}buttons.forEach((b,j)=>b.addEventListener('click',()=>go(j)));document.querySelectorAll('[data-next]').forEach(b=>b.addEventListener('click',()=>unlock(Number(b.dataset.next))));document.querySelectorAll('[data-back]').forEach(b=>b.addEventListener('click',()=>go(Number(b.dataset.back))));function msg(id,content,bad=false){const x=document.getElementById(id);x.textContent=content;x.classList.add('show');x.classList.toggle('warn',bad);x.scrollIntoView({block:'nearest',behavior:'instant'})}
-document.getElementById('riskBtn').addEventListener('click',()=>{const vals=[...document.querySelectorAll('#riskA,#riskB')].map(x=>x.value);if(vals.some(x=>!x))return msg('riskFeedback','Schätze zuerst die beiden Fälle A und B ein. Die weiteren Fälle sind freiwillig.',true);riskReady=true;msg('riskFeedback','Deine beiden ersten Einschätzungen sind festgehalten. Vergleiche sie mit deinem analogen Forscherheft – und prüfe gleich die neuen Hinweise.');document.getElementById('riskBtn').textContent='Zu den neuen Hinweisen →';setTimeout(()=>{if(current===1)unlock(2)},180)});
-document.querySelectorAll('[data-reveal]').forEach(b=>b.addEventListener('click',()=>{const e=document.getElementById(b.dataset.reveal);const was=e.classList.toggle('open');b.setAttribute('aria-expanded',String(was));if(was)revealing.add(e.id)}));document.getElementById('revealNext').addEventListener('click',()=>{if(revealing.size<2)return msg('revealFeedback','Öffne bitte beide neuen Hinweise. Erst ihr Vergleich ermöglicht eine fundierte Überarbeitung deiner Vermutung.',true);unlock(3)});
-document.getElementById('birdCheck').addEventListener('click',()=>{const ans=document.querySelector('input[name="bird"]:checked');if(!ans)return msg('birdFeedback','Wähle bitte eine Aussage aus und prüfe sie mit dem Stammbaum.',true);if(ans.value!=='b')return msg('birdFeedback',ans.value==='a'?'Noch nicht: Heutige Vögel stammen nicht direkt vom Tyrannosaurus rex ab. Suche im Stammbaum den gemeinsamen älteren Zweig.':'Vergleiche den Stammbaum: Die Vogel-Linie liegt innerhalb der Dinosaurier. Prüfe die Verzweigungen erneut.',true);birdReady=true;msg('birdFeedback','Richtig. Die Nicht-Vogel-Dinosaurier starben aus; einige Vogellinien überlebten. Formuliere die Korrektur in eigenen Worten im Forscherheft.');document.getElementById('birdCheck').textContent='Zum Forschungsurteil →';setTimeout(()=>{if(current===3)unlock(4)},180)});
-document.getElementById('finish').addEventListener('click',()=>{const checks=[...document.querySelectorAll('.heftcheck')];const n=checks.filter(x=>x.checked).length;if(!riskReady||!birdReady)return msg('finishFeedback','Überprüfe zuerst deine Profile und die Verwandtschaftsfrage.',true);if(n<4)return msg('finishFeedback','Zum Heft-Check fehlen noch '+(4-n)+' Punkte. Bitte vervollständige deine analoge Forscherakte.',true);finished=true;const b=document.getElementById('finish');b.textContent='✓ Mission 6 abgeschlossen';b.disabled=true;msg('finishFeedback','✓ Mission 6 abgeschlossen. Deine analoge Forscherakte enthält jetzt einen begründeten Vergleich, eine überarbeitete Vermutung und die Einordnung der Vögel als lebende Dinosaurier.');});go(0);
-})();
-</script></body></html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="#101a21" name="theme-color" />
+    <title>AKTE 66 | Mission 6 – Die Überlebenden</title>
+    <style>
+      :root {
+        --dark: #101a21;
+        --dark2: #1a2b31;
+        --gold: #e8b66b;
+        --gold2: #f5d6a1;
+        --paper: #fbf1dd;
+        --ink: #272721;
+        --line: #d1ab77;
+        --blue: #2d5c69;
+        --good: #155943;
+        --muted: #697e83;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: radial-gradient(ellipse at top, #263b3d 0%, #101a21 63%);
+        color: #f9f0df;
+        font:
+          17px/1.55 system-ui,
+          -apple-system,
+          "Segoe UI",
+          sans-serif;
+      }
+      button,
+      select {
+        font: inherit;
+      }
+      button {
+        cursor: pointer;
+      }
+      button:focus-visible,
+      select:focus-visible,
+      summary:focus-visible,
+      input:focus-visible {
+        outline: 3px solid #ffdf8b;
+        outline-offset: 3px;
+      }
+      a {
+        color: #80501b;
+      }
+      .hero {
+        height: 320px;
+        position: relative;
+        background:
+          linear-gradient(90deg, rgba(11, 21, 26, 0.95), rgba(11, 21, 26, 0.62) 45%, rgba(11, 21, 26, 0.04)),
+          url("{{asset:img/mission-6/hero-fossiliensammlung.jpg}}") center 57% / cover;
+        display: flex;
+        align-items: center;
+        padding: 20px max(22px, calc((100vw - 1220px) / 2));
+      }
+      .heroTitle {
+        max-width: 650px;
+      }
+      .eyebrow {
+        color: var(--gold);
+        text-transform: uppercase;
+        letter-spacing: 0.17em;
+        font-size: 0.77rem;
+        font-weight: 800;
+      }
+      .hero h1 {
+        font:
+          700 clamp(2.4rem, 5vw, 4.6rem) / 1 Georgia,
+          serif;
+        margin: 8px 0;
+        color: #ffe6ac;
+        text-shadow: 0 3px 15px #000;
+      }
+      .hero p {
+        font-size: 1.08rem;
+        max-width: 53ch;
+        color: #f4e9d6;
+      }
+      .toolbar {
+        max-width: 1220px;
+        padding: 0 16px;
+        margin: -20px auto 0;
+        position: relative;
+        z-index: 3;
+      }
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 7px;
+        background: #0d171c;
+        border: 1px solid #695232;
+        padding: 12px;
+        border-radius: 18px;
+        box-shadow: 0 16px 36px #0008;
+      }
+      .stepbtn {
+        min-height: 58px;
+        padding: 10px 8px;
+        background: #1b2d33;
+        border: 1px solid #476169;
+        border-radius: 12px;
+        color: #f3e6d0;
+        font-size: 0.91rem;
+        font-weight: 700;
+        text-align: center;
+      }
+      .stepbtn[aria-current="step"] {
+        background: #614529;
+        color: #fff2da;
+        border-color: #f3c277;
+      }
+      .stepbtn:disabled {
+        opacity: 0.47;
+        cursor: not-allowed;
+      }
+      .progress {
+        background: #2b4148;
+        height: 6px;
+        margin-top: 10px;
+        border-radius: 20px;
+        overflow: hidden;
+      }
+      .progress > div {
+        width: 0;
+        height: 100%;
+        background: #f1ba63;
+        transition: width 0.25s;
+      }
+      .frame {
+        max-width: 1220px;
+        margin: auto;
+        padding: 20px 16px 60px;
+      }
+      .stage {
+        display: none;
+      }
+      .stage.active {
+        display: block;
+      }
+      .stageHeader {
+        display: flex;
+        justify-content: space-between;
+        gap: 14px;
+        align-items: baseline;
+        margin: 12px 0 18px;
+      }
+      .stageHeader h2 {
+        font:
+          700 clamp(1.6rem, 3vw, 2.2rem) Georgia,
+          serif;
+        color: #f4d79e;
+        margin: 0;
+      }
+      .smalltag {
+        color: #f1d6aa;
+        font-size: 0.95rem;
+      }
+      .scene {
+        display: grid;
+        grid-template-columns: minmax(0, 1.06fr) minmax(0, 0.94fr);
+        gap: 16px;
+        align-items: start;
+      }
+      .imagepane {
+        background: #10232a;
+        border: 1px solid #766448;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 14px 30px #0004;
+      }
+      .imagepane img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      .figcaption {
+        font-size: 0.86rem;
+        line-height: 1.44;
+        padding: 10px 14px;
+        color: #dfe7e1;
+        background: #152831;
+      }
+      .paper {
+        background: linear-gradient(145deg, #fffaed, #f4e5c8);
+        color: var(--ink);
+        border: 1px solid #b89157;
+        border-radius: 18px;
+        box-shadow: 0 10px 30px #0004;
+        padding: clamp(18px, 3vw, 30px);
+      }
+      .paper h3 {
+        font:
+          700 1.6rem Georgia,
+          serif;
+        margin: 0 0 10px;
+        color: #3e301b;
+      }
+      .paper h4 {
+        font:
+          700 1.15rem Georgia,
+          serif;
+        color: #443521;
+        margin: 14px 0 6px;
+      }
+      .paper p {
+        margin: 10px 0;
+      }
+      .paper ol {
+        padding-left: 1.4em;
+      }
+      .paper li {
+        margin: 8px 0;
+      }
+      .notebox {
+        border-left: 5px solid #9a7138;
+        background: #fff7e9;
+        padding: 10px 14px;
+        border-radius: 10px;
+        margin: 16px 0;
+      }
+      .heft {
+        background: #e5f1eb;
+        border: 1px solid #9fc4ad;
+        color: #1b493b;
+        padding: 12px 14px;
+        border-radius: 12px;
+        margin: 14px 0;
+      }
+      .heft strong {
+        display: block;
+        margin-bottom: 3px;
+      }
+      .prior {
+        background: #fffaf0;
+        border: 1px solid #d2b386;
+        color: #26251f;
+        border-radius: 12px;
+        padding: 10px 13px;
+        margin: 11px 0;
+      }
+      .prior summary {
+        font-weight: 750;
+        color: #624214;
+        cursor: pointer;
+      }
+      .prior p,
+      .prior li {
+        color: #252821;
+      }
+      .helpbox {
+        background: #fffaf0;
+        color: #24251f;
+        border: 1px solid #d2b386;
+        border-radius: 12px;
+        margin: 10px 0;
+        padding: 9px 12px;
+      }
+      .helpbox summary {
+        font-weight: 750;
+        cursor: pointer;
+      }
+      .helpbox .prior {
+        background: #f6edda;
+      }
+      .buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 16px;
+      }
+      .btn {
+        border: 1px solid #ad9168;
+        padding: 11px 16px;
+        border-radius: 13px;
+        min-height: 45px;
+        font-weight: 800;
+      }
+      .btn.primary {
+        background: #205d4b;
+        color: #fff;
+        border-color: #216751;
+      }
+      .btn.secondary {
+        background: #f0e0c3;
+        color: #332612;
+      }
+      .feedback {
+        display: none;
+        margin-top: 12px;
+        padding: 12px 14px;
+        border-radius: 12px;
+        color: #1f3428;
+        background: #e8f2df;
+        border: 1px solid #8fb88e;
+        font-weight: 600;
+      }
+      .feedback.show {
+        display: block;
+      }
+      .feedback.warn {
+        background: #fff1d5;
+        color: #583918;
+        border-color: #c9a36b;
+      }
+      .fullpaper {
+        background: linear-gradient(145deg, #fcf2dd, #eddbb8);
+        color: var(--ink);
+        border: 1px solid #c4a06a;
+        border-radius: 20px;
+        padding: clamp(15px, 2.5vw, 28px);
+      }
+      .gridcards {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+      .profile {
+        background: #fffaf0;
+        border: 1px solid #caa976;
+        border-radius: 16px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+      .profile h3 {
+        font:
+          700 1.25rem Georgia,
+          serif;
+        margin: 0;
+      }
+      .profile .profileHead {
+        background: #e7d2a8;
+        padding: 14px;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+      .profile .letter {
+        display: grid;
+        place-items: center;
+        min-width: 42px;
+        height: 42px;
+        border-radius: 999px;
+        background: #263942;
+        color: #fff3d8;
+        font:
+          700 1.5rem Georgia,
+          serif;
+      }
+      .profile p {
+        margin: 0;
+        padding: 14px;
+      }
+      .profile .profileBody {
+        padding: 0 14px 15px;
+        margin-top: auto;
+      }
+      .profile select {
+        width: 100%;
+        min-height: 45px;
+        padding: 8px;
+        border-radius: 10px;
+        border: 1px solid #a88b61;
+        background: #fff;
+        color: #222;
+      }
+      .profile label {
+        font-size: 0.92rem;
+        font-weight: 750;
+      }
+      .network {
+        border: 1px solid #567076;
+        background: #12272f;
+        padding: 18px;
+        border-radius: 18px;
+        color: #f7f4e7;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+      .network span {
+        background: #253c43;
+        border: 1px solid #879795;
+        border-radius: 12px;
+        padding: 10px;
+        font-weight: 700;
+      }
+      .network em {
+        font-style: normal;
+        color: #ffd492;
+      }
+      .choice {
+        background: #fff9ed;
+        border: 1px solid #ccb086;
+        padding: 11px;
+        border-radius: 12px;
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        margin: 9px 0;
+      }
+      .choice input {
+        margin-top: 5px;
+        min-width: 19px;
+        min-height: 19px;
+      }
+      .tree {
+        background: #12262d;
+        border: 1px solid #75868b;
+        border-radius: 18px;
+        padding: 14px;
+        min-width: 0;
+      }
+      .tree svg {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      .tree text {
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
+      }
+      .revision {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+      .reveal {
+        border: 1px solid #c69b60;
+        border-radius: 14px;
+        overflow: hidden;
+        background: #fff5e1;
+      }
+      .reveal button {
+        background: #725431;
+        color: #fff8e6;
+        border: none;
+        width: 100%;
+        font-weight: 750;
+        padding: 13px;
+        text-align: left;
+      }
+      .reveal .inside {
+        padding: 13px;
+        display: none;
+      }
+      .reveal.open .inside {
+        display: block;
+      }
+      .marker {
+        display: inline-block;
+        background: #30584e;
+        color: #fff;
+        padding: 4px 9px;
+        border-radius: 20px;
+        font-size: 0.82rem;
+      }
+      .checklist label {
+        display: flex;
+        align-items: flex-start;
+        gap: 9px;
+        margin: 9px 0;
+      }
+      .checklist input {
+        margin-top: 5px;
+        min-width: 19px;
+        min-height: 19px;
+      }
+      .source {
+        font-size: 0.9rem;
+        color: #c8d0ce;
+        margin-top: 25px;
+        line-height: 1.6;
+      }
+      .source a {
+        color: #f7ce87;
+      }
+      .mini {
+        font-size: 0.94rem;
+        color: #554d3f;
+      }
+      .callout {
+        padding: 12px;
+        border-left: 4px solid #ab8754;
+        background: #fff9ea;
+        border-radius: 10px;
+      }
+      .visuallyHidden {
+        position: absolute;
+        clip: rect(0, 0, 0, 0);
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+      @media (max-width: 850px) {
+        .scene {
+          grid-template-columns: 1fr;
+        }
+        .steps {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+        .hero {
+          height: 280px;
+        }
+        .gridcards {
+          grid-template-columns: 1fr;
+        }
+        .revision {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 500px) {
+        body {
+          font-size: 16px;
+        }
+        .steps {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .stepbtn {
+          font-size: 0.85rem;
+        }
+        .hero {
+          height: 270px;
+        }
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+        .paper {
+          padding: 17px;
+        }
+        .frame {
+          padding: 15px 10px 40px;
+        }
+        .toolbar {
+          padding: 0 10px;
+        }
+        .stageHeader {
+          display: block;
+        }
+        .fullpaper {
+          padding: 15px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        .progress > div {
+          transition: none;
+        }
+      }
+      [data-extension] {
+        border-style: dashed !important;
+        opacity: 0.93;
+      }
+      [data-extension] .profileHead:after {
+        content: "Zusatzforschung";
+        font-size: 0.8rem;
+        padding: 3px 7px;
+        border-radius: 8px;
+        background: #e9dfc7;
+        color: #3b3020;
+        margin-left: auto;
+      }
+    </style>
+    <style>
+      /* AKTE 66 Forschungsreise 1.2: sprachsensibles, ruhiges Arbeitsgeruest */
+      .lernreise12-output {
+        margin: 10px 0 16px;
+        padding: 11px 14px;
+        border: 1px solid rgba(109, 143, 145, 0.32);
+        border-left: 4px solid #448f88;
+        border-radius: 9px;
+        background: rgba(74, 137, 133, 0.075);
+        color: inherit;
+        line-height: 1.55;
+        font-size: 0.96em;
+      }
+      .lernreise12-output strong {
+        font-weight: 750;
+      }
+      .lernreise12-help {
+        margin: 0 0 16px;
+        border: 1px solid rgba(124, 134, 138, 0.34);
+        border-radius: 8px;
+        background: rgba(127, 145, 144, 0.045);
+        font-size: 0.94em;
+        line-height: 1.5;
+      }
+      .lernreise12-help summary {
+        cursor: pointer;
+        padding: 9px 12px;
+        font-weight: 650;
+        list-style-position: inside;
+      }
+      .lernreise12-help p {
+        margin: 0;
+        padding: 0 12px 12px;
+        max-width: 78ch;
+      }
+      .lernreise12-output,
+      .lernreise12-help {
+        max-width: 85ch;
+      }
+      @media print {
+        .lernreise12-help p {
+          display: block;
+        }
+        .lernreise12-output {
+          break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="heroTitle">
+        <div class="eyebrow">AKTE 66 · Expedition ins verlorene Zeitalter</div>
+        <h1>Die Überlebenden</h1>
+        <p>
+          In einer verlassenen Forschungssammlung stößt das Team auf ein Rätsel: Warum verschwanden manche
+          Tiergruppen – während andere bis heute existieren?
+        </p>
+      </div>
+    </header>
+    <div class="toolbar">
+      <nav aria-label="Abschnitte der Forschungsmission" class="steps">
+        <button aria-current="step" class="stepbtn" data-step="0">01 · Sammlung</button
+        ><button class="stepbtn" data-step="1" disabled="">02 · Lebensstrategien</button
+        ><button class="stepbtn" data-step="2" disabled="">03 · Neue Hinweise</button
+        ><button class="stepbtn" data-step="3" disabled="">04 · Verwandtschaft</button
+        ><button class="stepbtn" data-step="4" disabled="">05 · Urteil</button>
+      </nav>
+      <div aria-hidden="true" class="progress"><div id="progressbar"></div></div>
+    </div>
+    <main class="frame" id="mission">
+      <section class="stage active" id="stage0">
+        <div class="stageHeader">
+          <h2>Ein rätselhafter Fund</h2>
+          <span class="smalltag">Forschungsschritt 1 von 5</span>
+        </div>
+        <div class="scene">
+          <div class="imagepane">
+            <img
+              alt="Künstlerische Rekonstruktion einer Forschungssammlung mit Dinosaurierknochen, federartiger Struktur, Vogelzeichnungen und Expeditionsausrüstung"
+              src="{{asset:img/mission-6/hero-fossiliensammlung.jpg}}" />
+            <div class="figcaption">
+              Künstlerische Expeditionsszene. Die Gegenstände dienen als Einstieg; sie sind keine
+              zusammengehörigen Originalfunde.
+            </div>
+            <img
+              alt="Museumsdiorama zur Hell-Creek-Formation mit kleinen zweibeinigen Dinosauriern in einer bewaldeten Umgebung"
+              src="{{asset:img/mission-6/hell-creek-dinosaurier.jpg}}" />
+            <div class="figcaption">
+              Museumsdiorama zur Hell-Creek-Formation, Montana: historische Rekonstruktion aus Fossilbefunden
+              (Michael Barera, CC BY-SA 4.0). Solche Darstellungen sind keine Fotografien der Kreidezeit.
+            </div>
+          </div>
+          <div class="paper">
+            <h3>Der Museumsführer behauptet …</h3>
+            <p>
+              „Vor 66 Millionen Jahren starben <strong>alle</strong> Dinosaurier aus. Danach lebten nur noch
+              völlig andere Tiere.“
+            </p>
+            <p>
+              In der Sammlung findest du Hinweise auf große Dinosaurier, kleine gefiederte Tiere,
+              Schildkröten, Vögel und Krokodil-Verwandte. Stimmt die Behauptung?
+            </p>
+            <div class="notebox">
+              <strong>Dein Forschungsauftrag</strong>
+              <ol>
+                <li>Betrachte beide Bilder. Nenne zwei Merkmale, die dir auffallen.</li>
+                <li>
+                  Überlege: Können Bilder allein zeigen, welche Arten das Massenaussterben überlebt haben?
+                </li>
+                <li>
+                  Notiere deine <strong>erste Vermutung</strong> im analogen Forscherheft. Du darfst sie
+                  später ändern.
+                </li>
+              </ol>
+              <div class="lernreise12-output" data-station="6" data-task="1">
+                <strong>Woran erkennst du, dass du fertig bist? </strong>Im Forscherheft: 2 beobachtete
+                Merkmale und 1 anfängliche Vermutung. Die Vermutung darf sich später verändern.
+              </div>
+              <details class="lernreise12-help">
+                <summary>Auftrag unklar? Begriffe und Vorgehen kurz erklärt</summary>
+                <p>
+                  Beobachten heißt: Was ist im Bild wirklich zu erkennen? Vermuten heißt: Welche Erklärung
+                  könnte stimmen? Bilder können eine Vermutung anregen, aber allein nicht zeigen, welche Arten
+                  überlebten.
+                </p>
+              </details>
+            </div>
+            <details class="prior">
+              <summary>Vorwissen: Was ist eine Art? Was ist ein Fossil?</summary>
+              <p>
+                Eine <strong>Art</strong> bezeichnet eine Gruppe eng verwandter Lebewesen. Ein
+                <strong>Fossil</strong> ist ein erhaltener Überrest oder eine Spur eines Lebewesens aus
+                früherer Zeit, etwa ein versteinerter Knochen.
+              </p>
+            </details>
+            <div class="heft">
+              <strong>📓 Dein analoges Forscherheft</strong>Überschrift „Mission 6 – Die Überlebenden“.
+              Notiere deine Vermutung und eine Frage, die du klären möchtest.
+            </div>
+            <div class="buttons">
+              <button class="btn primary" data-next="1">Vier Lebensweisen untersuchen →</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="stage" id="stage1">
+        <div class="stageHeader">
+          <h2>Wer hatte welche Schwierigkeiten?</h2>
+          <span class="smalltag">Forschungsschritt 2 von 5</span>
+        </div>
+        <div class="fullpaper">
+          <h3>Zwei Fälle untersuchen – weitere Fälle freiwillig</h3>
+          <p>
+            Nach dem Einschlag gelangte weniger Sonnenlicht zur Erdoberfläche. Pflanzen konnten zeitweise
+            weniger energiereiche Stoffe herstellen. Das wirkte sich auf Nahrungsketten aus. Die folgenden
+            Beispiele zeigen <strong>mögliche Lebensweisen</strong> und sind keine Messdaten einzelner Arten.
+            Beginne mit A und B. C und D kannst du anschließend freiwillig erforschen.
+          </p>
+          <div aria-label="Vereinfachte Nahrungskette" class="network">
+            <span>☀ Sonnenlicht</span><em>→</em><span>🌿 Pflanzen</span><em>→</em
+            ><span>🦕 Pflanzenfresser</span><em>→</em><span>🦖 Räuber</span>
+          </div>
+          <details class="prior">
+            <summary>Vorwissen: Was sind Nahrungskette, Vorrat und Detritus?</summary>
+            <p>
+              In einer <strong>Nahrungskette</strong> wird vereinfacht gezeigt, wer sich von wem ernährt. Ein
+              <strong>Vorrat</strong> ist Nahrung, die eine Zeit lang verfügbar bleibt, beispielsweise Samen.
+              <strong>Detritus</strong> bezeichnet abgestorbene Pflanzenteile und anderes organisches
+              Material; es kann über Kleinstlebewesen Teil einer Nahrungskette werden.
+            </p>
+          </details>
+          <div class="gridcards" id="profiles">
+            <div class="profile">
+              <div class="profileHead">
+                <span class="letter">A</span>
+                <h3>Großer Pflanzenfresser</h3>
+              </div>
+              <p>
+                Braucht viel frische Pflanzenmasse. Wenn Blätter und andere Pflanzen stark zurückgehen, findet
+                er weniger Nahrung.
+              </p>
+              <div class="profileBody">
+                <label for="riskA">Wie könnte sich der Nahrungsmangel auswirken?</label
+                ><select data-risk="" id="riskA">
+                  <option value="">Wähle eine Einschätzung …</option>
+                  <option value="hoch">Eher hoch</option>
+                  <option value="puffer">Möglicherweise abgefedert</option>
+                  <option value="offen">Noch nicht sicher einzuschätzen</option>
+                </select>
+              </div>
+            </div>
+            <div class="profile">
+              <div class="profileHead">
+                <span class="letter">B</span>
+                <h3>Kleiner samenfressender Vogel</h3>
+              </div>
+              <p>
+                Könnte harte Samen aufnehmen, die auch nach einer schweren Umweltstörung noch zeitweise
+                vorhanden sind. Aber Nahrung und Lebensraum bleiben unsicher.
+              </p>
+              <div class="profileBody">
+                <label for="riskB">Wie könnte sich der Nahrungsmangel auswirken?</label
+                ><select data-risk="" id="riskB">
+                  <option value="">Wähle eine Einschätzung …</option>
+                  <option value="hoch">Eher hoch</option>
+                  <option value="puffer">Möglicherweise abgefedert</option>
+                  <option value="offen">Noch nicht sicher einzuschätzen</option>
+                </select>
+              </div>
+            </div>
+            <div class="profile" data-extension="">
+              <div class="profileHead">
+                <span class="letter">C</span>
+                <h3>Tier im Süßwasser</h3>
+              </div>
+              <p>
+                Einige Süßwasser-Nahrungswege konnten abgestorbene organische Stoffe nutzen. Das könnte die
+                Abhängigkeit von frischen grünen Pflanzen zeitweise verringert haben.
+              </p>
+              <div class="profileBody">
+                <label for="riskC">Wie könnte sich der Nahrungsmangel auswirken?</label
+                ><select data-risk="" id="riskC">
+                  <option value="">Wähle eine Einschätzung …</option>
+                  <option value="hoch">Eher hoch</option>
+                  <option value="puffer">Möglicherweise abgefedert</option>
+                  <option value="offen">Noch nicht sicher einzuschätzen</option>
+                </select>
+              </div>
+            </div>
+            <div class="profile" data-extension="">
+              <div class="profileHead">
+                <span class="letter">D</span>
+                <h3>Großer Fleischfresser</h3>
+              </div>
+              <p>
+                Ist auf größere Beutetiere angewiesen. Wenn deren Nahrung knapp wird und ihre Zahl sinkt, kann
+                auch für den Räuber die Nahrung fehlen.
+              </p>
+              <div class="profileBody">
+                <label for="riskD">Wie könnte sich der Nahrungsmangel auswirken?</label
+                ><select data-risk="" id="riskD">
+                  <option value="">Wähle eine Einschätzung …</option>
+                  <option value="hoch">Eher hoch</option>
+                  <option value="puffer">Möglicherweise abgefedert</option>
+                  <option value="offen">Noch nicht sicher einzuschätzen</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="notebox">
+            <strong>Dein Forschungsauftrag</strong>
+            <ol>
+              <li>
+                Lies zunächst nur die Fälle <strong>A (Pflanzenfresser)</strong> und
+                <strong>B (samenfressender Vogel)</strong>.
+              </li>
+              <li>
+                Wähle jeweils eine Einschätzung: Wer könnte bei längerem Lichtmangel leichter Nahrung finden?
+                Erkläre warum.
+              </li>
+              <li>
+                <strong>Forscherheft:</strong> Schreibe zwei Sätze: „Der Pflanzenfresser könnte
+                Schwierigkeiten bekommen, weil …“ und „Der samenfressende Vogel könnte einen Vorteil haben,
+                weil …“. Ergänze: „Sicher wissen wir das nicht, denn …“.
+              </li>
+            </ol>
+            <div class="lernreise12-output" data-station="6" data-task="2">
+              <strong>Woran erkennst du, dass du fertig bist? </strong>Im Forscherheft: 2 begründete Sätze zu
+              den Fällen A und B und 1 Satz zur Unsicherheit. Die zusätzlichen Fälle bleiben freiwillig.
+            </div>
+            <details class="lernreise12-help">
+              <summary>Auftrag unklar? Begriffe und Vorgehen kurz erklärt</summary>
+              <p>
+                Vergleichen: Frage zuerst, welche Nahrung beide Tiere brauchen. Begründen: Sage, wie der
+                Lichtmangel auf diese Nahrung wirken könnte. Du sollst keine Sicherheit vortäuschen, wenn
+                mehrere Ergebnisse möglich sind.
+              </p>
+            </details>
+            <p>
+              <strong>Zusatzforschung (freiwillig):</strong> Vergleiche auch die Fälle C und D. Eine Tabelle
+              ist nicht nötig.
+            </p>
+          </div>
+          <details class="helpbox">
+            <summary>💡 Hilfe bei Schwierigkeiten</summary>
+            <p>
+              Denke in zwei Fragen: <strong>Wovon lebt das Tier?</strong> Und:
+              <strong>Wie stark hängt diese Nahrung von frisch wachsenden Pflanzen ab?</strong> Eine Vermutung
+              ist erlaubt, solange du sie begründest.
+            </p>
+          </details>
+          <div class="heft">
+            <strong>📓 Forscherheft</strong>Notiere die beiden begründeten Sätze zu A und B und mindestens
+            eine offene Frage. Die Zusatzfälle C und D sind freiwillig.
+          </div>
+          <div class="buttons">
+            <button class="btn secondary" data-back="0">← Zur Sammlung</button
+            ><button class="btn primary" id="riskBtn">Einschätzungen sichern →</button>
+          </div>
+          <div class="feedback" id="riskFeedback" role="status"></div>
+        </div>
+      </section>
+      <section class="stage" id="stage2">
+        <div class="stageHeader">
+          <h2>Neue Spuren verändern das Bild</h2>
+          <span class="smalltag">Forschungsschritt 3 von 5</span>
+        </div>
+        <div class="scene">
+          <div class="imagepane">
+            <div style="padding: 18px">
+              <div class="tree">
+                <svg
+                  aria-label="Schematische Darstellung von Nahrungswegen nach einem Rückgang der Pflanzenproduktion"
+                  role="img"
+                  viewbox="0 0 760 450">
+                  <rect fill="#152a32" height="450" rx="15" width="760"></rect>
+                  <text fill="#ffdd9c" font-size="27" font-weight="750" x="30" y="42">
+                    Zwei mögliche Nahrungswege
+                  </text>
+                  <g fill="none" stroke="#e6b76a" stroke-width="5">
+                    <path d="M186 130 V215"></path>
+                    <path d="M570 130 V215"></path>
+                    <path d="M186 300 V362"></path>
+                    <path d="M570 300 V362"></path>
+                  </g>
+                  <g fill="#fcf4dd" font-family="sans-serif" font-size="22" text-anchor="middle">
+                    <rect fill="#315747" height="60" rx="15" width="300" x="36" y="76"></rect>
+                    <text x="186" y="114">Gespeicherte Samen</text>
+                    <rect fill="#315747" height="60" rx="15" width="300" x="412" y="76"></rect>
+                    <text x="562" y="114">Abgestorbene Stoffe</text>
+                    <rect fill="#3a5058" height="80" rx="15" width="300" x="36" y="215"></rect>
+                    <text x="186" y="246">Samenfressende</text>
+                    <text x="186" y="273">Vögel</text>
+                    <rect fill="#3a5058" height="80" rx="15" width="300" x="412" y="215"></rect>
+                    <text x="562" y="246">Kleinstlebewesen</text>
+                    <text x="562" y="273">im Wasser</text>
+                    <rect fill="#755a34" height="53" rx="15" width="300" x="36" y="361"></rect>
+                    <text x="186" y="396">Mögliche Pufferung</text>
+                    <rect fill="#755a34" height="53" rx="15" width="300" x="412" y="361"></rect>
+                    <text x="562" y="396">Nahrung für Wassertiere</text>
+                  </g>
+                </svg>
+              </div>
+              <div class="figcaption">
+                Eigens erstelltes Wirkungsmodell. Es zeigt mögliche Nahrungswege, keine gemessenen
+                Überlebensraten.
+              </div>
+            </div>
+          </div>
+          <div class="paper">
+            <h3>Die zweite Expedition meldet sich</h3>
+            <p>
+              Die ersten Vergleiche sind hilfreich – aber vielleicht zu einfach. Jetzt treffen zwei
+              zusätzliche Hinweise ein.
+            </p>
+            <div class="revision">
+              <div class="reveal" id="revBird">
+                <button aria-expanded="false" data-reveal="revBird" type="button">
+                  ✉ Hinweis 1 · Vögel öffnen
+                </button>
+                <div class="inside">
+                  <p>
+                    Nach dem Massenaussterben blieben nur <strong>wenige Vogellinien</strong> übrig. Samen als
+                    haltbare Nahrung könnten manchen geholfen haben. Zugleich waren Wälder vielerorts
+                    zerstört. Die Fähigkeit zu fliegen oder klein zu sein reichte allein nicht aus.
+                  </p>
+                </div>
+              </div>
+              <div class="reveal" id="revWater">
+                <button aria-expanded="false" data-reveal="revWater" type="button">
+                  ✉ Hinweis 2 · Süßwasser öffnen
+                </button>
+                <div class="inside">
+                  <p>
+                    Manche Süßwasser-Nahrungsketten konnten abgestorbenes organisches Material nutzen. Das
+                    könnte zeitweise geholfen haben. Auch diese Nahrung war jedoch nicht unbegrenzt vorhanden;
+                    verschiedene Arten waren unterschiedlich betroffen.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="notebox">
+              <strong>Dein Forschungsauftrag</strong>
+              <ol>
+                <li>Öffne <strong>beide Hinweise</strong> und lies sie.</li>
+                <li>
+                  Überprüfe deine bisherigen Vermutungen aus dem Forscherheft (besonders zu Fall B; falls
+                  bearbeitet, auch zu Fall C). Welche Vermutung würdest du
+                  <strong>präzisieren oder ändern</strong>?
+                </li>
+                <li>
+                  Vervollständige im Heft: „Zuerst dachte ich … . Nach dem neuen Hinweis meine ich … , weil …
+                  .“
+                </li>
+              </ol>
+              <div class="lernreise12-output" data-station="6" data-task="3">
+                <strong>Woran erkennst du, dass du fertig bist? </strong>Im Forscherheft: mindestens 1
+                überarbeitete Vermutung mit dem Satzmuster „Zuerst dachte ich … Jetzt vermute ich …, weil …“.
+              </div>
+              <details class="lernreise12-help">
+                <summary>Auftrag unklar? Begriffe und Vorgehen kurz erklärt</summary>
+                <p>
+                  Überprüfen: Vergleiche eine frühere Vermutung mit einem neuen Hinweis. Präzisieren heißt:
+                  eine Aussage genauer machen. Du darfst deine erste Idee ändern – wichtig ist der Grund
+                  dafür.
+                </p>
+              </details>
+            </div>
+            <details class="helpbox">
+              <summary>💡 Hilfe: Eine Vermutung verbessern</summary>
+              <p>
+                Eine wissenschaftliche Vermutung zu ändern ist kein Fehler. Du zeigst damit, dass du neue
+                Belege ernst nimmst. Formuliere möglichst: „Der Vorteil <em>könnte</em> helfen,
+                <em>garantiert aber nicht</em> das Überleben.“
+              </p>
+            </details>
+            <div class="heft">
+              <strong>📓 Forscherheft</strong>Verbessere mindestens eine Einschätzung mit einem neuen
+              Argument. Markiere die Änderung sichtbar.
+            </div>
+            <div class="buttons">
+              <button class="btn secondary" data-back="1">← Vorherige Profile</button
+              ><button class="btn primary" id="revealNext">Weiter: Wer gehört zu den Dinosauriern? →</button>
+            </div>
+            <div class="feedback" id="revealFeedback" role="status"></div>
+          </div>
+        </div>
+      </section>
+      <section class="stage" id="stage3">
+        <div class="stageHeader">
+          <h2>Eine unerwartete Verwandtschaft</h2>
+          <span class="smalltag">Forschungsschritt 4 von 5</span>
+        </div>
+        <div class="scene">
+          <div class="imagepane">
+            <div class="tree">
+              <svg
+                aria-label="Vereinfachter Verwandtschaftsbaum: Dinosaurier umfassen mehrere Linien; innerhalb der Theropoden entstanden die Vögel, die heute noch leben"
+                role="img"
+                viewbox="0 0 740 520">
+                <rect fill="#10232c" height="520" rx="12" width="740"></rect>
+                <text fill="#f6d9a2" font-size="25" font-weight="750" x="24" y="38">
+                  Ein Stammbaum – stark vereinfacht
+                </text>
+                <g
+                  fill="none"
+                  stroke="#c9b283"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="5">
+                  <path
+                    d="M365 105 V142 M175 142 H560 M175 142 V205 M560 142 V205 M560 258 V299 M430 299 H650 M430 299 V355 M650 299 V355"></path>
+                </g>
+                <g font-size="23" font-weight="700" text-anchor="middle">
+                  <rect fill="#7a5430" height="55" rx="13" width="262" x="234" y="62"></rect>
+                  <text fill="#fff2d8" x="365" y="96">Dinosaurier</text>
+                  <rect fill="#335263" height="78" rx="13" width="290" x="30" y="200"></rect>
+                  <text fill="#fff2d8" x="175" y="233">andere Dinosaurier-</text>
+                  <text fill="#fff2d8" x="175" y="263">gruppen</text>
+                  <rect fill="#335263" height="76" rx="13" width="296" x="412" y="202"></rect>
+                  <text fill="#fff2d8" x="560" y="234">Theropoden</text>
+                  <text fill="#f8dfb3" font-size="17" x="560" y="260">z. B. T. rex und Vogel-Linien</text>
+                  <rect fill="#3b5360" height="76" rx="13" width="260" x="280" y="350"></rect>
+                  <text fill="#fff2d8" x="410" y="382">nichtvogelartige</text>
+                  <text fill="#fff2d8" x="410" y="412">Theropoden †</text>
+                  <rect fill="#2d684e" height="76" rx="13" width="164" x="565" y="350"></rect>
+                  <text fill="#fff2d8" x="647" y="382">Vögel</text>
+                  <text fill="#fff2d8" x="647" y="411">leben heute</text>
+                </g>
+                <g fill="#bfcfd1" font-size="17">
+                  <text x="28" y="480">† = heute ausgestorbene Linien</text>
+                </g>
+              </svg>
+            </div>
+            <div class="figcaption">
+              Ein stark vereinfachter Verwandtschaftsbaum: Vögel sind eine heute lebende Dinosauriergruppe.
+              Nicht alle frühen vogelartigen Linien überlebten.
+            </div>
+          </div>
+          <div class="paper">
+            <h3>Waren wirklich alle Dinosaurier verschwunden?</h3>
+            <p>
+              Der Museumsführer hat behauptet, alle Dinosaurier seien vor 66 Millionen Jahren ausgestorben. In
+              der Forschung werden Vögel aber zu den Dinosauriern gezählt. Das ist durch zahlreiche gemeinsame
+              Merkmale und Fossilien gut belegt.
+            </p>
+            <div class="notebox">
+              <strong>Dein Forschungsauftrag</strong>
+              <ol>
+                <li>Untersuche den Stammbaum. <strong>Wo</strong> zweigt die Vogel-Linie ab?</li>
+                <li>Vergleiche die drei Aussagen darunter. Wähle die fachlich zutreffende.</li>
+                <li>
+                  Verbessere die Behauptung des Museumsführers in <strong>zwei eigenen Sätzen</strong> im
+                  Forscherheft.
+                </li>
+              </ol>
+              <div class="lernreise12-output" data-station="6" data-task="4">
+                <strong>Woran erkennst du, dass du fertig bist? </strong>Im Forscherheft: 2 Sätze, die die
+                Behauptung des Museumsführers fachlich richtigstellen.
+              </div>
+              <details class="lernreise12-help">
+                <summary>Auftrag unklar? Begriffe und Vorgehen kurz erklärt</summary>
+                <p>
+                  Einen Stammbaum lesen: Verfolge den Ast einer Gruppe zurück zum gemeinsamen Ursprung.
+                  Vergleichen heißt hier: Prüfe die drei Aussagen darauf, welche zum Stammbaum passt.
+                </p>
+              </details>
+            </div>
+            <div class="choice">
+              <input id="birdA" name="bird" type="radio" value="a" /><label for="birdA"
+                >Vögel stammen direkt von Tyrannosaurus rex ab.</label
+              >
+            </div>
+            <div class="choice">
+              <input id="birdB" name="bird" type="radio" value="b" /><label for="birdB"
+                >Vögel gehören zu den Dinosauriern; die Nicht-Vogel-Dinosaurier starben aus.</label
+              >
+            </div>
+            <div class="choice">
+              <input id="birdC" name="bird" type="radio" value="c" /><label for="birdC"
+                >Vögel sehen nur ähnlich aus, sind aber mit Dinosauriern nicht verwandt.</label
+              >
+            </div>
+            <details class="prior">
+              <summary>Vorwissen: Was ist eine Abstammungslinie?</summary>
+              <p>
+                Eine <strong>Abstammungslinie</strong> verbindet Lebewesen über viele Generationen und
+                gemeinsame Vorfahren. Vögel entwickelten sich innerhalb kleiner, gefiederter
+                Theropoden-Linien. Sie stammen <em>nicht direkt</em> vom Tyrannosaurus rex ab; beide haben
+                weiter zurückliegende gemeinsame Vorfahren.
+              </p>
+            </details>
+            <details class="helpbox">
+              <summary>💡 Hilfe: Den Stammbaum lesen</summary>
+              <p>
+                Beginne oben bei „Dinosaurier“, folge den Verzweigungen bis zu „Theropoden“ und dann zur
+                Vogel-Linie. Ein Stammbaum zeigt Verwandtschaft, keine direkte Reihenfolge „T. rex → heutige
+                Vögel“.
+              </p>
+            </details>
+            <div class="buttons">
+              <button class="btn secondary" data-back="2">← Neue Hinweise</button
+              ><button class="btn primary" id="birdCheck">Aussage prüfen →</button>
+            </div>
+            <div class="feedback" id="birdFeedback" role="status"></div>
+          </div>
+        </div>
+      </section>
+      <section class="stage" id="stage4">
+        <div class="stageHeader">
+          <h2>Forschungsurteil sichern</h2>
+          <span class="smalltag">Forschungsschritt 5 von 5</span>
+        </div>
+        <div class="scene">
+          <div class="imagepane">
+            <img
+              alt="Fossiliensammlung und Forschungsheft in warmem Expeditionslicht"
+              src="{{asset:img/mission-6/hero-fossiliensammlung.jpg}}" />
+            <div class="figcaption">
+              Für die letzte Mission wird aus Beobachtungen und begründeten Vermutungen ein zusammenhängender
+              Forschungsbericht im analogen Heft.
+            </div>
+            <div style="padding: 16px">
+              <div class="network">
+                <span>Nahrungsquelle</span><em>→</em><span>Verwundbarkeit</span><em>→</em
+                ><span>Neue Belege</span><em>→</em><span>Urteil</span>
+              </div>
+            </div>
+          </div>
+          <div class="paper">
+            <h3>Dein Urteil zur Überlebensfrage</h3>
+            <p>
+              Wissenschaftliche Aussagen müssen erklären, <strong>warum</strong> etwas plausibel ist – und wo
+              die Grenzen der Erklärung liegen. Für die Überlebenden gab es keine einfache Regel.
+            </p>
+            <div class="notebox">
+              <strong>Dein Abschlussauftrag</strong>
+              <ol>
+                <li>
+                  Übertrage deine überarbeitete Vergleichsmatrix in dein analoges Forscherheft:
+                  <em>Nahrungsquelle – Risiko – möglicher Vorteil – Unsicherheit</em>.
+                </li>
+                <li>
+                  Schreibe drei begründete Sätze: <strong>Wodurch</strong> könnten manche Lebewesen Vorteile
+                  gehabt haben? <strong>Warum</strong> reichte ein einzelner Vorteil nicht aus?
+                  <strong>Welche</strong> Dinosaurier gibt es heute noch?
+                </li>
+                <li>Notiere eine Forschungsfrage, die offenbleibt.</li>
+              </ol>
+              <div class="lernreise12-output" data-station="6" data-task="5">
+                <strong>Woran erkennst du, dass du fertig bist? </strong>Im Forscherheft: eine einfache
+                Übersicht mit 4 Überschriften und 3 begründete Sätze. Eine offene Frage als letzter Punkt
+                genügt.
+              </div>
+              <details class="lernreise12-help">
+                <summary>Auftrag unklar? Begriffe und Vorgehen kurz erklärt</summary>
+                <p>
+                  Vergleichsmatrix heißt hier nur: eine kleine Tabelle. Überschriften: Nahrungsquelle | Risiko
+                  | möglicher Vorteil | Unsicherheit. Stichworte genügen – keine aufwendige Gestaltung.
+                  Begründen: Nenne jeweils einen passenden Grund.
+                </p>
+              </details>
+            </div>
+            <div class="callout">
+              <strong>Denke daran:</strong> „Konnte helfen“ ist nicht dasselbe wie „garantierte das
+              Überleben“. Deine Aussagen sollen zu den Befunden passen.
+            </div>
+            <h4>Heft-Check</h4>
+            <div class="checklist">
+              <label
+                ><input class="heftcheck" type="checkbox" /> Ich habe die Fälle A und B verglichen und
+                begründet.</label
+              ><label
+                ><input class="heftcheck" type="checkbox" /> Ich habe eine erste Vermutung wegen neuer
+                Hinweise überprüft.</label
+              ><label
+                ><input class="heftcheck" type="checkbox" /> Ich kann erklären, warum heutige Vögel
+                Dinosaurier sind.</label
+              ><label
+                ><input class="heftcheck" type="checkbox" /> Ich habe eine Unsicherheit oder offene Frage
+                festgehalten.</label
+              >
+            </div>
+            <div class="buttons">
+              <button class="btn secondary" data-back="3">← Verwandtschaft prüfen</button
+              ><button class="btn primary" id="finish">Mission 6 abschließen</button>
+            </div>
+            <div aria-live="polite" class="feedback" id="finishFeedback" role="status"></div>
+          </div>
+        </div>
+      </section>
+      <footer class="source">
+        <strong>Fachliche Grundlagen:</strong>
+        <a href="https://www.nhm.ac.uk/discover/why-are-birds-the-only-surviving-dinosaurs.html"
+          >Natural History Museum: Why are birds the only surviving dinosaurs?</a
+        >;
+        <a href="https://www.amnh.org/exhibitions/dinosaurs-ancient-fossils/extinction/dinosaurs-survive"
+          >American Museum of Natural History: Dinosaurs Survive</a
+        >;
+        <a
+          href="https://www.smithsonianmag.com/science-nature/why-birds-survived-and-dinosaurs-went-extinct-after-asteroid-hit-earth-180975801/"
+          >Smithsonian Magazine: Why Birds Survived</a
+        >. Die Quellenlinks sind optional und benötigen Internet; alle Aufgaben und Bilder dieser Station
+        funktionieren ohne Netz. Diorama-Foto: Michael Barera,
+        <a
+          href="https://commons.wikimedia.org/wiki/File:Milwaukee_Public_Museum_October_2023_33_(Exploring_Life_on_Earth--Hell_Creek_Formation_Montana_65_Million_Years_Ago).jpg"
+          >Wikimedia Commons, CC BY-SA 4.0</a
+        >. Die Expeditionsgrafik ist eine eigens erzeugte künstlerische Darstellung.
+      </footer>
+    </main>
+    <script>
+      (() => {
+        "use strict";
+        let unlocked = 0,
+          current = 0,
+          finished = false;
+        const stages = [...document.querySelectorAll(".stage")],
+          buttons = [...document.querySelectorAll(".stepbtn")],
+          bar = document.querySelector("#progressbar");
+        let riskReady = false;
+        let birdReady = false;
+        const revealing = new Set();
+        function go(i) {
+          if (i < 0 || i > unlocked) return;
+          current = i;
+          stages.forEach((s, j) => s.classList.toggle("active", i === j));
+          buttons.forEach((b, j) => {
+            b.disabled = j > unlocked;
+            if (j === i) b.setAttribute("aria-current", "step");
+            else b.removeAttribute("aria-current");
+          });
+          bar.style.width = (i / 4) * 100 + "%";
+          document.getElementById("mission").scrollIntoView({ block: "start", behavior: "instant" });
+        }
+        function unlock(i) {
+          unlocked = Math.max(i, unlocked);
+          go(i);
+        }
+        buttons.forEach((b, j) => b.addEventListener("click", () => go(j)));
+        document
+          .querySelectorAll("[data-next]")
+          .forEach((b) => b.addEventListener("click", () => unlock(Number(b.dataset.next))));
+        document
+          .querySelectorAll("[data-back]")
+          .forEach((b) => b.addEventListener("click", () => go(Number(b.dataset.back))));
+        function msg(id, content, bad = false) {
+          const x = document.getElementById(id);
+          x.textContent = content;
+          x.classList.add("show");
+          x.classList.toggle("warn", bad);
+          x.scrollIntoView({ block: "nearest", behavior: "instant" });
+        }
+        document.getElementById("riskBtn").addEventListener("click", () => {
+          const vals = [...document.querySelectorAll("#riskA,#riskB")].map((x) => x.value);
+          if (vals.some((x) => !x))
+            return msg(
+              "riskFeedback",
+              "Schätze zuerst die beiden Fälle A und B ein. Die weiteren Fälle sind freiwillig.",
+              true,
+            );
+          riskReady = true;
+          msg(
+            "riskFeedback",
+            "Deine beiden ersten Einschätzungen sind festgehalten. Vergleiche sie mit deinem analogen Forscherheft – und prüfe gleich die neuen Hinweise.",
+          );
+          document.getElementById("riskBtn").textContent = "Zu den neuen Hinweisen →";
+          setTimeout(() => {
+            if (current === 1) unlock(2);
+          }, 180);
+        });
+        document.querySelectorAll("[data-reveal]").forEach((b) =>
+          b.addEventListener("click", () => {
+            const e = document.getElementById(b.dataset.reveal);
+            const was = e.classList.toggle("open");
+            b.setAttribute("aria-expanded", String(was));
+            if (was) revealing.add(e.id);
+          }),
+        );
+        document.getElementById("revealNext").addEventListener("click", () => {
+          if (revealing.size < 2)
+            return msg(
+              "revealFeedback",
+              "Öffne bitte beide neuen Hinweise. Erst ihr Vergleich ermöglicht eine fundierte Überarbeitung deiner Vermutung.",
+              true,
+            );
+          unlock(3);
+        });
+        document.getElementById("birdCheck").addEventListener("click", () => {
+          const ans = document.querySelector('input[name="bird"]:checked');
+          if (!ans)
+            return msg("birdFeedback", "Wähle bitte eine Aussage aus und prüfe sie mit dem Stammbaum.", true);
+          if (ans.value !== "b")
+            return msg(
+              "birdFeedback",
+              ans.value === "a"
+                ? "Noch nicht: Heutige Vögel stammen nicht direkt vom Tyrannosaurus rex ab. Suche im Stammbaum den gemeinsamen älteren Zweig."
+                : "Vergleiche den Stammbaum: Die Vogel-Linie liegt innerhalb der Dinosaurier. Prüfe die Verzweigungen erneut.",
+              true,
+            );
+          birdReady = true;
+          msg(
+            "birdFeedback",
+            "Richtig. Die Nicht-Vogel-Dinosaurier starben aus; einige Vogellinien überlebten. Formuliere die Korrektur in eigenen Worten im Forscherheft.",
+          );
+          document.getElementById("birdCheck").textContent = "Zum Forschungsurteil →";
+          setTimeout(() => {
+            if (current === 3) unlock(4);
+          }, 180);
+        });
+        document.getElementById("finish").addEventListener("click", () => {
+          const checks = [...document.querySelectorAll(".heftcheck")];
+          const n = checks.filter((x) => x.checked).length;
+          if (!riskReady || !birdReady)
+            return msg(
+              "finishFeedback",
+              "Überprüfe zuerst deine Profile und die Verwandtschaftsfrage.",
+              true,
+            );
+          if (n < 4)
+            return msg(
+              "finishFeedback",
+              "Zum Heft-Check fehlen noch " +
+                (4 - n) +
+                " Punkte. Bitte vervollständige deine analoge Forscherakte.",
+              true,
+            );
+          finished = true;
+          const b = document.getElementById("finish");
+          b.textContent = "✓ Mission 6 abgeschlossen";
+          b.disabled = true;
+          msg(
+            "finishFeedback",
+            "✓ Mission 6 abgeschlossen. Deine analoge Forscherakte enthält jetzt einen begründeten Vergleich, eine überarbeitete Vermutung und die Einordnung der Vögel als lebende Dinosaurier.",
+          );
+        });
+        go(0);
+      })();
+    </script>
+  </body>
+</html>
