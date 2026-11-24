@@ -44,11 +44,26 @@ Klicks laufen zentral über `data-scene="..."` → `sceneAction(action)`
 ## Zustand / Speicher
 - `localStorage['akte66-expedition-2026']` – Array(7) Booleans (Heft-Checks der Missionen)
 - `localStorage['akte66-prolog-v1']` – `'true'|'false'` (Prolog bestätigt)
+- `localStorage['akte66-ort-v1']` – `{view, mission}` zuletzt besuchte Ansicht. Vorhanden → Trailer
+  wird übersprungen und dort weitergemacht (`restorePlace` in `src/js/persistence.js`).
+- `localStorage['akte66-mission-<0..6>-v1']` – `{hash, log}` Klickprotokoll je Mission.
+
+## Missionsstand (Aufzeichnen & Abspielen, `src/js/persistence.js`)
+Missionszustand steckt in gekapselten IIFEs der Missionen → nicht auslesbar. Stattdessen fügt
+`missionWithNavigation` ein Skript (`akte66MissionRecorder`, per `toString()`) vor `</body>` ein:
+- zeichnet echte Klicks (`isTrusted`) als Pfad auf (`#id>2>0` bzw. `body>…`), plus `confirm`-Antworten,
+  und schickt sie per `postMessage({type:'akte66-mission-log', mission, entry})` an die Hauptseite
+- spielt beim Öffnen das gespeicherte Protokoll per `el.click()` ab; währenddessen liefert
+  `confirm` die gespeicherten Antworten und `setTimeout` (≤1 s) läuft sofort; danach Dialoge zu
+- `hash` = Hash des Missions-HTML: ändert sich die Mission, wird das alte Protokoll verworfen
+- Endnavigation hat „↺ Mission neu beginnen“ → `postMessage({type:'akte66-mission-restart'})`;
+  Einstellungen: „Missionsstände zurücksetzen“ (`#resetMissionState`)
 - Rang aus Anzahl Checks: 0 Auf Spurensuche · ≤2 Feldforschung · ≤4 Beweisforschung ·
   ≤6 Expeditionsprofi · 7 Forschungsleitung; 100 Punkte je Check.
 
 ## Wichtig: Erweiterungsmuster
 `src/js/prolog-progress.js` erweitert `app.js` durch **Überschreiben** globaler Funktionen
 (`openMission`, `drawCards`, `sceneAction`, `refreshScene`) nach dem Muster
-`const base=fn; fn=function(){base(); ...}`. Reihenfolge der Scripts daher nicht ändern;
+`const base=fn; fn=function(){base(); ...}`. Genauso überschreibt `persistence.js` (3. Script) `view` und `missionWithNavigation`.
+Reihenfolge der Scripts daher nicht ändern;
 `refreshScene` wird dort komplett ersetzt.
