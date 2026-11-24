@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html lang="de"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><title>AKTE 66 – Mission 5 · Der zweite Verdächtige</title>
+<style>
+*{box-sizing:border-box}:root{--bg:#0d161c;--panel:#13222b;--paper:#fbf3e0;--paper2:#f5ead1;--ink:#28231b;--gold:#f0c06f;--line:#cda56d;--green:#1d6a57;--red:#8d3d31}
+body{margin:0;background:var(--bg);color:#f7f1e7;font:17px/1.55 system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+a{color:#6b4104}button{cursor:pointer;font:inherit}button,input,select{font:inherit}button:disabled{opacity:.48;cursor:not-allowed;filter:grayscale(.45)}
+button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #ffcb6b;outline-offset:2px}
+.hero{min-height:290px;background:linear-gradient(90deg,#081219ea 0%,#081219c8 36%,#08121920 100%),url({{asset:img/mission-5/hero-basalt-vulkane.webp}}) center/cover no-repeat;display:flex;align-items:flex-end;padding:26px}
+.brand{max-width:620px;background:rgba(10,16,21,.55);backdrop-filter: blur(3px);border:1px solid rgba(255,225,170,.2);border-radius:20px;padding:22px}
+.brand h1{margin:0 0 6px;font:700 2.2rem Georgia,serif;color:#ffe7b5} .brand p{margin:8px 0 0;max-width:56ch}
+.wrap{max-width:1180px;margin:0 auto;padding:18px}
+.topbar{display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-top:-28px;position:relative;z-index:2}
+.chip{background:#152731;border:1px solid rgba(255,221,162,.28);color:#f9e7c2;padding:10px 14px;border-radius:999px;font-weight:700}
+.main{display:grid;grid-template-columns:280px 1fr;gap:18px;margin-top:16px}
+.side{position:sticky;top:10px;align-self:start;background:#0f1c24;border:1px solid rgba(255,227,183,.18);border-radius:20px;padding:16px;box-shadow:0 10px 28px rgba(0,0,0,.28)}
+.side h2{margin:0 0 10px;font:700 1.25rem Georgia,serif;color:#ffdca2} .side p{margin:0 0 10px;color:#dfe7ea}
+.navbtn{width:100%;text-align:left;margin:8px 0;padding:10px 12px;border-radius:14px;border:1px solid rgba(240,192,111,.25);background:#12232c;color:#f6f0e6;font-weight:700}
+.navbtn.active{background:#284756;color:#fff2d3;border-color:#f0c06f}
+.side .small{font-size:.94rem;color:#d7cec0}
+.content{display:grid;gap:18px}
+.stage{display:none;background:#112029;border:1px solid rgba(255,227,183,.16);border-radius:24px;overflow:hidden;box-shadow:0 16px 32px rgba(0,0,0,.26)} .stage.active{display:grid;grid-template-columns:1.05fr .95fr}
+.panel{background:#081219;min-height:100%;padding:20px;display:flex;align-items:center;justify-content:center}
+.paper{background:var(--paper);color:var(--ink);padding:26px 24px 28px}
+.kicker{display:inline-block;background:#3f2b12;color:#ffe7bf;padding:7px 12px;border-radius:999px;font-size:.9rem;font-weight:700;letter-spacing:.03em;margin-bottom:10px}
+.paper h3{margin:0 0 10px;font:700 1.9rem Georgia,serif}
+.paper h4{margin:16px 0 8px;font:700 1.15rem Georgia,serif}
+.paper p,.paper li{max-width:72ch}
+.task{background:var(--paper2);border:1px solid #dcb982;border-radius:16px;padding:14px 15px;margin:14px 0}
+.task strong{color:#000} .note{background:#eef4f6;border-left:4px solid #477187;padding:10px 12px;border-radius:12px;margin:12px 0;color:#1f2a30}
+.details{background:#fff8eb;border:1px solid #d7b47f;border-radius:14px;padding:8px 12px;margin:12px 0} .details summary{font-weight:700;cursor:pointer;color:#513818}
+.controls{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px} .primary,.secondary{border:none;border-radius:14px;padding:12px 16px;font-weight:700}
+.primary{background:var(--green);color:#fff} .secondary{background:#243845;color:#fff5dc}
+.status{margin-top:12px;padding:11px 12px;border-radius:12px;background:#fff3d7;border:1px solid #d7b47f;font-weight:700;display:none}
+.status.show{display:block}
+figure{margin:0} .caption{font-size:.95rem;color:#d8e1e6;margin-top:10px;max-width:60ch}
+svg{max-width:100%;height:auto}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{background:#fff9ef;border:1px solid #d7bb8a;border-radius:16px;padding:14px}
+.statement{display:flex;gap:10px;align-items:flex-start;background:#fffaf2;border:1px solid #d7bb8a;padding:12px;border-radius:14px;margin:10px 0}
+.statement select{margin-left:auto;max-width:100%;min-width:150px} @media(max-width:700px){.statement{flex-direction:column}.statement select{width:100%;margin:0}.panel svg{max-width:100%}}
+.scorebox{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:10px 0 14px}
+.score{background:#fff8eb;border:1px solid #d7bb8a;border-radius:16px;padding:14px}
+.checklist label{display:flex;gap:10px;align-items:flex-start;margin:10px 0}
+.footerbar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 18px;background:#0d1a21;color:#e8d7b2;border-top:1px solid rgba(255,227,183,.14)}
+.badge{background:#1a2c35;padding:8px 12px;border-radius:999px;border:1px solid rgba(255,227,183,.18)}
+@media (max-width: 940px){.main{grid-template-columns:1fr}.side{position:static}.stage.active{grid-template-columns:1fr}.hero{padding:16px;min-height:220px}.brand h1{font-size:1.75rem}.grid2,.scorebox{grid-template-columns:1fr}}
+
+/* Lesbare Forschungsvisualisierungen und verlässliche Abschnittsnavigation */
+.stage--timeline.active{display:block}
+.stage--timeline .panel{padding:clamp(12px,3vw,30px);display:block;background:#0b171e;min-height:0;height:auto}
+.stage--timeline .panel>svg{display:block;width:100%;max-width:1100px;height:auto;margin:0 auto;border-radius:16px;box-shadow:0 14px 34px rgba(0,0,0,.35)}
+.stage--timeline .panel>.caption{max-width:1100px;margin:12px auto 4px;font-size:1rem}
+.stage--timeline .paper{padding:clamp(19px,3vw,36px)}
+.stage--timeline .paper>.task{max-width:960px}
+.stage--timeline .paper>p{max-width:960px}
+.stage--timeline .paper>.details{max-width:960px}
+.stage{scroll-margin-top:18px}
+.panel>figure{width:100%;max-width:100%}
+.panel>figure>img{width:100%;height:auto}
+.pan-hint{display:none;color:#f8dba7;font-weight:700;padding:6px 4px 12px;font-size:.95rem}@media(max-width:540px){.pan-hint{display:block}}
+.video-box{margin:16px 0;background:#fff9e9;border:2px solid #c79b5f;border-radius:16px;padding:15px;color:#30271b}
+.video-box a{display:inline-flex;align-items:center;gap:8px;border-radius:12px;background:#1c554b;color:#fff;padding:11px 16px;text-decoration:none;font-weight:700;margin:5px 0}
+.video-box a:hover,.video-box a:focus-visible{background:#12453c;color:#fff}
+.video-box small{display:block;color:#433b31;margin-top:5px;line-height:1.5}
+@media (max-width:940px){.stage--timeline.active{display:block}.stage--timeline .panel{padding:10px;min-height:0}}@media(max-width:540px){.stage--timeline .panel{overflow-x:auto;overflow-y:hidden}.stage--timeline .panel>svg{min-width:700px;width:700px;max-width:none}.stage--timeline .panel>.caption{min-width:0;max-width:100%}}
+
+/* AKTE 66: didaktisch neu gestaltete Beweisakte A; übrige Abschnitte unverändert */
+.stage#stage0.active{display:block;background:#fbf3e0;color:#28231b}
+#stage0 .basalt-intro{display:grid;grid-template-columns:minmax(0,0.95fr) minmax(0,1.05fr);background:#13232b;color:#f9f0dd;gap:0;align-items:stretch}
+#stage0 .basalt-intro figure{margin:0;padding:16px 16px 12px;min-width:0}
+#stage0 .basalt-intro img{width:100%;height:100%;min-height:180px;max-height:270px;object-fit:cover;display:block;border-radius:14px;border:1px solid #c2a36b}
+#stage0 .basalt-intro .basalt-lead{padding:23px 24px;align-self:center}
+#stage0 .basalt-intro h3{font:700 clamp(1.35rem,2vw,2rem) Georgia,serif;margin:4px 0 12px;color:#f3d296}
+#stage0 .basalt-intro p{font-size:1.02rem;margin:0 0 10px;line-height:1.55}
+#stage0 .basalt-intro small{display:block;color:#cbd5d7;font-size:.8rem;line-height:1.4;margin-top:10px}
+#stage0 .basalt-content{padding:clamp(14px,3vw,30px)}
+#stage0 .basalt-steps{display:flex;align-items:center;gap:8px;flex-wrap:wrap;color:#695030;font-size:.82rem;font-weight:800;margin:1px 0 19px}
+#stage0 .basalt-steps span{display:inline-block;background:#f5e5c4;border:1px solid #dfc290;padding:5px 10px;border-radius:999px}
+#stage0 .basalt-box{margin:14px 0 24px;border:1px solid #d8b983;background:#fffaf0;border-radius:18px;padding:clamp(12px,2vw,22px);box-shadow:0 3px 12px #43210010}
+#stage0 .basalt-box h3{font:700 clamp(1.35rem,2vw,1.75rem) Georgia,serif;color:#302b20;margin:0 0 9px}
+#stage0 .basalt-box>p{margin:8px 0 14px;line-height:1.55;max-width:90ch}
+#stage0 .basalt-fig{margin:0}
+#stage0 .basalt-fig img{display:block;width:100%;height:auto;object-fit:contain;background:#c2ced0;border-radius:12px;border:1px solid #c9bca6}
+#stage0 .basalt-fig figcaption{color:#4c4a3f;font-size:.9rem;margin:9px 2px 0;line-height:1.45}
+#stage0 .basalt-photo-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:16px;align-items:start}
+#stage0 .basalt-photo-grid .basalt-fig img{aspect-ratio:1.63;object-fit:cover}
+#stage0 .basalt-task{background:#f5ead1;border:1px solid #d9b173;border-radius:14px;margin-top:14px;padding:14px 18px;color:#27231c}
+#stage0 .basalt-task strong{color:#21201a}
+#stage0 .basalt-task p{max-width:90ch;margin:3px 0 7px}
+#stage0 .basalt-task ol{margin:7px 0 0;padding-left:25px}
+#stage0 .basalt-task li{padding-left:2px;margin:6px 0;max-width:86ch}
+#stage0 .basalt-info{border-left:4px solid #4b8084;padding:10px 14px;background:#eaf2f0;border-radius:8px;margin-top:14px;color:#263635}
+#stage0 .basalt-graphic img{width:100%;height:auto;display:block;border:1px solid #c3a26c;border-radius:12px}
+#stage0 .basalt-zoom{display:inline-flex;background:#174d4e;border:1px solid #437f78;border-radius:10px;color:#fff9e8;padding:10px 14px;font-size:.95rem;font-weight:700;margin:12px 0 1px}
+#stage0 .basaltZoomDialog{width:min(97vw,1640px);max-width:none;max-height:95vh;overflow:auto;border:2px solid #c69e5b;border-radius:14px;background:#0c1c25;color:#fff;padding:14px;box-shadow:0 0 0 100vmax #0008}
+#stage0 .basaltZoomDialog::backdrop{background:rgba(0,0,0,.75)}
+#stage0 .basaltZoomDialog img{display:block;width:max(100%,1150px);height:auto;max-width:none;border-radius:8px}
+#stage0 .basaltZoomDialog button{position:sticky;top:0;left:0;background:#f6d79a;color:#1c2627;border:0;font-weight:800;border-radius:8px;padding:10px 16px;z-index:3;margin-bottom:8px}
+#stage0 .basalt-follow{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+#stage0 .basalt-follow .details{margin:0}
+#stage0 .basalt-next{display:flex;justify-content:flex-end;margin-top:20px}
+#stage0 .basalt-next button{font-size:1.04rem;padding:13px 20px}
+@media(max-width:950px){#stage0 .basalt-intro{grid-template-columns:1fr}#stage0 .basalt-intro figure{padding-bottom:0}#stage0 .basalt-intro img{height:190px;min-height:0}#stage0 .basalt-photo-grid{grid-template-columns:1fr 1fr}#stage0 .basalt-fig figcaption{font-size:.84rem}}
+@media(max-width:660px){#stage0 .basalt-photo-grid,#stage0 .basalt-follow{grid-template-columns:1fr}#stage0 .basalt-fig img{height:auto}#stage0 .basalt-photo-grid .basalt-fig img{aspect-ratio:auto;object-fit:contain}#stage0 .basalt-intro .basalt-lead{padding:17px 18px}#stage0 .basalt-task{padding:13px}#stage0 .basalt-content{padding:12px}#stage0 .basalt-zoom{width:100%;justify-content:center}#stage0 .basalt-next button{width:100%}}
+</style><style>
+/* AKTE 66 Forschungsreise 1.2: sprachsensibles, ruhiges Arbeitsgeruest */
+.lernreise12-output{margin:10px 0 16px;padding:11px 14px;border:1px solid rgba(109,143,145,.32);border-left:4px solid #448f88;border-radius:9px;background:rgba(74,137,133,.075);color:inherit;line-height:1.55;font-size:.96em}
+.lernreise12-output strong{font-weight:750}
+.lernreise12-help{margin:0 0 16px;border:1px solid rgba(124,134,138,.34);border-radius:8px;background:rgba(127,145,144,.045);font-size:.94em;line-height:1.5}
+.lernreise12-help summary{cursor:pointer;padding:9px 12px;font-weight:650;list-style-position:inside}
+.lernreise12-help p{margin:0;padding:0 12px 12px;max-width:78ch}
+.lernreise12-output,.lernreise12-help{max-width:85ch}
+@media print{.lernreise12-help p{display:block}.lernreise12-output{break-inside:avoid}}
+</style></head>
+<body>
+<header class="hero"><div class="brand"><div class="kicker">AKTE 66 · Mission 5</div><h1>Der zweite Verdächtige</h1><p>Die Expedition stößt auf gewaltige Basaltdecken und Hinweise auf lange anhaltenden Vulkanismus. Kann dieser „zweite Verdächtige“ das Massenaussterben erklären – oder ergänzt er nur das Bild?</p></div></header>
+<div class="wrap">
+<div class="topbar"><div class="chip">Forschungsweg: beobachten → vergleichen → beurteilen</div><div class="chip">Alle Ergebnisse ins <strong>analoge Forscherheft</strong></div></div>
+<div class="main">
+<aside class="side"><h2>Mission 5</h2><p>Untersuche den Deccan-Vulkanismus und vergleiche seine Erklärungskraft mit den bisherigen Einschlagbelegen.</p>
+<button class="navbtn active" data-go="0">1 · Spur im Gestein</button>
+<button class="navbtn" data-go="1">2 · Die Zeitfrage</button>
+<button class="navbtn" data-go="2">3 · Klimafolgen vergleichen</button>
+<button class="navbtn" data-go="3">4 · Urteil der Expedition</button>
+<p class="small"><strong>Merke:</strong> Du sollst nicht einfach abstimmen, sondern die <em>Aussagekraft</em> der Belege begründen.</p>
+</aside>
+<section class="content">
+<div class="stage active" id="stage0">
+<div class="basalt-intro">
+<figure>
+<img alt="Atmosphärische Illustration der Expedition vor Basalthochflächen und Vulkanen" src="{{asset:img/mission-5/hero-basalt-vulkane.webp}}"/>
+</figure>
+<div class="basalt-lead">
+<span class="kicker">Beweisakte A · Mission 5</span>
+<h3>Ein Gebirge aus erstarrter Lava?</h3>
+<p>Die Expedition erreicht die <strong>Dekkan-Trapps in Indien</strong>. Die steilen Felswände wirken wie gewaltige Treppen. Wie konnten solche Gesteinspakete entstehen?</p>
+<p>Bislang ist der Vulkanismus nur ein <strong>Verdächtiger</strong>. Bevor du seine Rolle beim Dinosauriersterben beurteilst, musst du die Spuren im Gestein verstehen.</p>
+<small>Die Illustration links zeigt die Expeditionsstimmung. Die Beweise liefern dir die echten Fotos und das geologische Modell darunter.</small>
+</div>
+</div>
+<div class="basalt-content">
+<div aria-label="Ablauf der Untersuchung" class="basalt-steps"><span>1 · Beobachten</span> → <span>2 · Erklären</span> → <span>3 · Beweiskraft beurteilen</span></div>
+<section aria-labelledby="basaltMaterial1" class="basalt-box">
+<h3 id="basaltMaterial1">Spur 1 · Ein echtes Gesteinsgebirge</h3>
+<p>Das erste Foto zeigt eine Landschaft der Dekkan-Trapps. Suche zunächst nach Formen und Strukturen, die du wirklich sehen kannst.</p>
+<div class="basalt-photo-grid">
+<figure class="basalt-fig">
+<img alt="Reale Berglandschaft der Dekkan-Trapps in Indien mit terrassenartigen Felsstufen" loading="lazy" src="{{asset:img/mission-5/dekkan-trapps.jpg}}"/>
+<figcaption><strong>Foto A:</strong> Dekkan-Trapps in Indien. Sichtbar sind Felsstufen und annähernd waagerechte Geländestrukturen. Diese Aufnahme allein erklärt noch nicht ihre Entstehung.</figcaption>
+</figure>
+<figure class="basalt-fig">
+<img alt="Gesteinsaufschluss mit zwei weißen Pfeilen, die auf eine auffällige Grenze zwischen unterschiedlich aussehenden Gesteinsbereichen deuten" loading="lazy" src="{{asset:img/mission-5/gesteinsgrenze.jpg}}"/>
+<figcaption><strong>Foto B:</strong> Detail eines Gesteinsaufschlusses. Die weißen Pfeile lenken den Blick auf eine auffällige Grenze. Ob dort zwei Lavaergüsse aneinandergrenzen, ergibt sich nicht allein aus dem Foto.</figcaption>
+</figure>
+</div>
+<div class="basalt-task"><strong>Dein Auftrag · Beobachten</strong>
+<ol>
+<li><strong>Beschreibe</strong> an Foto A zwei auffällige Formen der Felslandschaft.</li>
+<li><strong>Untersuche</strong> Foto B. Beschreibe, worauf die Pfeile zeigen. Trenne dabei sichtbare Merkmale von deinen Vermutungen über die Entstehung.</li>
+</ol><div class="lernreise12-output" data-station="5" data-task="1"><strong>Woran erkennst du, dass du fertig bist? </strong>Im Forscherheft: 2 sichtbare Merkmale aus Foto A und mindestens 1 sichtbares Merkmal aus Foto B. Schreibe Vermutungen getrennt davon auf.</div><details class="lernreise12-help"><summary>Auftrag unklar? Begriffe und Vorgehen kurz erklärt</summary><p>Beschreiben: „Ich sehe …“ (nur Sichtbares). Vermuten: „Das könnte entstanden sein, weil …“ (mögliche Erklärung). Ein Foto allein zeigt nicht, wie ein Gestein genau entstanden ist.</p></details>
+<p><strong>Schreibe</strong> deine Beobachtungen in dein analoges Forscherheft.</p>
+</div>
+</section>
+<section aria-labelledby="basaltMaterial2" class="basalt-box">
+<h3 id="basaltMaterial2">Spur 2 · Wie entstehen Basaltdecken?</h3>
+<p>Die neue Schnittzeichnung zeigt die <strong>Entstehung als Modell</strong>: Lava gelangt durch Spalten an die Erdoberfläche, kühlt ab und erstarrt. Bei späteren Ausbrüchen können sich neue Lavaströme darüber ausbreiten.</p>
+<figure class="basalt-fig basalt-graphic">
+<img alt="Deutschsprachige Infografik: Drei Phasen wiederholter Lavaergüsse, Entstehung übereinanderliegender Basaltschichten, Blick in die Tiefe und zentrale Merksätze" loading="lazy" src="{{asset:img/mission-5/basalt-infografik.webp}}"/>
+<figcaption><strong>Modell C – So entstehen mächtige Basaltdecken:</strong> eine schematische Erklärung, kein Foto eines konkreten geologischen Aufschlusses. Klicke auf „Grafik groß lesen“, wenn du Details genauer betrachten möchtest.</figcaption>
+</figure>
+<button class="basalt-zoom" onclick="document.getElementById('basaltZoom').showModal()" type="button">↗ Grafik groß lesen</button>
+<dialog aria-label="Großansicht der Basalt-Infografik" class="basaltZoomDialog" id="basaltZoom">
+<button onclick="document.getElementById('basaltZoom').close()" type="button">✕ Grafik schließen</button>
+<p>Die Grafik kannst du seitlich verschieben, wenn dein Bildschirm schmal ist.</p>
+<img alt="Vergrößerte Darstellung: Entstehung mächtiger Basaltdecken durch wiederholte Lavaergüsse" src="{{asset:img/mission-5/basalt-infografik.webp}}"/>
+</dialog>
+<div class="basalt-info"><strong>Gut zu wissen:</strong> Unter der Erdoberfläche nennt man geschmolzenes Gestein <strong>Magma</strong>. Tritt es an die Oberfläche, heißt es <strong>Lava</strong>. Beim Abkühlen kann daraus Basalt entstehen. Fließen zu verschiedenen Zeiten große Lavamengen über weite Gebiete, können sich mehrere Basaltschichten übereinander bilden.</div>
+<div class="basalt-task"><strong>Dein Auftrag · Erklären</strong>
+<ol>
+<li><strong>Erkläre</strong> mithilfe der drei Phasen in Modell C, wie aus wiederholten Lavaergüssen ein mächtiges Schichtenpaket entsteht.</li>
+<li><strong>Übertrage</strong> dein Wissen auf die Fotos: Warum passen die Stufen im Gelände und die Grenzen zwischen Gesteinsbereichen grundsätzlich zu einer Landschaft mit mehreren erstarrten Lavaströmen?</li>
+</ol><div class="lernreise12-output" data-station="5" data-task="2"><strong>Woran erkennst du, dass du fertig bist? </strong>Im Forscherheft: eine kurze Erklärung in 2–3 Schritten. Verwende „Lava“, „erstarren“ und „Basaltschicht“. Eine neue Zeichnung ist nicht nötig, wenn das Modell verständlich ist.</div><details class="lernreise12-help"><summary>Auftrag unklar? Begriffe und Vorgehen kurz erklärt</summary><p>Erklären bedeutet: Ordne die Schritte und zeige den Zusammenhang. Schreibe beispielsweise zunächst, was bei einem Lavaerguss geschieht, und dann, was bei einer Wiederholung hinzukommt. Keine aufwendige Reinzeichnung nötig.</p></details>
+<p>Nutze die Fachwörter <strong>Lava</strong>, <strong>erstarren</strong> und <strong>Basaltschicht</strong> in deinem Forscherheft.</p>
+</div>
+</section>
+<section aria-labelledby="basaltUrteil" class="basalt-box">
+<h3 id="basaltUrteil">Forschungsbefund · Was beweisen die Spuren?</h3>
+<p>In der Expedition geht es nicht nur darum, wie die Gesteinsstufen entstanden sind: Wir untersuchen, ob der Vulkanismus eine Erklärung für das Massenaussterben vor etwa 66 Millionen Jahren liefern kann.</p>
+<div class="basalt-task"><strong>Dein Auftrag · Beweiskraft beurteilen</strong>
+<ol>
+<li><strong>Halte fest:</strong> Welche Aussage über frühere Vulkanausbrüche wird durch großflächige Basaltdecken gestützt?</li>
+<li><strong>Begründe:</strong> Warum beweisen Gesteinsschichten allein <em>nicht</em>, dass diese Ausbrüche das Dinosauriersterben verursachten? Welche zusätzliche Frage müsste die Expedition untersuchen?</li>
+</ol><div class="lernreise12-output" data-station="5" data-task="3"><strong>Woran erkennst du, dass du fertig bist? </strong>Im Forscherheft: 1 Satz dazu, was die Basaltdecken belegen, und 1 Satz dazu, was sie nicht beweisen. Ergänze 1 offene Frage.</div><details class="lernreise12-help"><summary>Auftrag unklar? Begriffe und Vorgehen kurz erklärt</summary><p>Begründen: Stütze deine Aussage auf einen Befund. Achte auf den Unterschied: „Es gab viel Vulkanismus“ ist nicht dieselbe Aussage wie „Dieser Vulkanismus verursachte das Aussterben“.</p></details>
+<p>Schreibe deinen <strong>vorläufigen Forschungsbefund</strong> in dein analoges Forscherheft. In der nächsten Akte untersuchst du die <strong>Zeitfrage</strong>.</p>
+</div>
+<div class="basalt-follow">
+<details class="details"><summary>Wort- und Vorwissenshilfe</summary><p><strong>Basalt</strong> ist ein dunkles vulkanisches Gestein, das aus erstarrter Lava entsteht. <strong>Flutbasalte</strong> sind sehr ausgedehnte Basaltablagerungen, die durch große Lavaförderungen entstehen können. Eine <strong>Gesteinsschicht</strong> ist ein unterscheidbarer Teil eines Gesteinspakets.</p></details>
+<details class="details"><summary>Denkhilfe · Beobachtung oder Erklärung?</summary><p>Ein Foto kann dir Felsformen und auffällige Grenzen zeigen. Es verrät nicht von allein, wann sie entstanden sind oder welche Folgen die Ausbrüche für Lebewesen hatten. Überlege, welche Hinweise dir dafür noch fehlen.</p></details>
+</div>
+<div class="video-box"><strong>🎬 Optionaler Videoimpuls: Wie bricht ein Vulkan aus?</strong><p>Das deutschsprachige <em>logo!</em>-Video (ZDF, ca. 2 Minuten) zeigt heutigen Vulkanismus. Beobachte, wie Lava an die Erdoberfläche gelangt. <strong>Achtung:</strong> Der Film zeigt nicht die Dekkan-Ausbrüche vor rund 66 Millionen Jahren.</p><a href="https://schule.zdf.de/video/erklaerstueck-vulkanausbruch-100" rel="noopener noreferrer" target="_blank">▶ Video bei ZDF öffnen ↗</a><small>Freiwillige Online-Vertiefung · Internet erforderlich. Die geologische Untersuchung auf dieser Seite funktioniert vollständig offline.</small></div>
+<div class="basalt-next"><button class="primary" onclick="nextStage(1)">Weiter zur Zeitfrage →</button></div>
+</section>
+</div>
+</div>
+<div class="stage stage--timeline" id="stage1">
+<div class="panel"><div class="pan-hint">↔ Große Zeitleiste: seitlich wischen, um alles zu lesen</div><svg aria-label="Großer schematischer Zeitvergleich: Deccan-Vulkanismus über längere Zeit vor und nach der Kreide-Paläogen-Grenze; Chicxulub-Einschlag als kurzes Ereignis vor etwa 66 Millionen Jahren." role="img" viewbox="0 0 1060 650">
+<rect fill="#152731" height="650" rx="18" width="1060"></rect>
+<text fill="#ffe7b7" font-family="Georgia,serif" font-size="38" font-weight="700" x="52" y="66">Zwei Ereignisse – unterschiedliche Dauer</text>
+<text fill="#d0e1e5" font-family="sans-serif" font-size="23" x="52" y="105">Vereinfachter Zeitvergleich vor etwa 66 Millionen Jahren</text>
+<rect fill="#203846" height="410" rx="22" stroke="#587382" stroke-width="2" width="972" x="44" y="153"></rect>
+<g fill="#eaf2f1" font-family="sans-serif" font-size="27" font-weight="700"><text x="60" y="219">Deccan-</text><text x="60" y="253">Vulkanismus</text><text x="60" y="362">Chicxulub-</text><text x="60" y="396">Einschlag</text></g>
+<line opacity=".38" stroke="#93b0b9" stroke-width="2" x1="300" x2="300" y1="172" y2="525"></line>
+<line opacity=".38" stroke="#93b0b9" stroke-width="2" x1="550" x2="550" y1="172" y2="525"></line>
+<line opacity=".38" stroke="#93b0b9" stroke-width="2" x1="800" x2="800" y1="172" y2="525"></line>
+<g fill="#d7e2e4" font-family="sans-serif" font-size="25" text-anchor="middle"><text x="300" y="528">vorher</text><text x="550" y="528">Grenze: ca. 66 Mio. Jahre</text><text x="800" y="528">nachher</text></g>
+<rect fill="#d18b4f" height="82" rx="17" width="446" x="328" y="218"></rect>
+<path d="M347 244h415 M347 262h415 M347 281h415" opacity=".42" stroke="#6e3b22" stroke-width="3"></path>
+<text fill="#281c12" font-family="sans-serif" font-size="26" font-weight="700" text-anchor="middle" x="550" y="266">mehrere Ausbruchsphasen</text>
+<line stroke="#f8d991" stroke-dasharray="9 10" stroke-width="6" x1="550" x2="550" y1="184" y2="465"></line>
+<circle cx="550" cy="378" fill="#ffe3a8" r="25" stroke="#8f551d" stroke-width="7"></circle>
+<text fill="#f9ebce" font-family="sans-serif" font-size="24" x="580" y="423">kurzes Ereignis</text>
+<text fill="#d6e5e7" font-family="sans-serif" font-size="20" x="50" y="602">Schema – keine exakten Datierungs- oder Ausbruchsvolumina. Die Länge verdeutlicht nur die Dauer.</text>
+</svg><div class="caption">Zeitmodell: Große Deccan-Ausbrüche begannen bereits vor der Kreide-Paläogen-Grenze und setzten sich danach fort. Der Einschlag ereignete sich an der Grenze. Die Darstellung enthält keine exakten Datierungen einzelner Ausbruchsphasen.</div></div>
+<div class="paper"><div class="kicker">Beweisakte B</div><p style="font-weight:700;background:#f7e8c9;border-radius:10px;padding:8px 12px">Auf schmalen Bildschirmen: Die Zeitleiste im dunklen Bildbereich seitlich verschieben.</p><h3>Die Zeitfrage</h3><p>Jetzt zählt nicht nur <em>ob</em> etwas passierte, sondern auch <em>wann</em>. Ein möglicher Auslöser muss zeitlich zu dem Ereignis passen, das erklärt werden soll. Beachte: Auch länger wirkende Umweltveränderungen können eine Rolle spielen.</p>
+<div class="task"><strong>Dein Auftrag</strong><ol><li><strong>Beschreibe</strong> den Unterschied zwischen dem langen Vulkanismus-Balken und der einzelnen Einschlagsmarke.</li><li><strong>Beurteile</strong>: Welcher Vorgang passt zeitlich besonders gut zu einem plötzlichen Umbruch? Begründe.</li><li><strong>Halte fest</strong>: Notiere im Forscherheft einen Satz zu der Frage, warum die Zeitlage für wissenschaftliche Erklärungen wichtig ist.</li></ol><div class="lernreise12-output" data-station="5" data-task="4"><strong>Woran erkennst du, dass du fertig bist? </strong>Im Forscherheft: 1 Satz zum Unterschied der Zeitspannen und 1 begründeter Satz zur zeitlichen Passung.</div><details class="lernreise12-help"><summary>Auftrag unklar? Begriffe und Vorgehen kurz erklärt</summary><p>Beurteilen heißt: Wäge ab und entscheide anhand eines Kriteriums. Hier lautet das Kriterium: zeitliche Passung zu einem plötzlichen Umbruch. Die zeitliche Nähe allein beweist noch keine Ursache.</p></details></div>
+<details class="details"><summary>Vorwissenshilfe: Was bedeutet „Ma“?</summary><p>„Ma“ steht für „Millionen Jahre vor heute“. 66 Ma bedeutet also: vor 66 Millionen Jahren.</p></details>
+<details class="details"><summary>Denkhilfe: Zeitliche Passung</summary><p>Eine Ursache kann lange vorbereitet sein und trotzdem erst später besonders wirksam werden. Prüfe also: Passt der Befund genau zur Grenze oder eher als zusätzlicher Einflussfaktor?</p></details>
+<div class="controls"><button class="secondary" onclick="nextStage(0)">Zurück</button><button class="primary" onclick="nextStage(2)">Weiter zum Vergleich</button></div>
+</div></div>
+<div class="stage" id="stage2">
+<div class="panel"><div style="width:100%"><div class="card" style="background:#faf0e5;color:#2a1f19"><h4 style="margin-top:0">Aussagen einordnen</h4><p>Ordne jede Aussage dem Bereich zu, zu dem sie am besten passt. So vergleichst du die Erklärungskraft der Befunde.</p>
+<div class="statement"><span>1. „Kann Staub und Gase in die Atmosphäre bringen und das Klima über längere Zeit beeinflussen.“</span><select data-correct="vulkan"><option value="">wähle …</option><option value="impact">eher Einschlag</option><option value="vulkan">eher Vulkanismus</option><option value="beide">beide</option></select></div>
+<div class="statement"><span>2. „Erklärt besonders gut eine weltweite Iridiumanreicherung und Schockquarz.“</span><select data-correct="impact"><option value="">wähle …</option><option value="impact">eher Einschlag</option><option value="vulkan">eher Vulkanismus</option><option value="beide">beide</option></select></div>
+<div class="statement"><span>3. „Ist ein einzelnes, sehr kurzes Ereignis an der Zeitgrenze.“</span><select data-correct="impact"><option value="">wähle …</option><option value="impact">eher Einschlag</option><option value="vulkan">eher Vulkanismus</option><option value="beide">beide</option></select></div>
+<div class="statement"><span>4. „Kann als zusätzlicher Belastungsfaktor Ökosysteme schwächen.“</span><select data-correct="vulkan"><option value="">wähle …</option><option value="impact">eher Einschlag</option><option value="vulkan">eher Vulkanismus</option><option value="beide">beide</option></select></div>
+<div class="statement"><span>5. „Liefert den Krater bei Chicxulub.“</span><select data-correct="impact"><option value="">wähle …</option><option value="impact">eher Einschlag</option><option value="vulkan">eher Vulkanismus</option><option value="beide">beide</option></select></div>
+<button class="primary" onclick="checkSort()">Einordnung prüfen</button><div class="status" id="sortStatus"></div></div></div></div>
+<div class="paper"><div class="kicker">Beweisakte C</div><h3>Klimafolgen vergleichen</h3><p>Beide Prozesse könnten Klima und Lebensbedingungen beeinflusst haben – aber nicht auf dieselbe Weise und nicht gleich gut belegt. Jetzt vergleichst du ihre Erklärungskraft.</p>
+<div class="task"><strong>Dein Auftrag</strong><ol><li>Ordne die fünf Aussagen zu.</li><li><strong>Vergleiche</strong> danach: Wofür sprechen die Einschlagbelege besonders stark? Wofür spricht der Vulkanismus eher als Zusatzfaktor?</li><li><strong>Halte fest</strong>: Erstelle im Forscherheft eine kleine Tabelle mit zwei Spalten: „stark belegt“ und „ergänzend plausibel“.</li></ol><div class="lernreise12-output" data-station="5" data-task="5"><strong>Woran erkennst du, dass du fertig bist? </strong>Im Forscherheft: eine kleine Tabelle mit genau 2 Spalten („stark belegt“ und „ergänzend plausibel“). Stichworte reichen.</div><details class="lernreise12-help"><summary>Auftrag unklar? Begriffe und Vorgehen kurz erklärt</summary><p>Ordnen: Lege jede Aussage in die passende Kategorie. Vergleichen: Sage, worin sich die Aussagekraft unterscheidet. Eine Tabelle aus zwei Überschriften und wenigen Stichworten genügt; aufwendiges Gestalten ist unnötig.</p></details></div>
+<details class="details"><summary>Vorwissenshilfe: Was heißt „Zusatzfaktor“?</summary><p>Ein Zusatzfaktor ist nicht unbedingt die Hauptursache. Er kann ein Geschehen verstärken, vorbereiten oder verschlimmern.</p></details>
+<details class="details"><summary>Denkhilfe bei Unsicherheit</summary><p>Frage immer: Welcher Befund gehört direkt zu einer Hypothese? Und welcher erklärt eher allgemeine Umweltbelastungen?</p></details>
+<div class="controls"><button class="secondary" onclick="nextStage(1)">Zurück</button><button class="primary" onclick="nextStage(3)">Weiter zum Urteil</button></div>
+</div></div>
+<div class="stage" id="stage3">
+<div class="panel"><figure><img alt="Vulkanische Landschaft als Missionsbild" src="{{asset:img/karten/mission-5.jpg}}" style="width:100%;display:block;border-radius:18px;border:2px solid rgba(255,225,170,.25)"/><figcaption class="caption">Mission 5: Die Expedition wägt die Belege ab und formuliert ein wissenschaftliches Urteil.</figcaption></figure></div>
+<div class="paper"><div class="kicker">Abschluss</div><h3>Urteil der Expedition</h3><p>Jetzt entscheidest du nicht einfach „richtig oder falsch“, sondern formulierst ein begründetes wissenschaftliches Urteil.</p>
+<div class="scorebox">
+<div class="score"><h4>Wie gut ist der Einschlag belegt?</h4><label><input name="impactStrength" type="radio" value="stark"/> Der Einschlag ist durch mehrere voneinander unabhängige Spuren stark belegt.</label><br/><label><input name="impactStrength" type="radio" value="mittel"/> Für den Einschlag gibt es nur schwache Hinweise.</label><br/><label><input name="impactStrength" type="radio" value="schwach"/> Ob es überhaupt einen Einschlag gab, ist völlig offen.</label></div>
+<div class="score"><h4>Welche Rolle könnte der Deccan-Vulkanismus gespielt haben?</h4><label><input name="volcanStrength" type="radio" value="stark"/> Er ist als alleinige Ursache des Massenaussterbens nachgewiesen.</label><br/><label><input name="volcanStrength" type="radio" value="erg"/> Er kann die Umwelt zusätzlich belastet haben; wie groß sein Anteil war, ist umstritten.</label><br/><label><input name="volcanStrength" type="radio" value="schwach"/> Die Ausbrüche hatten sicher keinerlei Bedeutung für die Umwelt.</label></div></div>
+<div class="task"><strong>Dein Auftrag – prüfe dein Urteil anhand der Belege</strong><ol><li>Wähle für beide Ereignisse die Aussage, die <strong>am besten durch eure bisherigen Untersuchungen gestützt</strong> wird.</li><li>Wähle danach <strong>mindestens zwei unterschiedliche Belege</strong>, auf die du dich in deiner Erklärung stützt. Nicht jede Aussage ist ein Beleg!</li><li>Klicke auf <strong>„Urteil und Belege prüfen“</strong>. Nutze die Rückmeldung und verbessere deine Auswahl, falls nötig.</li><li>Formuliere dann <strong>dein begründetes Urteil in deinem analogen Forscherheft</strong>. Nenne mindestens zwei Belege und eine Frage, die noch nicht abschließend geklärt ist.</li></ol><div class="lernreise12-output" data-station="5" data-task="6"><strong>Woran erkennst du, dass du fertig bist? </strong>Im Forscherheft: 1 Urteil mit mindestens 2 unterschiedlichen Belegen und 1 noch offenen Frage. Etwa 3–4 Sätze reichen, wenn sie fachlich begründet sind.</div><details class="lernreise12-help"><summary>Auftrag unklar? Begriffe und Vorgehen kurz erklärt</summary><p>Beurteilen heißt: Entscheide mit Gründen, nicht nach Gefühl. Prüfe: Welche Belege zeigen den Einschlag? Welche zeigen Vulkanismus? Was wissen wir über die Ursache des Aussterbens noch nicht sicher?</p></details></div>
+<div class="card" style="margin:14px 0;background:#fff9ed;color:#2a241a"><h4 style="margin-top:0">Welche Belege tragen dein Urteil?</h4>
+<div class="checklist" id="evidenceChoices">
+<label><input class="evidencecheck" type="checkbox" value="quarz"/> Im Grenzgestein wurden Quarzkörner mit Spuren extrem hohen Stoßdrucks gefunden.</label>
+<label><input class="evidencecheck" type="checkbox" value="krater"/> Die Untersuchungen zeigen eine große Einschlagstruktur bei Chicxulub.</label>
+<label><input class="evidencecheck" type="checkbox" value="basalt"/> Riesige, übereinanderliegende Basaltdecken zeigen ausgedehnten Vulkanismus in Indien.</label>
+<label><input class="evidencecheck" type="checkbox" value="iridium"/> An vielen Orten der Erde wurde eine auffällige Iridiumanreicherung an der Kreide-Paläogen-Grenze gemessen.</label>
+<label><input class="evidencecheck" type="checkbox" value="falsch1"/> Die Vulkanausbrüche erzeugten den Chicxulub-Krater.</label>
+<label><input class="evidencecheck" type="checkbox" value="falsch2"/> Alle Dinosaurier starben unmittelbar im Feuer der Vulkane.</label>
+</div></div>
+<div class="controls"><button class="secondary" id="checkVerdict" onclick="checkVerdict()" type="button">Urteil und Belege prüfen</button></div>
+<div aria-live="polite" class="status" id="verdictStatus" role="status"></div>
+<div class="note"><strong>Wissenschaftlich arbeiten:</strong> Gute Erklärungen unterscheiden, was Befunde zeigen, von dem, was man daraus folgert. Über die genaue Beteiligung des Deccan-Vulkanismus wird weiterhin geforscht.</div>
+<div class="checklist"><h4>Heft-Check</h4>
+<label><input class="missioncheck" type="checkbox"/> Ich habe mein Urteil zum Einschlag <strong>begründet</strong> aufgeschrieben.</label>
+<label><input class="missioncheck" type="checkbox"/> Ich habe die mögliche Rolle des Vulkanismus <strong>differenziert</strong> dargestellt.</label>
+<label><input class="missioncheck" type="checkbox"/> Ich habe mindestens zwei passende Befunde in meinem Heft erläutert.</label>
+<label><input class="missioncheck" type="checkbox"/> Ich habe eine noch offene Frage oder Unsicherheit benannt.</label>
+</div>
+<div class="controls"><button class="secondary" onclick="nextStage(2)">Zurück</button><button aria-describedby="verdictStatus" class="primary" disabled="" id="finishButton" onclick="finishMission()" type="button">Mission 5 abschließen</button></div>
+<div aria-live="polite" class="status" id="finishStatus" role="status"></div>
+</div>
+</div></section></div>
+</div>
+<div class="wrap" style="font-size:.85rem;color:#c5cfd1;padding-top:10px;padding-bottom:10px">Fachliche Einordnung: Schoene u. a. (2015, 2019), <a href="https://pubmed.ncbi.nlm.nih.gov/25502315/" rel="noopener noreferrer" style="color:#f4cc8b" target="_blank">Datierung der Deccan-Trapps</a>. Die Zeitleiste ist ein Lernmodell, keine Messkurve. Filmclip: ZDF logo! (2026), online und optional.</div><footer class="footerbar"><div class="badge">Mission 5 · analoges Forscherheft bleibt verbindlich</div><div class="badge" id="progressBadge">Noch nicht abgeschlossen</div></footer>
+<script>
+const stages=[...document.querySelectorAll('.stage')];
+const navBtns=[...document.querySelectorAll('.navbtn')];
+function nextStage(i){
+ if(!Number.isInteger(i)||i<0||i>=stages.length)return;
+ stages.forEach((s,idx)=>s.classList.toggle('active',idx===i));
+ navBtns.forEach((b,idx)=>{b.classList.toggle('active',idx===i);b.setAttribute('aria-current',idx===i?'step':'false')});
+ const target=stages[i];
+ requestAnimationFrame(()=>{target.scrollIntoView({block:'start',behavior:'instant'});const heading=target.querySelector('h3');if(heading){heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true});}});
+}
+navBtns.forEach((b,idx)=>b.addEventListener('click',()=>nextStage(idx)));
+function checkSort(){const sels=[...document.querySelectorAll('.statement select')]; let correct=0, empty=0; sels.forEach(s=>{if(!s.value) empty++; if(s.value && s.value===s.dataset.correct) correct++;}); const out=document.getElementById('sortStatus'); out.classList.add('show'); if(empty){out.textContent='Es fehlen noch '+empty+' Zuordnungen.'; out.style.background='#fff3d7'; out.style.color='#4f3916'; return;} if(correct===sels.length){out.textContent='✓ Sehr gut. Du hast die Aussagekraft der Befunde passend eingeordnet.'; out.style.background='#dff5e8'; out.style.color='#0f5132';} else {out.textContent='Du hast '+correct+' von '+sels.length+' Aussagen passend eingeordnet. Prüfe besonders, welche Belege direkt für den Einschlag sprechen.'; out.style.background='#fff3d7'; out.style.color='#4f3916';}}
+let verdictVerified=false;
+const validEvidence=new Set(['quarz','krater','basalt','iridium']);
+function feedback(el,message,good=false){
+ el.classList.add('show');el.textContent=message;
+ el.style.background=good?'#dff5e8':'#fff3d7';
+ el.style.color=good?'#0f5132':'#4f3916';
+}
+function clearVerdictCheck(){
+ verdictVerified=false;
+ document.getElementById('finishButton').disabled=true;
+ document.getElementById('finishButton').textContent='Mission 5 abschließen';
+ document.getElementById('progressBadge').textContent='Noch nicht abgeschlossen';
+ document.getElementById('verdictStatus').classList.remove('show');
+ document.getElementById('finishStatus').classList.remove('show');
+}
+document.querySelectorAll('input[name="impactStrength"], input[name="volcanStrength"], .evidencecheck').forEach(el=>el.addEventListener('change',clearVerdictCheck));
+function checkVerdict(){
+ const impact=document.querySelector('input[name="impactStrength"]:checked');
+ const volcan=document.querySelector('input[name="volcanStrength"]:checked');
+ const marked=[...document.querySelectorAll('.evidencecheck:checked')].map(el=>el.value);
+ const out=document.getElementById('verdictStatus');
+ verdictVerified=false;
+ document.getElementById('finishButton').disabled=true;
+ if(!impact||!volcan){feedback(out,'Bitte wähle zuerst zu beiden Ereignissen eine Einschätzung aus.');return;}
+ if(impact.value!=='stark'){
+   feedback(out,'Überprüfe deine Einschätzung zum Einschlag: Was zeigen Schockquarz, Iridium und der Chicxulub-Krater zusammen? Gehe bei Bedarf zu Beweisakte C zurück.');return;
+ }
+ if(volcan.value!=='erg'){
+   feedback(out,'Prüfe das Urteil zum Vulkanismus: Die Basaltdecken belegen große Ausbrüche. Aber beweisen sie, dass der Vulkanismus allein das Massenaussterben verursachte – oder dass er keinerlei Wirkung hatte?');return;
+ }
+ if(marked.length<2){feedback(out,'Wähle mindestens zwei unterschiedliche Befunde aus, mit denen du dein Urteil begründen kannst.');return;}
+ const invalid=marked.filter(v=>!validEvidence.has(v));
+ if(invalid.length){feedback(out,'Mindestens eine markierte Aussage ist keine belegte Beobachtung. Prüfe besonders, ob sie einen Fund beschreibt oder eine unbewiesene Behauptung ist.');return;}
+ verdictVerified=true;
+ document.getElementById('finishButton').disabled=false;
+ feedback(out,'✓ Deine Einschätzung und deine Belegauswahl passen zur untersuchten Befundlage. Begründe sie jetzt in deinem analogen Forscherheft und bestätige anschließend den Heft-Check.',true);
+}
+function finishMission(){
+ const out=document.getElementById('finishStatus');
+ if(!verdictVerified){feedback(out,'Prüfe zuerst dein Urteil und die ausgewählten Belege.');return;}
+ const checks=[...document.querySelectorAll('.missioncheck')];
+ const done=checks.filter(c=>c.checked).length;
+ if(done<checks.length){feedback(out,'Im analogen Forscherheft fehlen noch '+(checks.length-done)+' Punkte des Heft-Checks.');return;}
+ feedback(out,'✓ Mission 5 abgeschlossen! Die Belege sind geprüft. Dein ausführliches Urteil bleibt in deinem analogen Forscherheft dokumentiert.',true);
+ document.getElementById('progressBadge').textContent='Mission 5 erfolgreich abgeschlossen';
+ document.getElementById('finishButton').textContent='✓ Mission 5 abgeschlossen';
+}
+
+</script>
+</body></html>

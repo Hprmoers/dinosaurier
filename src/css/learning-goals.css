@@ -1,0 +1,24 @@
+
+.outcomes-cover{max-width:1560px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;padding:8px 14px;background:linear-gradient(110deg,#24333a,#304341);border:1px solid #ac8755;border-radius:11px;color:#f8eaca;font-size:14px}
+.outcomes-cover button,.goals-open{border:1px solid #d7ac65;border-radius:9px;background:#f5dfb1;color:#2c271c;font-weight:750;padding:8px 14px;cursor:pointer}
+.outcomes-cover button:hover,.goals-open:hover{background:#fff0ce}
+.goal-brief{margin:0;color:#f6e1bb;font-size:14px}
+#learningGoalDialog{border:2px solid #af8244;border-radius:18px;max-width:min(840px,95vw);width:95vw;max-height:90dvh;padding:0;background:#f5e8cd;color:#2b281f;box-shadow:0 24px 80px #0009}
+#learningGoalDialog::backdrop{background:#000b}
+.goal-dialog-head{position:sticky;top:0;background:#27383c;color:#fff3d7;display:flex;gap:14px;align-items:center;justify-content:space-between;padding:17px 22px;border-bottom:3px solid #d0a05f;z-index:1}
+.goal-dialog-head h2{margin:0;font-size:clamp(19px,2.5vw,27px)}
+.goal-dialog-head button{background:#fff3d7;border:0;border-radius:9px;padding:8px 12px;color:#293638;cursor:pointer;font-weight:800}
+.goal-dialog-content{padding:16px 23px 24px;overflow:auto;max-height:calc(90dvh - 76px)}
+.goal-dialog-intro{font-size:16px;line-height:1.5;margin:0 0 15px}
+.goal-dialog-list{display:grid;gap:12px}
+.goal-dialog-list article{background:#fffaf0;border:1px solid #cfb487;border-radius:10px;padding:14px 16px}
+.goal-dialog-list h3{font-size:17px;margin:0 0 6px;color:#3e3321}
+.goal-dialog-list ul{margin:0;padding-left:21px;line-height:1.55}
+.goal-dialog-list li{margin:5px 0}
+.mission-goal-box{margin:0;padding:0 16px;background:#e9d5aa;color:#292a26;border-top:1px solid #9f8056;border-bottom:1px solid #9f8056;flex-shrink:0}
+.mission-goal-box summary{padding:10px 0;cursor:pointer;font-size:15px;line-height:1.4}
+.mission-goal-box summary strong{color:#573f18}
+.mission-goal-box ul{margin:0 0 12px 5px;padding-left:19px;line-height:1.45}
+.mission-goal-box li{margin:7px 0}
+.mission-quick-goal{margin:8px 0!important;font-size:14px!important;line-height:1.4!important}
+@media(max-width:600px){.outcomes-cover{margin:0 9px 8px;padding:9px}.goal-dialog-content{padding:12px}.goal-dialog-list article{padding:12px}.mission-goal-box{padding:0 11px}.mission-goal-box summary{font-size:13px}}

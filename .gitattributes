@@ -1,0 +1,3 @@
+# Generierte Einzeldatei: keine Text-Diffs (spart Tokens/Lesezeit), als generiert markieren
+/index.html -diff linguist-generated=true
+assets/** binary
